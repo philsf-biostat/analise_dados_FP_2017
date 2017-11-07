@@ -8,4 +8,4 @@ dados <- transform(dados, ID = factor(ID),
                    `LADO DOR`=factor(`LADO DOR`),
                    `TONNIS D`=ordered(`TONNIS D`),
                    `TONNIS E`=ordered(`TONNIS E`),
-                   "")
+                   IMC = IMC)
