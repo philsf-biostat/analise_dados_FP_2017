@@ -2,6 +2,7 @@ library(readxl)
 library(data.table)
 
 dados <- data.table(read_excel("dataset/EXCEL TORÇÃO.xlsx"))
+dados <- data.table(read_excel("dataset/EXCEL TORÇÃO FINAL MESTRADO.xlsx"))
 dados <- transform(dados, ID = factor(ID),
                    SEXO = factor(SEXO),
                    RAÇA = factor(RAÇA),
