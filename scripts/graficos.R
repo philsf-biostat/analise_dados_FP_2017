@@ -25,3 +25,4 @@ ggplot(dados, aes(`ALFA E`, `TORÇÃO E`, col = `LADO DOR`)) +
 ggplot(dados, aes(`CAM D`)) + geom_bar(aes(fill = SEXO), position = "dodge")
 ggplot(dados, aes(`CAM E`)) + geom_bar(aes(fill = SEXO), position = "dodge")
 ggplot(dados, aes(PINCER)) + geom_bar(aes(fill = SEXO), position = "dodge")
+ggplot(dados, aes(IMPACTO)) + geom_bar(aes(fill = SEXO), position = "dodge")

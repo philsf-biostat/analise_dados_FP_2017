@@ -26,3 +26,12 @@ PINCER[dados$`PINCER D` == TRUE] <- "D"
 PINCER[dados$`PINCER E` == TRUE] <- "E"
 dados$PINCER <- PINCER
 rm(PINCER)
+
+# IMPACTO
+dados[, `IMPACTO D` := `ALFA D` < 0 | `IA D` < 0 | `I. EXTRU D` > 39]
+dados[, `IMPACTO E` := `ALFA E` < 0 | `IA E` < 0 | `I. EXTRU E` > 39]
+IMPACTO <- rep(NA, nrow(dados))
+IMPACTO[dados$`IMPACTO D` == TRUE] <- "D"
+IMPACTO[dados$`IMPACTO E` == TRUE] <- "E"
+dados$IMPACTO <- IMPACTO
+rm(IMPACTO)
