@@ -27,15 +27,23 @@ PINCER[dados$`PINCER E` == TRUE] <- "E"
 dados$PINCER <- factor(PINCER)
 rm(PINCER)
 
-# # IMPACTO
-# dados[, `IMPACTO D` := `ALFA D` < 0 | `IA D` < 0 | `I. EXTRU D` > 39]
-# dados[, `IMPACTO E` := `ALFA E` < 0 | `IA E` < 0 | `I. EXTRU E` > 39]
-# IMPACTO <- rep(NA, nrow(dados))
-# IMPACTO[dados$`IMPACTO D` == TRUE] <- "D"
-# IMPACTO[dados$`IMPACTO E` == TRUE] <- "E"
-# dados$IMPACTO <- factor(IMPACTO)
-# rm(IMPACTO)
+# IMPACTO D
+`IMPACTO D` <- rep(NA, nrow(dados))
+`IMPACTO D`[dados$`PINCER D` == TRUE] <- "PINCER"
+`IMPACTO D`[dados$`CAM D` == "CAM"] <- "CAM"
+`IMPACTO D`[dados$`MISTO D` == TRUE] <- "MISTO"
+dados$`IMPACTO D` <- factor(`IMPACTO D`)
+rm(`IMPACTO D`)
+
+# IMPACTO E
+`IMPACTO E` <- rep(NA, nrow(dados))
+`IMPACTO E`[dados$`PINCER E` == TRUE] <- "PINCER"
+`IMPACTO E`[dados$`CAM E` == "CAM"] <- "CAM"
+`IMPACTO E`[dados$`MISTO E` == TRUE] <- "MISTO"
+dados$`IMPACTO E` <- factor(`IMPACTO E`)
+rm(`IMPACTO E`)
 
 # MISTO
 dados[, `MISTO D` := `CAM D` == "CAM" & `PINCER D` == TRUE]
 dados[, `MISTO E` := `CAM E` == "CAM" & `PINCER E` == TRUE]
+
