@@ -1,7 +1,7 @@
 library(readxl)
 library(data.table)
 
-dados <- data.table(read_excel("dataset/EXCEL TORÇÃO.xlsx"))
+# dados <- data.table(read_excel("dataset/EXCEL TORÇÃO.xlsx"))
 dados <- data.table(read_excel("dataset/EXCEL TORÇÃO FINAL MESTRADO.xlsx"))
 dados <- transform(dados, ID = factor(ID),
                    SEXO = factor(SEXO),
@@ -27,11 +27,15 @@ PINCER[dados$`PINCER E` == TRUE] <- "E"
 dados$PINCER <- factor(PINCER)
 rm(PINCER)
 
-# IMPACTO
-dados[, `IMPACTO D` := `ALFA D` < 0 | `IA D` < 0 | `I. EXTRU D` > 39]
-dados[, `IMPACTO E` := `ALFA E` < 0 | `IA E` < 0 | `I. EXTRU E` > 39]
-IMPACTO <- rep(NA, nrow(dados))
-IMPACTO[dados$`IMPACTO D` == TRUE] <- "D"
-IMPACTO[dados$`IMPACTO E` == TRUE] <- "E"
-dados$IMPACTO <- factor(IMPACTO)
-rm(IMPACTO)
+# # IMPACTO
+# dados[, `IMPACTO D` := `ALFA D` < 0 | `IA D` < 0 | `I. EXTRU D` > 39]
+# dados[, `IMPACTO E` := `ALFA E` < 0 | `IA E` < 0 | `I. EXTRU E` > 39]
+# IMPACTO <- rep(NA, nrow(dados))
+# IMPACTO[dados$`IMPACTO D` == TRUE] <- "D"
+# IMPACTO[dados$`IMPACTO E` == TRUE] <- "E"
+# dados$IMPACTO <- factor(IMPACTO)
+# rm(IMPACTO)
+
+# MISTO
+dados[, `MISTO D` := `CAM D` == "CAM" & `PINCER D` == TRUE]
+dados[, `MISTO E` := `CAM E` == "CAM" & `PINCER E` == TRUE]
