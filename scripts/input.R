@@ -17,6 +17,12 @@ levels(dados$SEXO) <- c("M", "F")
 # CAM ####
 dados$`CAM D` <- cut(dados$`ALFA D`, breaks = c(0,50,Inf), labels = c("NORMAL", "CAM"))
 dados$`CAM E` <- cut(dados$`ALFA E`, breaks = c(0,50,Inf), labels = c("NORMAL", "CAM"))
+CAM <- rep(NA, nrow(dados))
+CAM[dados$`CAM D` == "CAM"] <- "D"
+CAM[dados$`CAM E` == "CAM"] <- "E"
+CAM[dados$`CAM D` == "CAM" & dados$`CAM E` == "CAM"] <- "B"
+dados$CAM <- factor(CAM)
+rm(CAM)
 
 # PINCER ####
 dados[, `PINCER D` := `IA D` > 10 | `ACB D` > 39 | `I. EXTRU D` < 10]
@@ -24,6 +30,7 @@ dados[, `PINCER E` := `IA E` > 10 | `ACB E` > 39 | `I. EXTRU E` < 10]
 PINCER <- rep(NA, nrow(dados))
 PINCER[dados$`PINCER D` == TRUE] <- "D"
 PINCER[dados$`PINCER E` == TRUE] <- "E"
+PINCER[dados$`PINCER D` == TRUE & dados$`PINCER E` == TRUE] <- "B"
 dados$PINCER <- factor(PINCER)
 rm(PINCER)
 
@@ -46,4 +53,10 @@ rm(`IMPACTO E`)
 # MISTO
 dados[, `MISTO D` := `CAM D` == "CAM" & `PINCER D` == TRUE]
 dados[, `MISTO E` := `CAM E` == "CAM" & `PINCER E` == TRUE]
+MISTO <- rep(NA, nrow(dados))
+MISTO[dados$`MISTO D` == TRUE] <- "D"
+MISTO[dados$`MISTO E` == TRUE] <- "E"
+MISTO[dados$`MISTO D` == TRUE & dados$`MISTO E` == TRUE] <- "B"
+dados$MISTO <- factor(MISTO)
+rm(MISTO)
 
