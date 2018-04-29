@@ -3,13 +3,14 @@ library(data.table)
 
 # dados <- data.table(read_excel("dataset/EXCEL TORÇÃO.xlsx"))
 # dados <- data.table(read_excel("dataset/EXCEL TORÇÃO FINAL MESTRADO.xlsx"))
-dados <- data.table(read_excel("dataset/EXCEL TORÇÃO  MESTRADO 18 fev.xlsx"))
+# dados <- data.table(read_excel("dataset/EXCEL TORÇÃO  MESTRADO 18 fev.xlsx"))
+dados <- data.table(read_excel("dataset/Cabral FMP dados 2018-04-22.xlsx"))
 dados <- transform(dados, ID = factor(ID),
                    SEXO = factor(SEXO),
                    RAÇA = factor(RAÇA),
-                   `LADO DOR`=factor(`LADO DOR`),
-                   `TONNIS D`=ordered(`TONNIS D`),
-                   `TONNIS E`=ordered(`TONNIS E`),
+                   `LADO DOR` = factor(`LADO DOR`),
+                   `TONNIS D` = ordered(`TONNIS D`),
+                   `TONNIS E` = ordered(`TONNIS E`),
                    `TIPO DE PATOLOGIA` = factor(`TIPO DE PATOLOGIA`),
                    IMC = IMC)
 levels(dados$`LADO DOR`) <- c("D","E","B")
