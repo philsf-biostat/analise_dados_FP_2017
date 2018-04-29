@@ -23,7 +23,10 @@ CAM <- rep(NA, nrow(dados))
 CAM[dados$`CAM D` == "CAM"] <- "D"
 CAM[dados$`CAM E` == "CAM"] <- "E"
 CAM[dados$`CAM D` == "CAM" & dados$`CAM E` == "CAM"] <- "B"
-dados$CAM <- factor(CAM)
+CAM[dados$`CAM D` == "NORMAL" & dados$`CAM E` == "NORMAL"] <- "N"
+CAM <- factor(CAM)
+CAM <- relevel(CAM, "N")
+dados$CAM <- CAM
 rm(CAM)
 
 # PINCER ####
@@ -33,7 +36,10 @@ PINCER <- rep(NA, nrow(dados))
 PINCER[dados$`PINCER D` == TRUE] <- "D"
 PINCER[dados$`PINCER E` == TRUE] <- "E"
 PINCER[dados$`PINCER D` == TRUE & dados$`PINCER E` == TRUE] <- "B"
-dados$PINCER <- factor(PINCER)
+PINCER[dados$`PINCER D` == FALSE & dados$`PINCER E` == FALSE] <- "N"
+PINCER <- factor(PINCER)
+PINCER <- relevel(PINCER, "N")
+dados$PINCER <- PINCER
 rm(PINCER)
 
 # IMPACTO D
