@@ -1,10 +1,7 @@
 library(readxl)
 library(data.table)
 
-# dados <- data.table(read_excel("dataset/EXCEL TORÇÃO.xlsx"))
-# dados <- data.table(read_excel("dataset/EXCEL TORÇÃO FINAL MESTRADO.xlsx"))
-# dados <- data.table(read_excel("dataset/EXCEL TORÇÃO  MESTRADO 18 fev.xlsx"))
-dados <- data.table(read_excel("dataset/Cabral FMP dados 2018-04-22.xlsx"))
+dados <- data.table(read_excel("dataset/Cabral FMP dados 2018-05-07.xlsx"))
 dados <- transform(dados, ID = factor(ID),
                    SEXO = factor(SEXO),
                    RAÇA = factor(RAÇA),
@@ -67,4 +64,3 @@ MISTO[dados$`MISTO E` == TRUE] <- "E"
 MISTO[dados$`MISTO D` == TRUE & dados$`MISTO E` == TRUE] <- "B"
 dados$MISTO <- factor(MISTO)
 rm(MISTO)
-
