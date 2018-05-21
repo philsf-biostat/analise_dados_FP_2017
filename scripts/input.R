@@ -27,8 +27,8 @@ CAM[dados$`CAM D` == "CAM"] <- "D"
 CAM[dados$`CAM E` == "CAM"] <- "E"
 CAM[dados$`CAM D` == "CAM" & dados$`CAM E` == "CAM"] <- "B"
 CAM[dados$`CAM D` == "NORMAL" & dados$`CAM E` == "NORMAL"] <- "N"
-CAM <- factor(CAM)
-CAM <- relevel(CAM, "N")
+CAM <- factor(CAM, levels = c("N", "D", "E", "B"))
+# CAM <- relevel(CAM, "N")
 dados$CAM <- CAM
 rm(CAM)
 
@@ -49,8 +49,8 @@ PINCER[dados$`PINCER D` == TRUE] <- "D"
 PINCER[dados$`PINCER E` == TRUE] <- "E"
 PINCER[dados$`PINCER D` == TRUE & dados$`PINCER E` == TRUE] <- "B"
 PINCER[dados$`PINCER D` == FALSE & dados$`PINCER E` == FALSE] <- "N"
-PINCER <- factor(PINCER)
-PINCER <- relevel(PINCER, "N")
+PINCER <- factor(PINCER, levels = c("N", "D", "E", "B"))
+# PINCER <- relevel(PINCER, "N")
 dados$PINCER <- PINCER
 rm(PINCER)
 
@@ -81,6 +81,7 @@ MISTO <- rep(NA, nrow(dados))
 MISTO[dados$`MISTO D` == TRUE] <- "D"
 MISTO[dados$`MISTO E` == TRUE] <- "E"
 MISTO[dados$`MISTO D` == TRUE & dados$`MISTO E` == TRUE] <- "B"
-MISTO[is.na(MISTO)] <- "N"
-dados$MISTO <- factor(MISTO)
+MISTO[is.na(MISTO)] <- "Simples"
+dados$MISTO <- factor(MISTO, levels = c("Simples", "D", "E", "B"))
+# dados$MISTO <- relevel(dados$MISTO, "N")
 rm(MISTO)
