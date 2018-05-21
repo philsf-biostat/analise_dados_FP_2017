@@ -54,26 +54,6 @@ PINCER <- factor(PINCER, levels = c("N", "D", "E", "B"))
 dados$PINCER <- PINCER
 rm(PINCER)
 
-# IMPACTO D
-`IMPACTO D` <- rep(NA, nrow(dados))
-`IMPACTO D`[dados$`PINCER D` == TRUE] <- "PINCER"
-`IMPACTO D`[dados$`CAM D` == "CAM"] <- "CAM"
-`IMPACTO D`[dados$`MISTO D` == TRUE] <- "MISTO"
-`IMPACTO D`[is.na(`IMPACTO D`)] <- "NORMAL"
-dados$`IMPACTO D` <- factor(`IMPACTO D`)
-dados$`IMPACTO D` <- relevel(dados$`IMPACTO D`, "NORMAL")
-rm(`IMPACTO D`)
-
-# IMPACTO E
-`IMPACTO E` <- rep(NA, nrow(dados))
-`IMPACTO E`[dados$`PINCER E` == TRUE] <- "PINCER"
-`IMPACTO E`[dados$`CAM E` == "CAM"] <- "CAM"
-`IMPACTO E`[dados$`MISTO E` == TRUE] <- "MISTO"
-`IMPACTO E`[is.na(`IMPACTO E`)] <- "NORMAL"
-dados$`IMPACTO E` <- factor(`IMPACTO E`)
-dados$`IMPACTO E` <- relevel(dados$`IMPACTO E`, "NORMAL")
-rm(`IMPACTO E`)
-
 # MISTO
 dados[, `MISTO D` := `CAM D` == "CAM" & `PINCER D` == TRUE]
 dados[, `MISTO E` := `CAM E` == "CAM" & `PINCER E` == TRUE]
@@ -85,3 +65,23 @@ MISTO[is.na(MISTO)] <- "Simples"
 dados$MISTO <- factor(MISTO, levels = c("Simples", "D", "E", "B"))
 # dados$MISTO <- relevel(dados$MISTO, "N")
 rm(MISTO)
+
+# IMPACTO D
+`IMPACTO D` <- rep(NA, nrow(dados))
+`IMPACTO D`[dados$`PINCER D` == TRUE] <- "PINCER"
+`IMPACTO D`[dados$`CAM D` == "CAM"] <- "CAM"
+`IMPACTO D`[dados$`MISTO D` == TRUE] <- "MISTO"
+`IMPACTO D`[is.na(`IMPACTO D`)] <- "NORMAL"
+dados$`IMPACTO D` <- factor(`IMPACTO D`, levels = c("NORMAL", "CAM", "PINCER", "MISTO"))
+# dados$`IMPACTO D` <- relevel(dados$`IMPACTO D`, "NORMAL")
+rm(`IMPACTO D`)
+
+# IMPACTO E
+`IMPACTO E` <- rep(NA, nrow(dados))
+`IMPACTO E`[dados$`PINCER E` == TRUE] <- "PINCER"
+`IMPACTO E`[dados$`CAM E` == "CAM"] <- "CAM"
+`IMPACTO E`[dados$`MISTO E` == TRUE] <- "MISTO"
+`IMPACTO E`[is.na(`IMPACTO E`)] <- "NORMAL"
+dados$`IMPACTO E` <- factor(`IMPACTO E`, levels = c("NORMAL", "CAM", "PINCER", "MISTO"))
+# dados$`IMPACTO E` <- relevel(dados$`IMPACTO E`, "NORMAL")
+rm(`IMPACTO E`)
