@@ -25,7 +25,7 @@ ggplot(dados, aes(`ALFA E`, `TORÇÃO E`)) +
 # SEPARADO POR IMPACTO
 ggplot(dados, aes(`ALFA D`, `TORÇÃO D`)) +
   geom_point(aes(`ALFA D`, `TORÇÃO D`, col = `IMPACTO D`, shape = `IMPACTO D`)) + theme(legend.position = "bottom") +
-  geom_smooth(method = "lm", se = F, mapping = aes(col = `IMPACTO D`, shape = `IMPACTO D`)) +
+  geom_smooth(method = "lm", se = F, mapping = aes(col = `IMPACTO D`)) +
   geom_smooth(method = "lm", col = "black")
 
 ggplot(dados, aes(`ALFA E`, `TORÇÃO E`, col = `LADO DOR`)) +
