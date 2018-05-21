@@ -18,6 +18,10 @@ levels(dados$SEXO) <- c("M", "F")
 # CAM ####
 dados$`CAM D` <- cut(dados$`ALFA D`, breaks = c(0,50,Inf), labels = c("NORMAL", "CAM"))
 dados$`CAM E` <- cut(dados$`ALFA E`, breaks = c(0,50,Inf), labels = c("NORMAL", "CAM"))
+
+# exceção: P17 sem ALFA D
+dados[ID == "P17"]$`CAM D` <- "NORMAL"
+
 CAM <- rep(NA, nrow(dados))
 CAM[dados$`CAM D` == "CAM"] <- "D"
 CAM[dados$`CAM E` == "CAM"] <- "E"
@@ -32,6 +36,15 @@ rm(CAM)
 dados[, `PINCER D` := `IA D` > 10 | `ACB D` > 39 | `I. EXTRU D` < 10]
 dados[, `PINCER E` := `IA E` > 10 | `ACB E` > 39 | `I. EXTRU E` < 10]
 PINCER <- rep(NA, nrow(dados))
+
+# exceção: P15 sem ACB D
+# dados[ID == "P15", `PINCER D` := `IA D` > 10 | `I. EXTRU D` < 10]
+dados[ID == "P15"]$`PINCER D` <- FALSE
+
+# exceção: P28 sem I Extru D e E
+dados[ID == "P28"]$`PINCER D` <- FALSE
+dados[ID == "P28"]$`PINCER E` <- TRUE
+
 PINCER[dados$`PINCER D` == TRUE] <- "D"
 PINCER[dados$`PINCER E` == TRUE] <- "E"
 PINCER[dados$`PINCER D` == TRUE & dados$`PINCER E` == TRUE] <- "B"
