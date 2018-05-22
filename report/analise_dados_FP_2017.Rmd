@@ -1,0 +1,76 @@
+---
+title: "Análise Estatística de ..."
+author: '**De:** Felipe Figueiredo **Para:** ___'
+date: '**Data: ** dd/mm/aaaa'
+output:
+  html_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 6
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    number_sections: yes
+    toc: yes
+  word_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 6
+    reference_docx: misc/style.docx
+    toc: yes
+subtitle: 'CÓDIGO: analise_dados_FP_2017'
+toc-title: "Sumário"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = normalizePath(".."))
+options(scipen = 999)
+library(pander)
+library(knitr)
+library(philsfmisc)
+
+
+```
+
+---
+
+**Histórico do documento**
+
+```{r, echo = FALSE}
+Version <- c("01")
+Changes <- c("Versão inicial")
+history <- cbind(Version, Changes)
+colnames(history) <- c("Versão", "Alterações")
+# pander(history, split.cells = 70)
+kable(history)
+```
+
+---
+
+# Lista de abreviaturas
+
+# Introdução
+
+## Objetivos
+
+## Recepção e tratamento dos dados
+
+# Metodologia
+
+Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
+
+<!-- The exact confidence intervals (CIs) of binomial proportions were calculated using package `exactci` (version `r packageVersion("exactci")`). -->
+
+# Resultados
+
+<!-- # Exceções e Desvios do teste -->
+
+# Conclusões
+
+
+# Referências
+
+# Apêndice
+
