@@ -65,6 +65,55 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 
 # Resultados
 
+```{r include=FALSE}
+source('scripts/descritiva.R', encoding = 'UTF-8')
+```
+
+## Descritivas
+
+### Tabela básica
+
+```{r echo=FALSE}
+pander(print(CreateTableOne(data = dados[, c(2:6, 7:21, 25, 28, 31)]), showAllLevels = TRUE, printToggle = FALSE))
+```
+
+Table: Tabela descritiva básica (univariada) - EXCLUIR linhas relativas a colunas da tabela que  não foram usadas!
+
+### Tabelas estratificadas
+
+```{r echo=FALSE}
+pander(print(CreateTableOne(
+  data = d.num,
+  strata = "LADO"
+  ), showAllLevels = TRUE, exact = TRUE, printToggle = FALSE)[, 1:4])
+panderOptions('table.split.table', 120)
+```
+
+Table: Tabela por lado da medição
+
+```{r}
+pander(sum.gen[, 1:4])
+```
+
+Table: Tabela por genero
+
+```{r}
+pander(sum.dor[, 1:5])
+```
+
+Table: Tabela por lado da dor
+
+```{r}
+pander(sum.rac[, 1:4])
+```
+
+Table: Tabela por raça
+
+## Por sexo
+
+## Por lado de dor
+
+
 <!-- # Exceções e Desvios do teste -->
 
 # Conclusões
