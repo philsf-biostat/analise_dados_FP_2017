@@ -89,6 +89,10 @@ dados$`IMPACTO E` <- factor(`IMPACTO E`, levels = c("NORMAL", "CAM", "PINCER", "
 # dados$`IMPACTO E` <- relevel(dados$`IMPACTO E`, "NORMAL")
 rm(`IMPACTO E`)
 
+# influentes: checar valores de ALFA D
+print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, `LADO DOR`, `ALFA D`, `TORÇÃO D`)])
+# dados <- dados[!(ID %in% c("P22", "P30", "P36"))]
+
 impacto.lat <- dados[, .(ID, SEXO, `LADO DOR`, CAM, PINCER, MISTO)]
 names(impacto.lat)[3] <- "DOR"
 
