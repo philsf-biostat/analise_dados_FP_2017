@@ -116,4 +116,4 @@ d.num <- data.frame(
   PINCER = rep(dados$PINCER, 2),
   IMPACTO = c(as.character(dados$`IMPACTO D`), as.character(dados$`IMPACTO E`))
 )
-
+levels(d.num$IMPACTO) <- c("NORMAL", "CAM", "PINCER", "MISTO")
