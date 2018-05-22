@@ -12,8 +12,11 @@ dados <- transform(dados, ID = factor(ID),
                    `TONNIS E` = ordered(`TONNIS E`),
                    `TIPO DE PATOLOGIA` = factor(`TIPO DE PATOLOGIA`),
                    IMC = IMC)
+levels(dados$RAÇA) <- c("Branca", "Outros")
+dados$RAÇA <- relevel(dados$RAÇA, "Outros")
 levels(dados$`LADO DOR`) <- c("D","E","B")
 levels(dados$SEXO) <- c("M", "F")
+dados$SEXO <- relevel(dados$SEXO, "F")
 
 # CAM ####
 dados$`CAM D` <- cut(dados$`ALFA D`, breaks = c(0,50,Inf), labels = c("NORMAL", "CAM"))
