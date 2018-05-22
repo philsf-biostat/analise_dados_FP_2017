@@ -109,6 +109,8 @@ levels(impacto$MISTO) <- c("SIMPLES", "MISTO", "MISTO", "MISTO")
 # dados numéricos
 d.num <- data.frame(
   LADO = rep(c("D", "E"), each = 26),
+  SEXO = rep(dados$SEXO, 2),
+  RAÇA = rep(dados$RAÇA, 2),
   DOR = rep(dados$`LADO DOR`, 2),
   TORCAO = c(dados$`TORÇÃO D`, dados$`TORÇÃO E`),
   ALFA = c(dados$`ALFA D`, dados$`ALFA E`),
