@@ -95,6 +95,13 @@ ggplot(d.num, aes(ALFA, TORCAO, col = IMPACTO)) +
   facet_grid(~ LADO)
 ggsave("figures/painel_AlfTor_IMPACTO.png")
 
+ggplot(d.num[d.num$IMPACTO != "NORMAL",], aes(ALFA, TORCAO)) +
+  theme(legend.position = "bottom") +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_grid(IMPACTO ~ LADO, margins = "IMPACTO")
+ggsave("figures/painel_AlfTor_IMPACTO2.png")
+
 # ggplot(gather(dados[, .(SEXO, `IMPACTO D`, `IMPACTO E`)], LADO, IMPACTO, `IMPACTO D`, `IMPACTO E`, -SEXO), aes(IMPACTO)) + geom_bar(aes(fill = SEXO))
 # ggplot(dados, aes(`IMPACTO D`)) + geom_bar(aes(fill = SEXO), position = "dodge")
 # ggplot(dados, aes(`IMPACTO E`)) + geom_bar(aes(fill = SEXO), position = "dodge")
