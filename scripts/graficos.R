@@ -46,20 +46,20 @@ ggplot(dados, aes(`ALFA E`, `TORÇÃO E`, col = `LADO DOR`)) +
 # ggplot(dados, aes(`MISTO D`)) + geom_bar(aes(fill = SEXO), position = "dodge")
 # ggplot(dados, aes(`MISTO E`)) + geom_bar(aes(fill = SEXO), position = "dodge")
 
-ggplot(dados, aes(CAM)) + geom_bar(aes(fill = SEXO), position = "dodge") + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
-ggplot(dados, aes(CAM)) + geom_bar(aes(y = (..count..)/sum(..count..), fill = SEXO), position = "dodge") + scale_y_continuous(labels = percent, limits = c(0, 1)) + ylab("Participantes")
-ggplot(dados, aes(CAM)) + geom_bar(aes(fill = SEXO)) + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
+# ggplot(dados, aes(CAM)) + geom_bar(aes(fill = SEXO), position = "dodge") + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
+# ggplot(dados, aes(CAM)) + geom_bar(aes(y = (..count..)/sum(..count..), fill = SEXO), position = "dodge") + scale_y_continuous(labels = percent, limits = c(0, 1)) + ylab("Participantes")
+# ggplot(dados, aes(CAM)) + geom_bar(aes(fill = SEXO)) + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
 # ggsave("figures/CAM.png")
 
-ggplot(dados, aes(PINCER)) + geom_bar(aes(fill = SEXO)) + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
-ggplot(dados, aes(PINCER)) + geom_bar(aes(fill = SEXO), position = "dodge") + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
-ggplot(dados, aes(PINCER)) + geom_bar(aes(y = (..count..)/sum(..count..), fill = SEXO), position = "dodge") + scale_y_continuous(labels = percent, limits = c(0, 1)) + ylab("Participantes")
+# ggplot(dados, aes(PINCER)) + geom_bar(aes(fill = SEXO)) + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
+# ggplot(dados, aes(PINCER)) + geom_bar(aes(fill = SEXO), position = "dodge") + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
+# ggplot(dados, aes(PINCER)) + geom_bar(aes(y = (..count..)/sum(..count..), fill = SEXO), position = "dodge") + scale_y_continuous(labels = percent, limits = c(0, 1)) + ylab("Participantes")
 # ggsave("figures/PINCER.png")
 
-ggplot(dados, aes(MISTO)) + geom_bar(aes(fill = SEXO)) + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
-ggplot(dados, aes(MISTO)) + geom_bar(aes(fill = SEXO), position = "dodge") + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
-ggplot(dados, aes(MISTO)) + geom_bar(aes(y = (..count..)/sum(..count..), fill = SEXO), position = "dodge") + scale_y_continuous(labels = percent, limits = c(0, 1)) + ylab("Participantes")
-ggplot(dados, aes(MISTO)) + geom_bar(aes(y = (..count..)/sum(..count..), fill = SEXO)) + scale_y_continuous(labels = percent, limits = c(0, 1)) + ylab("Participantes")
+# ggplot(dados, aes(MISTO)) + geom_bar(aes(fill = SEXO)) + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
+# ggplot(dados, aes(MISTO)) + geom_bar(aes(fill = SEXO), position = "dodge") + scale_y_continuous(limits = c(0, ceiling(nrow(dados)/10)*10)) + ylab("Participantes")
+# ggplot(dados, aes(MISTO)) + geom_bar(aes(y = (..count..)/sum(..count..), fill = SEXO), position = "dodge") + scale_y_continuous(labels = percent, limits = c(0, 1)) + ylab("Participantes")
+# ggplot(dados, aes(MISTO)) + geom_bar(aes(y = (..count..)/sum(..count..), fill = SEXO)) + scale_y_continuous(labels = percent, limits = c(0, 1)) + ylab("Participantes")
 # ggsave("figures/MISTO.png")
 
 # ggplot(impacto.lat[CAM != "N"], aes(CAM)) +
