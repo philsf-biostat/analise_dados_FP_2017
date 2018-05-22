@@ -90,8 +90,13 @@ dados$`IMPACTO E` <- factor(`IMPACTO E`, levels = c("NORMAL", "CAM", "PINCER", "
 rm(`IMPACTO E`)
 
 # influentes: checar valores de ALFA D
-print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, `LADO DOR`, `ALFA D`, `TORÇÃO D`)])
+print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, `LADO DOR`, `TORÇÃO D`, `ALFA D`)])
 # dados <- dados[!(ID %in% c("P22", "P30", "P36"))]
+
+# PINCER influentes: TORCAO muito pequena?
+print(dados[(ID %in% c("P3" )),.(ID, `IMPACTO D`, `TORÇÃO D`, `ALFA D`)])
+print(dados[(ID %in% c("P17")),.(ID, `IMPACTO E`, `TORÇÃO E`, `ALFA E`)])
+# dados <- dados[!(ID %in% c("P3", "P17"))]
 
 impacto.lat <- dados[, .(ID, SEXO, `LADO DOR`, CAM, PINCER, MISTO)]
 names(impacto.lat)[3] <- "DOR"
