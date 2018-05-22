@@ -85,3 +85,11 @@ rm(`IMPACTO D`)
 dados$`IMPACTO E` <- factor(`IMPACTO E`, levels = c("NORMAL", "CAM", "PINCER", "MISTO"))
 # dados$`IMPACTO E` <- relevel(dados$`IMPACTO E`, "NORMAL")
 rm(`IMPACTO E`)
+
+impacto.lat <- dados[, .(ID, SEXO, `LADO DOR`, CAM, PINCER, MISTO)]
+names(impacto.lat)[3] <- "DOR"
+
+impacto <- impacto.lat
+levels(impacto$CAM) <- c("Ausente", "CAM", "CAM", "CAM")
+levels(impacto$PINCER) <- c("Ausente", "PINCER", "PINCER", "PINCER")
+levels(impacto$MISTO) <- c("SIMPLES", "MISTO", "MISTO", "MISTO")
