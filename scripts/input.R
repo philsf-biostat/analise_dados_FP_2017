@@ -105,3 +105,15 @@ impacto <- impacto.lat
 levels(impacto$CAM) <- c("Ausente", "CAM", "CAM", "CAM")
 levels(impacto$PINCER) <- c("Ausente", "PINCER", "PINCER", "PINCER")
 levels(impacto$MISTO) <- c("SIMPLES", "MISTO", "MISTO", "MISTO")
+
+# dados numéricos
+d.num <- data.frame(
+  LADO = rep(c("D", "E"), each = 26),
+  DOR = rep(dados$`LADO DOR`, 2),
+  TORCAO = c(dados$`TORÇÃO D`, dados$`TORÇÃO E`),
+  ALFA = c(dados$`ALFA D`, dados$`ALFA E`),
+  CAM = rep(dados$CAM, 2),
+  PINCER = rep(dados$PINCER, 2),
+  IMPACTO = c(as.character(dados$`IMPACTO D`), as.character(dados$`IMPACTO E`))
+)
+

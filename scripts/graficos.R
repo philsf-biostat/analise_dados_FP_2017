@@ -62,6 +62,39 @@ ggplot(dados[`IMPACTO E` != "NORMAL"], aes(`ALFA E`, `TORÇÃO E`, col = `IMPACT
   geom_smooth(method = "lm", se = F, size = .6)
 ggsave("figures/AlfTor_IMPACTO_E.png")
 
+# paineis por lado
+
+ggplot(d.num, aes(ALFA, TORCAO, col = DOR)) +
+  theme(legend.position = "bottom") +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_grid(~ LADO)
+ggsave("figures/painel_AlfTor_dor.png")
+
+# ggplot(d.num[d$CAM != "N",], aes(ALFA, TORCAO, col = CAM)) +
+ggplot(d.num, aes(ALFA, TORCAO, col = CAM)) +
+  theme(legend.position = "bottom") +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_grid(~ LADO)
+ggsave("figures/painel_AlfTor_CAM.png")
+
+# ggplot(d.num[d$PINCER != "N",], aes(ALFA, TORCAO, col = PINCER)) +
+ggplot(d.num, aes(ALFA, TORCAO, col = PINCER)) +
+  theme(legend.position = "bottom") +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_grid(~ LADO)
+ggsave("figures/painel_AlfTor_PINCER.png")
+
+# ggplot(d.num[d$IMPACTO != "NORMAL",], aes(ALFA, TORCAO, col = IMPACTO)) +
+ggplot(d.num, aes(ALFA, TORCAO, col = IMPACTO)) +
+  theme(legend.position = "bottom") +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_grid(~ LADO)
+ggsave("figures/painel_AlfTor_IMPACTO.png")
+
 # ggplot(gather(dados[, .(SEXO, `IMPACTO D`, `IMPACTO E`)], LADO, IMPACTO, `IMPACTO D`, `IMPACTO E`, -SEXO), aes(IMPACTO)) + geom_bar(aes(fill = SEXO))
 # ggplot(dados, aes(`IMPACTO D`)) + geom_bar(aes(fill = SEXO), position = "dodge")
 # ggplot(dados, aes(`IMPACTO E`)) + geom_bar(aes(fill = SEXO), position = "dodge")
