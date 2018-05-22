@@ -71,7 +71,7 @@ fisher.test(with(impacto, table(MISTO, SEXO)))
 # controlando pelo lado do impacto
 fisher.test(with(impacto.lat[CAM != "N"], table(CAM, SEXO)))
 fisher.test(with(impacto.lat[PINCER != "N"], table(PINCER, SEXO)))
-fisher.test(with(impacto.lat[MISTO != "N"], table(MISTO, SEXO)))
+fisher.test(with(impacto.lat[MISTO != "Simples"], table(MISTO, SEXO)))
 
 # png("figures/impactos_sexo.png", 1200, 500)
 # par(mfrow = c(1,3))
@@ -85,6 +85,6 @@ fisher.test(with(impacto, table(DOR, CAM)))
 fisher.test(with(impacto, table(DOR, PINCER)))
 fisher.test(with(impacto, table(DOR, MISTO)))
 
-fisher.test(with(impacto.lat, table(DOR, CAM)))
-fisher.test(with(impacto.lat, table(DOR, PINCER)))
-fisher.test(with(impacto.lat, table(DOR, MISTO)))
+fisher.test(with(impacto.lat[CAM != "N"], table(DOR, CAM)))
+fisher.test(with(impacto.lat[PINCER != "N"], table(DOR, PINCER)))
+fisher.test(with(impacto.lat[MISTO != "Simples"], table(DOR, MISTO)))
