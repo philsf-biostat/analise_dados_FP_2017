@@ -11,10 +11,22 @@ write.csv2(sum.rac[, 1:5], "results/raca.csv")
 
 png("figures/painel_Alfa_Tor_dor.png")
 par(mfrow = c(2,2))
+stripchart(`ALFA D` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19)
+stripchart(`ALFA E` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19)
+stripchart(`TORÇÃO D` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19)
+stripchart(`TORÇÃO E` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19)
+dev.off()
+
+png("figures/painel_Alfa_Tor_dor2.png")
+par(mfrow = c(2,2))
 with(dados, plot(`ALFA D` ~ `LADO DOR`, ylim = c(30, 100)))
+stripchart(`ALFA D` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19, add = TRUE)
 with(dados, plot(`ALFA E` ~ `LADO DOR`, ylim = c(30, 100)))
+stripchart(`ALFA E` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19, add = TRUE)
 with(dados, plot(`TORÇÃO D` ~ `LADO DOR`, ylim = c(0, 40)))
+stripchart(`TORÇÃO D` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
 with(dados, plot(`TORÇÃO E` ~ `LADO DOR`, ylim = c(0, 40)))
+stripchart(`TORÇÃO E` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
 dev.off()
 
 CreateTableOne(
@@ -22,18 +34,24 @@ CreateTableOne(
   strata = "DOR"
   )
 
-png("figures/painel_Alfa_Tor_sex.png")
-# par(mfrow = c(2,2))
-# with(dados, plot(`ALFA D` ~ SEXO, ylim = c(30, 100)))
-# with(dados, plot(`ALFA E` ~ SEXO, ylim = c(30, 100)))
-# with(dados, plot(`TORÇÃO D` ~ SEXO, ylim = c(0, 40)))
-# with(dados, plot(`TORÇÃO E` ~ SEXO, ylim = c(0, 40)))
-
+png("figures/painel_Alfa_Tor_sex2.png")
 par(mfrow = c(2,2))
-stripchart(`ALFA D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 20)
-stripchart(`ALFA E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 20)
-stripchart(`TORÇÃO D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 20)
-stripchart(`TORÇÃO E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 20)
+with(dados, plot(`ALFA D` ~ SEXO, ylim = c(30, 100)))
+stripchart(`ALFA D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19, add = TRUE)
+with(dados, plot(`ALFA E` ~ SEXO, ylim = c(30, 100)))
+stripchart(`ALFA E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19, add = TRUE)
+with(dados, plot(`TORÇÃO D` ~ SEXO, ylim = c(0, 40)))
+stripchart(`TORÇÃO D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
+with(dados, plot(`TORÇÃO E` ~ SEXO, ylim = c(0, 40)))
+stripchart(`TORÇÃO E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
+dev.off()
+
+png("figures/painel_Alfa_Tor_sex.png")
+par(mfrow = c(2,2))
+stripchart(`ALFA D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19)
+stripchart(`ALFA E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19)
+stripchart(`TORÇÃO D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19)
+stripchart(`TORÇÃO E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19)
 dev.off()
 
 CreateTableOne(
