@@ -1,40 +1,66 @@
 source('scripts/input.R', encoding = 'UTF-8')
 
 library(ggplot2)
+
 ggplot(dados, aes(`ALFA D`, `TORÇÃO D`, col = `LADO DOR`)) +
-  geom_point() + theme(legend.position = "bottom")
-
-ggplot(dados, aes(`ALFA D`, `TORÇÃO D`, col = `CAM D`)) +
   geom_point() + theme(legend.position = "bottom") +
-  geom_smooth(method = "lm", se = F, mapping = aes(col = `CAM D`))
+  # geom_smooth(method = "lm", se = F)
+  geom_smooth(method = "lm", se = F, mapping = aes(col = `LADO DOR`))
+ggsave("figures/AlfTor_dor_D.png")
 
-ggplot(dados, aes(`ALFA D`, `TORÇÃO D`, col = `PINCER D`)) +
-  geom_point() + theme(legend.position = "bottom") +
-  geom_smooth(method = "lm", se = F, mapping = aes(col = `PINCER D`))
-
-ggplot(dados, aes(`ALFA D`, `TORÇÃO D`, col = `MISTO D`)) +
-  geom_point() + theme(legend.position = "bottom") +
-  geom_smooth(method = "lm", se = F, mapping = aes(col = `MISTO D`))
-
-ggplot(dados, aes(`ALFA E`, `TORÇÃO E`)) +
+ggplot(dados, aes(`ALFA E`, `TORÇÃO E`, col = `LADO DOR`)) +
   geom_point(aes(`ALFA E`, `TORÇÃO E`, col = `LADO DOR`)) + theme(legend.position = "bottom") +
-  # geom_smooth(method = "lm", se = F, mapping = aes(col = `LADO DOR`)) +
-  geom_smooth(method = "lm", col = "black")
+  geom_smooth(method = "lm", se = F, mapping = aes(col = `LADO DOR`))
+ggsave("figures/AlfTor_dor_E.png")
 
+ggplot(dados[`CAM D` == "CAM"], aes(`ALFA D`, `TORÇÃO D`)) +
+  ggtitle("CAM D") +
+  geom_point() + theme(legend.position = "none") +
+  geom_smooth(method = "lm", se = F)
+ggsave("figures/AlfTor_CAM_D.png")
+
+ggplot(dados[`CAM E` == "CAM"], aes(`ALFA E`, `TORÇÃO E`)) +
+  ggtitle("CAM E") +
+  geom_point() + theme(legend.position = "bottom") +
+  geom_smooth(method = "lm", se = F)
+ggsave("figures/AlfTor_CAM_E.png")
+
+ggplot(dados[`PINCER D` == TRUE], aes(`ALFA D`, `TORÇÃO D`)) +
+  ggtitle("PINCER D") +
+  geom_point() + theme(legend.position = "bottom") +
+  geom_smooth(method = "lm", se = F)
+ggsave("figures/AlfTor_PINCER_D.png")
+
+ggplot(dados[`PINCER E` == TRUE], aes(`ALFA E`, `TORÇÃO E`)) +
+  ggtitle("PINCER E") +
+  geom_point() + theme(legend.position = "bottom") +
+  geom_smooth(method = "lm", se = F)
+ggsave("figures/AlfTor_PINCER_E.png")
+
+ggplot(dados[`MISTO D` == TRUE], aes(`ALFA D`, `TORÇÃO D`)) +
+  ggtitle("MISTO D") +
+  geom_point() + theme(legend.position = "bottom") +
+  geom_smooth(method = "lm", se = F)
+ggsave("figures/AlfTor_MISTO_D.png")
+
+ggplot(dados[`MISTO E` == TRUE], aes(`ALFA E`, `TORÇÃO E`)) +
+  ggtitle("MISTO E") +
+  geom_point() + theme(legend.position = "bottom") +
+  geom_smooth(method = "lm", se = F)
+ggsave("figures/AlfTor_MISTO_E.png")
 
 # SEPARADO POR IMPACTO
-ggplot(dados, aes(`ALFA D`, `TORÇÃO D`)) +
-  geom_point(aes(`ALFA D`, `TORÇÃO D`, col = `IMPACTO D`, shape = `IMPACTO D`)) + theme(legend.position = "bottom") +
-  geom_smooth(method = "lm", se = F, mapping = aes(col = `IMPACTO D`)) +
-  geom_smooth(method = "lm", col = "black")
+ggplot(dados[`IMPACTO D` != "NORMAL"], aes(`ALFA D`, `TORÇÃO D`, col = `IMPACTO D`, shape = `IMPACTO D`)) +
+  geom_point(size = 2) +
+  theme(legend.position = "bottom") +
+  geom_smooth(method = "lm", se = F, size = .6) 
+ggsave("figures/AlfTor_IMPACTO_D.png")
 
-ggplot(dados, aes(`ALFA E`, `TORÇÃO E`, col = `LADO DOR`)) +
-  geom_point() + theme(legend.position = "bottom")
-
-ggplot(dados, aes(`ALFA E`, `TORÇÃO E`, col = `LADO DOR`)) +
-  geom_point() + theme(legend.position = "bottom") +
-  # geom_smooth(method = "lm", col = "black") +
-  geom_smooth(method = "lm", se = F)
+ggplot(dados[`IMPACTO E` != "NORMAL"], aes(`ALFA E`, `TORÇÃO E`, col = `IMPACTO E`, shape = `IMPACTO E`)) +
+  geom_point(size = 2) +
+  theme(legend.position = "bottom") +
+  geom_smooth(method = "lm", se = F, size = .6)
+ggsave("figures/AlfTor_IMPACTO_E.png")
 
 # ggplot(gather(dados[, .(SEXO, `IMPACTO D`, `IMPACTO E`)], LADO, IMPACTO, `IMPACTO D`, `IMPACTO E`, -SEXO), aes(IMPACTO)) + geom_bar(aes(fill = SEXO))
 # ggplot(dados, aes(`IMPACTO D`)) + geom_bar(aes(fill = SEXO), position = "dodge")
