@@ -1,11 +1,65 @@
 source('scripts/input.R', encoding = 'UTF-8')
 
-summary(lm(`TORÇÃO D` ~ `ALFA D` + `LADO DOR` - 1, data = dados))
-summary(lm(`TORÇÃO E` ~ `ALFA E` + `LADO DOR` - 1, data = dados))
-
+summary(lm(`TORÇÃO D` ~ `LADO DOR`, data = dados))
+summary(lm(`TORÇÃO E` ~ `LADO DOR`, data = dados))
+# summary(lm(`TORÇÃO D` ~ `ALFA D` + `LADO DOR` - 1, data = dados))
+# summary(lm(`TORÇÃO E` ~ `ALFA E` + `LADO DOR` - 1, data = dados))
 summary(lm(`TORÇÃO D` ~ `ALFA D` + `LADO DOR`, data = dados))
 summary(lm(`TORÇÃO E` ~ `ALFA E` + `LADO DOR`, data = dados))
 
+summary(lm(`TORÇÃO D` ~ `ALFA D`, data = dados))
+summary(lm(`TORÇÃO E` ~ `ALFA E`, data = dados))
+
+# summary(lm(IMC ~ `LADO DOR`, data = dados))
+summary(lm(IMC ~ CAM, data = dados))
+summary(lm(IMC ~ PINCER, data = dados))
+summary(lm(IMC ~ MISTO, data = dados))
+
+summary(lm(IMC ~ CAM + `LADO DOR`, data = dados))
+summary(lm(IMC ~ PINCER + `LADO DOR`, data = dados))
+summary(lm(IMC ~ MISTO + `LADO DOR`, data = dados))
+
+
+# summary(lm(`TORÇÃO D` ~ IMC, data = dados))
+# summary(lm(`TORÇÃO E` ~ IMC, data = dados))
+# summary(lm(`TORÇÃO D` ~ `ALFA D` + IMC, data = dados))
+# summary(lm(`TORÇÃO E` ~ `ALFA E` + IMC, data = dados))
+
+summary(lm(`ALFA D` ~ `LADO DOR`, data = dados))
+summary(lm(`ALFA E` ~ `LADO DOR`, data = dados))
+
+summary(lm(`ALFA D` ~ CAM, data = dados))
+summary(lm(`ALFA E` ~ CAM, data = dados))
+summary(lm(`ALFA D` ~ PINCER, data = dados))
+summary(lm(`ALFA E` ~ PINCER, data = dados))
+summary(lm(`ALFA D` ~ MISTO, data = dados))
+summary(lm(`ALFA E` ~ MISTO, data = dados))
+
+summary(lm(`ALFA D` ~ CAM+PINCER, data = dados))
+summary(lm(`ALFA E` ~ CAM+PINCER, data = dados))
+summary(lm(`ALFA D` ~ CAM*PINCER, data = dados))
+summary(lm(`ALFA E` ~ CAM*PINCER, data = dados))
+summary(lm(`ALFA D` ~ CAM+PINCER+`LADO DOR`, data = dados))
+summary(lm(`ALFA E` ~ CAM+PINCER+`LADO DOR`, data = dados))
+
+
+# ## casos positivos
+# summary(lm(`ALFA D` ~ CAM, data = dados[CAM != "NORMAL"] ))
+# summary(lm(`ALFA E` ~ CAM, data = dados[CAM != "NORMAL"]))
+# summary(lm(`ALFA D` ~ PINCER, data = dados[PINCER != "N"]))
+# summary(lm(`ALFA E` ~ PINCER, data = dados[PINCER != "N"]))
+# summary(lm(`ALFA D` ~ MISTO, data = dados[MISTO != "Simples"]))
+# summary(lm(`ALFA E` ~ MISTO, data = dados[MISTO != "Simples"]))
+
+## ANOVAs
+summary(aov(`TORÇÃO D` ~  CAM, dados))
+TukeyHSD(aov(`TORÇÃO D` ~  CAM, dados))
+
+summary(aov(`TORÇÃO D` ~  PINCER, dados))
+TukeyHSD(aov(`TORÇÃO D` ~  PINCER, dados))
+
+summary(aov(`TORÇÃO D` ~  MISTO, dados))
+TukeyHSD(aov(`TORÇÃO D` ~  MISTO, dados))
 
 # correlação sem filtro ---------------------------------------------------
 
