@@ -102,6 +102,42 @@ library(nnet)
 # round(exp(coef(glm(MISTO ~ DOR -1, binomial(link = "logit"), impacto))), 1)
 # round(exp(coef(multinom(MISTO ~ DOR -1, impacto.lat))), 1)
 
+## Desfecho Impacto
+impacto.subsetcols <- dados[, .(`TORÇÃO D`, `TORÇÃO E`, `LADO DOR`, `IMPACTO D`, `IMPACTO E`, HHS)]
+
+# Tipo de impacto
+multi.imp.tor.d <- multinom(`IMPACTO D` ~ `TORÇÃO D`, dados)
+multi.imp.tor.dor.d <- multinom(`IMPACTO D` ~ `TORÇÃO D` + `LADO DOR`, dados)
+
+multi.imp.tor.e <- multinom(`IMPACTO E` ~ `TORÇÃO E`, dados)
+multi.imp.tor.dor.e <- multinom(`IMPACTO E` ~ `TORÇÃO E` + `LADO DOR`, dados)
+
+png("figures/painel_Tor_impacto.png")
+par(mfrow = c(2,1))
+with(dados, plot(`TORÇÃO D` ~ `IMPACTO D`, ylim = c(0, 40)))
+abline(h=c(5,25), lty = 4)
+stripchart(`TORÇÃO D` ~ `IMPACTO D`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
+with(dados, plot(`TORÇÃO E` ~ `IMPACTO E`, ylim = c(0, 40)))
+abline(h=c(5,25), lty = 4)
+stripchart(`TORÇÃO E` ~ `IMPACTO E`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
+dev.off()
+
+# HHS
+lm.hhs.tor.d <- lm(HHS ~ `TORÇÃO D`, dados)
+lm.hhs.tor.e <- lm(HHS ~ `TORÇÃO E`, dados)
+
+lm.hhs.tor.dor.d <- lm(HHS ~ `TORÇÃO D` + `LADO DOR`, dados)
+lm.hhs.tor.dor.e <- lm(HHS ~ `TORÇÃO E` + `LADO DOR`, dados)
+
+png("figures/painel_Tor_HHS.png")
+par(mfrow = c(2,1))
+with(dados, plot(`TORÇÃO D`, HHS, xlim = c(1, 36)))
+abline(v=c(5,25), lty = 4)
+with(dados, plot(`TORÇÃO E`, HHS, xlim = c(1, 36)))
+abline(v=c(5,25), lty = 4)
+dev.off()
+
+## Desfecho DOR
 
 dor.cam <- multinom(DOR ~ CAM, impacto)
 dor.cam.lat <- multinom(DOR ~ CAM, impacto.lat)
