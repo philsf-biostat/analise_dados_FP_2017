@@ -124,3 +124,14 @@ d.num <- data.frame(
   IMPACTO = c(as.character(dados$`IMPACTO D`), as.character(dados$`IMPACTO E`))
 )
 levels(d.num$IMPACTO) <- c("NORMAL", "CAM", "PINCER", "MISTO")
+
+# medições numéricas
+med.num <- data.frame(
+  LADO = rep(c("D", "E"), each = 26),
+  TORCAO = c(dados$`TORCAO D`, dados$`TORCAO E`),
+  ALFA = c(dados$`ALFA D`, dados$`ALFA E`),
+  IA = c(dados$`IA D`, dados$`IA E`),
+  ACB = c(dados$`ACB D`, dados$`ACB E`),
+  EXTRU = c(dados$`I. EXTRU D`, dados$`I. EXTRU E`),
+  IMPACTO = d.num$IMPACTO
+)

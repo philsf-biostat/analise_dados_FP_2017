@@ -2,27 +2,17 @@ source('scripts/input.R', encoding = 'UTF-8')
 
 library(tableone)
 
-tab1 <- print(CreateTableOne(
-  data = dados[, c(2:7)]),
-  showAllLevels = TRUE, printToggle = FALSE)
-
-sum.lado <- print(
-  CreateTableOne(
-    data = d.num,
-    strata = "LADO"),
-  showAllLevels = TRUE,
-  exact = TRUE,
-  printToggle = FALSE)[, 1:4]
-
-sum.gen <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "SEXO"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
-sum.dor <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "DOR"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
-sum.rac <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "RACA"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
+tab1 <- print(CreateTableOne(data = dados[, c(2:7)]), showAllLevels = TRUE, printToggle = FALSE)
+sum.lado <- print(CreateTableOne(data = med.num,strata = "LADO"), showAllLevels = TRUE, exact = TRUE, printToggle = FALSE)
+sum.gen <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "SEXO"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
+sum.dor <- print(CreateTableOne(data = dados[, .(IDADE, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "DOR"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
+sum.rac <- print(CreateTableOne(data = dados[, .(SEXO, RACA, IDADE, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "RACA"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 
 # remover variável de estratificação, filtrar colunas
-sum.lado <- sum.lado[-c(1,2:3,8:10), 1:4]
-sum.rac <- sum.rac[-c(5:6), 1:4]
+sum.lado <- sum.lado[-c(1:3), 1:4]
 sum.gen <- sum.gen[-c(2:3), 1:4]
-sum.dor <- sum.dor[-c(8:10), 1:5]
+sum.dor <- sum.dor[-c(4:6), 1:5]
+sum.rac <- sum.rac[-c(4:5), 1:4]
 
 write.csv2(tab1, "results/tab1.csv")
 write.csv2(sum.lado, "results/lado.csv")
