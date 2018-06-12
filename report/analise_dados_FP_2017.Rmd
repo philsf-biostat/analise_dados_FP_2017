@@ -100,6 +100,19 @@ pander(sum.dor)
 
 Table: Tabela por lado da dor
 
+Os participantes brancos e de outras raças tem distribuições semelhantes de gênero
+(p = `r format.pval(fisher.test(with(dados, table(RACA, SEXO)))$p.value, digits = 4)`),
+idade 
+(p = `r format.pval(with(dados, t.test(IDADE~RACA))$p.value, digits = 4)`).
+Os participantes brancos tem IMC ligeiramente menor que de outras raças
+(p = `r format.pval(with(dados, t.test(IMC~RACA))$p.value, digits = 4)`).
+Não houve diferença entre os participants brancos e de outras raças quanto à observação de CAM
+(p = `r format.pval(fisher.test(with(dados, table(RACA, CAM)))$p.value, digits = 4)`),
+PINCER
+(p = `r format.pval(fisher.test(with(dados, table(RACA, PINCER)))$p.value, digits = 4)`)
+ou impacto MISTO
+(p = `r format.pval(fisher.test(with(dados, table(RACA, MISTO)))$p.value, digits = 4)`).
+
 ## Frequências dos impactos
 
 ```{r}
