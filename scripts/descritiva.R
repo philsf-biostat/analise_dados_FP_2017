@@ -3,7 +3,7 @@ source('scripts/input.R', encoding = 'UTF-8')
 library(tableone)
 
 tab1 <- print(CreateTableOne(
-  data = dados[, c(2:6, 7:21, 25, 28, 31)]),
+  data = dados[, c(2:7)]),
   showAllLevels = TRUE, printToggle = FALSE)
 
 sum.lado <- print(
