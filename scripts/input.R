@@ -1,8 +1,7 @@
 library(readxl)
 library(data.table)
 
-dados <- data.table(read_excel("dataset/Cabral FMP dados 2018-05-07.xlsx"))
-dados <- dados[ID != "P14"] # excluído - sem esperança de completar
+dados <- data.table(read_excel("dataset/Cabral FMP dados 2018-06-06.xlsx"))
 dados <- dados[, c(1:19,24:26)]
 dados <- transform(dados, ID = factor(ID),
                    SEXO = factor(SEXO),
