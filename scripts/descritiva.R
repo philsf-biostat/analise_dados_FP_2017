@@ -1,11 +1,21 @@
 source('scripts/input.R', encoding = 'UTF-8')
 
 library(tableone)
+
+sum.lado <- print(
+  CreateTableOne(
+    data = d.num,
+    strata = "LADO"),
+  showAllLevels = TRUE,
+  exact = TRUE,
+  printToggle = FALSE)[, 1:4]
+
 sum.gen <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "SEXO"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 sum.dor <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "DOR"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 sum.rac <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "RACA"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 
 # remover variável de estratificação
+sum.lado <- sum.lado[-c(2:3,8:10), ]
 sum.rac <- sum.rac[-c(5:6), ]
 sum.gen <- sum.gen[-c(2:3), ]
 sum.dor <- sum.dor[-c(8:10), ]

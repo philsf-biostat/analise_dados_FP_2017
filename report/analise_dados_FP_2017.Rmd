@@ -82,10 +82,7 @@ Table: Tabela descritiva básica (univariada) - EXCLUIR linhas relativas a colun
 ### Tabelas estratificadas
 
 ```{r echo=FALSE}
-pander(print(CreateTableOne(
-  data = d.num,
-  strata = "LADO"
-  ), showAllLevels = TRUE, exact = TRUE, printToggle = FALSE)[, 1:4])
+pander(sum.lado)
 panderOptions('table.split.table', 120)
 ```
 
