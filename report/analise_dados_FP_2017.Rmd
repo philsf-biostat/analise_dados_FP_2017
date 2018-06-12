@@ -112,15 +112,17 @@ Todas as análises foram realizadas utilizando-se o software `R` versão `r getR
 source('scripts/descritiva.R', encoding = 'UTF-8')
 ```
 
-## Descritivas
-
-### Tabela básica
+## Descrição dos participantes do estudo
 
 ```{r echo=FALSE}
 pander(tab1)
 ```
 
-Table: Tabela descritiva básica (univariada) - EXCLUIR linhas relativas a colunas da tabela que  não foram usadas!
+Table: Descrição dos participantes do estudo (N = 26).
+sd = Desvio padrão,
+IMC = Índice de massa corpórea,
+HHS = Harris hip score (modificado).
+
 
 ### Tabelas estratificadas
 
@@ -129,7 +131,13 @@ pander(sum.lado)
 panderOptions('table.split.table', 120)
 ```
 
-Table: Tabela por lado da medição
+Table: Descrição das mensurações avaliadas e os tipos de impacto em cada lado do quadril.
+sd = Desvio padrão,
+ALFA = ângulo alfa,
+IA = índice acetabular,
+ACB = ângulo centro-borda acetabular,
+EXTRU = índice de extrusão.
+p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
 
 ```{r}
 pander(sum.gen)
