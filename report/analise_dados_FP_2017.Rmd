@@ -160,7 +160,12 @@ Parece haver boa homogeneidade quanto ao gênero, nas idades e tipos de impacto 
 pander(sum.dor)
 ```
 
-Table: Tabela por lado da dor
+Table: **Tabela 4** Descrição dos participantes quanto ao lado doloroso.
+sd = Desvio padrão,
+IMC = Índice de massa corpórea,
+p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
+
+Não houve associação significativa entre idade, IMC
 
 Os participantes brancos e de outras raças tem distribuições semelhantes de gênero
 (p = `r format.pval(fisher.test(with(dados, table(RACA, SEXO)))$p.value, digits = 4)`),
