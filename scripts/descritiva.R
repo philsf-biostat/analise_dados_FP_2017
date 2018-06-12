@@ -5,6 +5,11 @@ sum.gen <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `
 sum.dor <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "DOR"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 sum.rac <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "RACA"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 
+# remover variável de estratificação
+sum.rac <- sum.rac[-c(5:6), ]
+sum.gen <- sum.gen[-c(2:3), ]
+sum.dor <- sum.dor[-c(8:10), ]
+
 write.csv2(sum.gen[, 1:5], "results/gen.csv")
 write.csv2(sum.dor[, 1:5], "results/dor.csv")
 write.csv2(sum.rac[, 1:5], "results/raca.csv")
