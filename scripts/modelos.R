@@ -1,14 +1,14 @@
 source('scripts/input.R', encoding = 'UTF-8')
 
-summary(lm(`TORÇÃO D` ~ `LADO DOR`, data = dados))
-summary(lm(`TORÇÃO E` ~ `LADO DOR`, data = dados))
-# summary(lm(`TORÇÃO D` ~ `ALFA D` + `LADO DOR` - 1, data = dados))
-# summary(lm(`TORÇÃO E` ~ `ALFA E` + `LADO DOR` - 1, data = dados))
-summary(lm(`TORÇÃO D` ~ `ALFA D` + `LADO DOR`, data = dados))
-summary(lm(`TORÇÃO E` ~ `ALFA E` + `LADO DOR`, data = dados))
+summary(lm(`TORCAO D` ~ `LADO DOR`, data = dados))
+summary(lm(`TORCAO E` ~ `LADO DOR`, data = dados))
+# summary(lm(`TORCAO D` ~ `ALFA D` + `LADO DOR` - 1, data = dados))
+# summary(lm(`TORCAO E` ~ `ALFA E` + `LADO DOR` - 1, data = dados))
+summary(lm(`TORCAO D` ~ `ALFA D` + `LADO DOR`, data = dados))
+summary(lm(`TORCAO E` ~ `ALFA E` + `LADO DOR`, data = dados))
 
-summary(lm(`TORÇÃO D` ~ `ALFA D`, data = dados))
-summary(lm(`TORÇÃO E` ~ `ALFA E`, data = dados))
+summary(lm(`TORCAO D` ~ `ALFA D`, data = dados))
+summary(lm(`TORCAO E` ~ `ALFA E`, data = dados))
 
 # summary(lm(IMC ~ `LADO DOR`, data = dados))
 summary(lm(IMC ~ CAM, data = dados))
@@ -20,10 +20,10 @@ summary(lm(IMC ~ PINCER + `LADO DOR`, data = dados))
 summary(lm(IMC ~ MISTO + `LADO DOR`, data = dados))
 
 
-# summary(lm(`TORÇÃO D` ~ IMC, data = dados))
-# summary(lm(`TORÇÃO E` ~ IMC, data = dados))
-# summary(lm(`TORÇÃO D` ~ `ALFA D` + IMC, data = dados))
-# summary(lm(`TORÇÃO E` ~ `ALFA E` + IMC, data = dados))
+# summary(lm(`TORCAO D` ~ IMC, data = dados))
+# summary(lm(`TORCAO E` ~ IMC, data = dados))
+# summary(lm(`TORCAO D` ~ `ALFA D` + IMC, data = dados))
+# summary(lm(`TORCAO E` ~ `ALFA E` + IMC, data = dados))
 
 summary(lm(`ALFA D` ~ `LADO DOR`, data = dados))
 summary(lm(`ALFA E` ~ `LADO DOR`, data = dados))
@@ -52,25 +52,25 @@ summary(lm(`ALFA E` ~ CAM+PINCER+`LADO DOR`, data = dados))
 # summary(lm(`ALFA E` ~ MISTO, data = dados[MISTO != "Simples"]))
 
 ## ANOVAs
-summary(aov(`TORÇÃO D` ~  CAM, dados))
-TukeyHSD(aov(`TORÇÃO D` ~  CAM, dados))
+summary(aov(`TORCAO D` ~  CAM, dados))
+TukeyHSD(aov(`TORCAO D` ~  CAM, dados))
 
-summary(aov(`TORÇÃO D` ~  PINCER, dados))
-TukeyHSD(aov(`TORÇÃO D` ~  PINCER, dados))
+summary(aov(`TORCAO D` ~  PINCER, dados))
+TukeyHSD(aov(`TORCAO D` ~  PINCER, dados))
 
-summary(aov(`TORÇÃO D` ~  MISTO, dados))
-TukeyHSD(aov(`TORÇÃO D` ~  MISTO, dados))
+summary(aov(`TORCAO D` ~  MISTO, dados))
+TukeyHSD(aov(`TORCAO D` ~  MISTO, dados))
 
 # correlação sem filtro ---------------------------------------------------
 
-with(dados, cor.test(`TORÇÃO D` , `ALFA D`))
-with(dados, cor.test(`TORÇÃO E` , `ALFA E`))
+with(dados, cor.test(`TORCAO D` , `ALFA D`))
+with(dados, cor.test(`TORCAO E` , `ALFA E`))
 
 
 # correlação com filtro de lateralidade -----------------------------------
 
-with(dados[`LADO DOR` %in% c("D", "B")], cor.test(`TORÇÃO D` , `ALFA D`))
-with(dados[`LADO DOR` %in% c("E", "B")], cor.test(`TORÇÃO E` , `ALFA E`))
+with(dados[`LADO DOR` %in% c("D", "B")], cor.test(`TORCAO D` , `ALFA D`))
+with(dados[`LADO DOR` %in% c("E", "B")], cor.test(`TORCAO E` , `ALFA E`))
 
 
 # desfecho categórico -----------------------------------------------------
@@ -103,37 +103,37 @@ library(nnet)
 # round(exp(coef(multinom(MISTO ~ DOR -1, impacto.lat))), 1)
 
 ## Desfecho Impacto
-impacto.subsetcols <- dados[, .(`TORÇÃO D`, `TORÇÃO E`, `LADO DOR`, `IMPACTO D`, `IMPACTO E`, HHS)]
+impacto.subsetcols <- dados[, .(`TORCAO D`, `TORCAO E`, `LADO DOR`, `IMPACTO D`, `IMPACTO E`, HHS)]
 
 # Tipo de impacto
-multi.imp.tor.d <- multinom(`IMPACTO D` ~ `TORÇÃO D`, dados)
-multi.imp.tor.dor.d <- multinom(`IMPACTO D` ~ `TORÇÃO D` + `LADO DOR`, dados)
+multi.imp.tor.d <- multinom(`IMPACTO D` ~ `TORCAO D`, dados)
+multi.imp.tor.dor.d <- multinom(`IMPACTO D` ~ `TORCAO D` + `LADO DOR`, dados)
 
-multi.imp.tor.e <- multinom(`IMPACTO E` ~ `TORÇÃO E`, dados)
-multi.imp.tor.dor.e <- multinom(`IMPACTO E` ~ `TORÇÃO E` + `LADO DOR`, dados)
+multi.imp.tor.e <- multinom(`IMPACTO E` ~ `TORCAO E`, dados)
+multi.imp.tor.dor.e <- multinom(`IMPACTO E` ~ `TORCAO E` + `LADO DOR`, dados)
 
 png("figures/painel_Tor_impacto.png")
 par(mfrow = c(2,1))
-with(dados, plot(`TORÇÃO D` ~ `IMPACTO D`, ylim = c(0, 40)))
+with(dados, plot(`TORCAO D` ~ `IMPACTO D`, ylim = c(0, 40)))
 abline(h=c(5,25), lty = 4)
-stripchart(`TORÇÃO D` ~ `IMPACTO D`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
-with(dados, plot(`TORÇÃO E` ~ `IMPACTO E`, ylim = c(0, 40)))
+stripchart(`TORCAO D` ~ `IMPACTO D`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
+with(dados, plot(`TORCAO E` ~ `IMPACTO E`, ylim = c(0, 40)))
 abline(h=c(5,25), lty = 4)
-stripchart(`TORÇÃO E` ~ `IMPACTO E`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
+stripchart(`TORCAO E` ~ `IMPACTO E`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
 dev.off()
 
 # HHS
-lm.hhs.tor.d <- lm(HHS ~ `TORÇÃO D`, dados)
-lm.hhs.tor.e <- lm(HHS ~ `TORÇÃO E`, dados)
+lm.hhs.tor.d <- lm(HHS ~ `TORCAO D`, dados)
+lm.hhs.tor.e <- lm(HHS ~ `TORCAO E`, dados)
 
-lm.hhs.tor.dor.d <- lm(HHS ~ `TORÇÃO D` + `LADO DOR`, dados)
-lm.hhs.tor.dor.e <- lm(HHS ~ `TORÇÃO E` + `LADO DOR`, dados)
+lm.hhs.tor.dor.d <- lm(HHS ~ `TORCAO D` + `LADO DOR`, dados)
+lm.hhs.tor.dor.e <- lm(HHS ~ `TORCAO E` + `LADO DOR`, dados)
 
 png("figures/painel_Tor_HHS.png")
 par(mfrow = c(2,1))
-with(dados, plot(`TORÇÃO D`, HHS, xlim = c(1, 36)))
+with(dados, plot(`TORCAO D`, HHS, xlim = c(1, 36)))
 abline(v=c(5,25), lty = 4)
-with(dados, plot(`TORÇÃO E`, HHS, xlim = c(1, 36)))
+with(dados, plot(`TORCAO E`, HHS, xlim = c(1, 36)))
 abline(v=c(5,25), lty = 4)
 dev.off()
 

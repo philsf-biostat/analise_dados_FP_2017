@@ -3,16 +3,21 @@ library(data.table)
 
 dados <- data.table(read_excel("dataset/Cabral FMP dados 2018-06-06.xlsx"))
 dados <- dados[, c(1:19,24:26)]
+names(dados) <- c("ID", "SEXO", "IDADE", "RACA", "IMC", "LADO DOR", "HHS",
+                  "TORCAO D", "TORCAO E", "TONNIS D", "TONNIS E",
+                  "ACB D", "ACB E", "IA D", "IA E", "ACD D", "ACD E",
+                  "ALFA D", "ALFA E", "I. EXTRU D", "I. EXTRU E",
+                  "TIPO DE PATOLOGIA")
 dados <- transform(dados, ID = factor(ID),
                    SEXO = factor(SEXO),
-                   RAÇA = factor(RAÇA),
+                   RACA = factor(RACA),
                    `LADO DOR` = factor(`LADO DOR`),
                    `TONNIS D` = ordered(`TONNIS D`),
                    `TONNIS E` = ordered(`TONNIS E`),
                    `TIPO DE PATOLOGIA` = factor(`TIPO DE PATOLOGIA`),
                    IMC = IMC)
-levels(dados$RAÇA) <- c("Branca", "Outros")
-dados$RAÇA <- relevel(dados$RAÇA, "Outros")
+levels(dados$RACA) <- c("Branca", "Outros")
+dados$RACA <- relevel(dados$RACA, "Outros")
 levels(dados$`LADO DOR`) <- c("D","E","B")
 levels(dados$SEXO) <- c("M", "F")
 dados$SEXO <- relevel(dados$SEXO, "F")
@@ -89,12 +94,12 @@ dados$`IMPACTO E` <- factor(`IMPACTO E`, levels = c("NORMAL", "CAM", "PINCER", "
 rm(`IMPACTO E`)
 
 # influentes: checar valores de ALFA D
-print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, `LADO DOR`, `TORÇÃO D`, `ALFA D`)])
+print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, `LADO DOR`, `TORCAO D`, `ALFA D`)])
 # dados <- dados[!(ID %in% c("P22", "P30", "P36"))]
 
 # PINCER influentes: TORCAO muito pequena?
-print(dados[(ID %in% c("P3" )),.(ID, `IMPACTO D`, `TORÇÃO D`, `ALFA D`)])
-print(dados[(ID %in% c("P17")),.(ID, `IMPACTO E`, `TORÇÃO E`, `ALFA E`)])
+print(dados[(ID %in% c("P3" )),.(ID, `IMPACTO D`, `TORCAO D`, `ALFA D`)])
+print(dados[(ID %in% c("P17")),.(ID, `IMPACTO E`, `TORCAO E`, `ALFA E`)])
 # dados <- dados[!(ID %in% c("P3", "P17"))]
 
 impacto.lat <- dados[, .(ID, SEXO, `LADO DOR`, CAM, PINCER, MISTO)]
@@ -109,9 +114,9 @@ levels(impacto$MISTO) <- c("SIMPLES", "MISTO", "MISTO", "MISTO")
 d.num <- data.frame(
   LADO = rep(c("D", "E"), each = 26),
   SEXO = rep(dados$SEXO, 2),
-  RAÇA = rep(dados$RAÇA, 2),
+  RACA = rep(dados$RACA, 2),
   DOR = rep(dados$`LADO DOR`, 2),
-  TORCAO = c(dados$`TORÇÃO D`, dados$`TORÇÃO E`),
+  TORCAO = c(dados$`TORCAO D`, dados$`TORCAO E`),
   ALFA = c(dados$`ALFA D`, dados$`ALFA E`),
   CAM = rep(dados$CAM, 2),
   PINCER = rep(dados$PINCER, 2),
