@@ -130,6 +130,8 @@ Table: Impactos CAM x PINCER, levando em conta lateralidade p-value = 0.1918
 Há 2 pacientes que tem simultaneamente CAM e PINCER, mas em lados diferentes (1 paciente tem CAM D e PINCER E, e o outro tem CAM E e PINCER D).
 Por isso, não são contabilizados como casos de impacto MISTO.
 
+![](../figures/painel_dor.png)
+
 ## Por sexo
 
 Os impactos ocorrem de forma diferenciada por sexo?
@@ -173,6 +175,8 @@ pander(with(impacto.lat[MISTO != "N"], table(MISTO, SEXO)))
 ```
 
 Table: MISTO p-value = 1.000
+
+![](../figures/painel_sex_lat.png)
 
 
 ## Por lado de dor
@@ -218,6 +222,8 @@ pander(with(impacto.lat[MISTO != "N"], table(MISTO, DOR)))
 ```
 
 Table: MISTO p-value = 0.1333
+
+![](../figures/painel_dor_lat.png)
 
 <!-- # Exceções e Desvios do teste -->
 
