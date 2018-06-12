@@ -100,12 +100,6 @@ pander(sum.dor)
 
 Table: Tabela por lado da dor
 
-```{r}
-pander(sum.rac)
-```
-
-Table: Tabela por raça
-
 ## Frequências dos impactos
 
 ```{r}
