@@ -341,6 +341,7 @@ ggplot(impacto, aes(SEXO)) +
 
 ggsave("figures/MISTO_sex.png")
 
+library(tidyr)
 impacto.m <- gather(impacto[, 2:6], TIPO, IMPACTO, CAM, PINCER, MISTO)
 impacto.m$IMPACTO <- factor(impacto.m$IMPACTO)
 levels(impacto.m$IMPACTO) <- c("Ausente", "Presente", "Presente", "Presente", "Ausente")
