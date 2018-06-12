@@ -59,6 +59,33 @@ pander(history, split.cells = 70)
 
 # Metodologia
 
+## Diagnóstico sistemático
+
+As medidas obtidas por avaliação clínica e radiológica foram utilizadas para classificar sistematicamente o tipo de impacto.
+Foram considerados impactos CAM aqueles participantes que tinham ângulo alfa maior que 50 graus.
+Para classificar o impacto do tipo PINCER foi considerada qualquer uma das seguintes medidas:
+
+- índice acetabuar maior que 10 graus;
+- ângulo centro-borda acetabular maior que 39 graus;
+- índice de extrusão menor que 10 graus.
+
+Participantes que possuíam tanto impacto CAM quanto PINCER no mesmo lado do quadril foram posteriormente classificados como impacto MISTO.
+Observe que isto não considera um paciente com CAM em um lado e PINCER no outro como um paciente de impacto MISTO.
+
+### Exceções
+
+**CAM**
+
+Um participante não teve seu ângulo alfa mensurado no lado direito, ele foi diagnosticado clinicamente como não possuindo impacto CAM.
+
+**PINCER**
+
+Um segundo participante não teve seu ângulo centro-borda cetabular mensurado no lado direito, e seu diagnóstico clínico foi de que não possuía PINCER.
+Um terceiro participante não teve seus índices de extrusão mensurados em ambos os lados.
+Seu diagnóstico clínico foi de que possuía PINCER apenas no quadril esquerdo.
+
+## Análises estatísticas
+
 Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
 
 <!-- The exact confidence intervals (CIs) of binomial proportions were calculated using package `exactci` (version `r packageVersion("exactci")`). -->
