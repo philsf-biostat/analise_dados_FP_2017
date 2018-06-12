@@ -151,8 +151,8 @@ sd = Desvio padrão,
 IMC = Índice de massa corpórea,
 p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
 
-o IMC médio dos homens é significativamente maior que o das mulheres (tabela 3).
-Parece haver boa homogeneidade quanto ao gênero, nas idades e tipos de impacto dos participantes.
+O IMC médio dos homens é significativamente maior que o das mulheres (tabela 3).
+A idade média, lado doloroso e o tipo de impacto dos participantes de cada gênero apresentou boa homogeneidade.
 
 ## Características pelo lado doloroso
 
