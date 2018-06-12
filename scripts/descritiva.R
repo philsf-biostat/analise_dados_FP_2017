@@ -2,6 +2,10 @@ source('scripts/input.R', encoding = 'UTF-8')
 
 library(tableone)
 
+tab1 <- print(CreateTableOne(
+  data = dados[, c(2:6, 7:21, 25, 28, 31)]),
+  showAllLevels = TRUE, printToggle = FALSE)
+
 sum.lado <- print(
   CreateTableOne(
     data = d.num,
@@ -14,15 +18,17 @@ sum.gen <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `
 sum.dor <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "DOR"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 sum.rac <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, RACA, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "RACA"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 
-# remover variável de estratificação
-sum.lado <- sum.lado[-c(2:3,8:10), ]
-sum.rac <- sum.rac[-c(5:6), ]
-sum.gen <- sum.gen[-c(2:3), ]
-sum.dor <- sum.dor[-c(8:10), ]
+# remover variável de estratificação, filtrar colunas
+sum.lado <- sum.lado[-c(1,2:3,8:10), 1:4]
+sum.rac <- sum.rac[-c(5:6), 1:4]
+sum.gen <- sum.gen[-c(2:3), 1:4]
+sum.dor <- sum.dor[-c(8:10), 1:5]
 
-write.csv2(sum.gen[, 1:5], "results/gen.csv")
-write.csv2(sum.dor[, 1:5], "results/dor.csv")
-write.csv2(sum.rac[, 1:5], "results/raca.csv")
+write.csv2(tab1, "results/tab1.csv")
+write.csv2(sum.lado, "results/lado.csv")
+write.csv2(sum.gen, "results/gen.csv")
+write.csv2(sum.dor, "results/dor.csv")
+write.csv2(sum.rac, "results/raca.csv")
 
 png("figures/painel_Alfa_Tor_dor.png")
 par(mfrow = c(2,2))

@@ -120,6 +120,7 @@ d.num <- data.frame(
   ALFA = c(dados$`ALFA D`, dados$`ALFA E`),
   CAM = rep(dados$CAM, 2),
   PINCER = rep(dados$PINCER, 2),
+  MISTO = rep(dados$MISTO, 2),
   IMPACTO = c(as.character(dados$`IMPACTO D`), as.character(dados$`IMPACTO E`))
 )
 levels(d.num$IMPACTO) <- c("NORMAL", "CAM", "PINCER", "MISTO")
