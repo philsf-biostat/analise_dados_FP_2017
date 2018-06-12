@@ -30,7 +30,7 @@ options(scipen = 999)
 library(pander)
 library(knitr)
 library(philsfmisc)
-
+panderOptions('table.style', 'rmarkdown')
 
 ```
 
@@ -43,8 +43,8 @@ Version <- c("01")
 Changes <- c("Versão inicial")
 history <- cbind(Version, Changes)
 colnames(history) <- c("Versão", "Alterações")
-# pander(history, split.cells = 70)
-kable(history)
+pander(history, split.cells = 70)
+# kable(history)
 ```
 
 ---
