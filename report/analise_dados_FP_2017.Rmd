@@ -114,6 +114,8 @@ source('scripts/descritiva.R', encoding = 'UTF-8')
 
 ## Descrição dos participantes do estudo
 
+A Tabela 1 apresenta as características gerais dos participantes do estudo.
+
 ```{r echo=FALSE}
 pander(tab1)
 ```
@@ -140,7 +142,7 @@ Observou-se que, na média, o ângulo alfa foi significativamente maior no lado 
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os lados.
 O mesmo ocorre com a distribuição de frequências doso tipos de impacto em ambos os quadris de cada paciente.
 
-## Características de cada gênero
+<!-- ## Características de cada gênero -->
 
 ```{r}
 pander(sum.gen)
@@ -154,7 +156,7 @@ p = teste t de Student para variáveis contínuas, e teste exato de Fisher para 
 O IMC médio dos homens é significativamente maior que o das mulheres (tabela 3).
 A idade média, lado doloroso e o tipo de impacto dos participantes de cada gênero apresentou boa homogeneidade.
 
-## Características pelo lado doloroso
+<!-- ## Características pelo lado doloroso -->
 
 ```{r}
 pander(sum.dor)
@@ -165,9 +167,9 @@ sd = Desvio padrão,
 IMC = Índice de massa corpórea,
 p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
 
-Não houve associação significativa entre idade, IMC
+Não houve associação significativa entre idade, IMC ou a dsitribuição dos tipos de impacto e o lado doloroso (Tabela 4).
 
-Os participantes brancos e de outras raças tem distribuições semelhantes de gênero
+Além disso, os participantes brancos e de outras raças tem distribuições semelhantes de gênero
 (p = `r format.pval(fisher.test(with(dados, table(RACA, SEXO)))$p.value, digits = 4)`),
 idade 
 (p = `r format.pval(with(dados, t.test(IDADE~RACA))$p.value, digits = 4)`).
