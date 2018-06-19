@@ -65,7 +65,7 @@ As medidas obtidas por avaliação clínica e radiológica foram utilizadas para
 Foram considerados impactos CAM aqueles participantes que tinham ângulo alfa maior que 50 graus.
 Para classificar o impacto do tipo PINCER foi considerada qualquer uma das seguintes medidas:
 
-- índice acetabuar maior que 10 graus;
+- índice acetabular negativo;
 - ângulo centro-borda acetabular maior que 39 graus;
 - índice de extrusão menor que 10 graus.
 

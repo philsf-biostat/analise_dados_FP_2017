@@ -40,8 +40,8 @@ dados$CAM <- CAM
 rm(CAM)
 
 # PINCER ####
-dados[, `PINCER D` := `IA D` > 10 | `ACB D` > 39 | `I. EXTRU D` < 10]
-dados[, `PINCER E` := `IA E` > 10 | `ACB E` > 39 | `I. EXTRU E` < 10]
+dados[, `PINCER D` := `IA D` < 0 | `ACB D` > 39 | `I. EXTRU D` < 10]
+dados[, `PINCER E` := `IA E` < 0 | `ACB E` > 39 | `I. EXTRU E` < 10]
 PINCER <- rep(NA, nrow(dados))
 
 # exceção: P15 sem ACB D
