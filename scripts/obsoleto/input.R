@@ -137,16 +137,16 @@ med.num <- data.frame(
 )
 
 dor <- rbind(
-  dados[`LADO DOR` == "D", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)],
-  dados[`LADO DOR` == "E", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)],
-  dados[`LADO DOR` == "B", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)],
-  dados[`LADO DOR` == "B", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)]
+  dados[`LADO DOR` == "D", .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)],
+  dados[`LADO DOR` == "E", .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)],
+  dados[`LADO DOR` == "B", .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)],
+  dados[`LADO DOR` == "B", .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)]
 )
 dor$GRUPO <- rep("Doloroso", nrow(dor))
 
 controle <- rbind(
-  dados[`LADO DOR` == "D", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)],
-  dados[`LADO DOR` == "E", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)]
+  dados[`LADO DOR` == "D", .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)],
+  dados[`LADO DOR` == "E", .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)]
 )
 controle$GRUPO <- rep("Controle", nrow(controle))
 quadris.dolorosos <- rbind(dor, controle)
