@@ -135,3 +135,22 @@ med.num <- data.frame(
   EXTRU = c(dados$`I. EXTRU D`, dados$`I. EXTRU E`),
   IMPACTO = d.num$IMPACTO
 )
+
+dor <- rbind(
+  dados[`LADO DOR` == "D", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)],
+  dados[`LADO DOR` == "E", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)],
+  dados[`LADO DOR` == "B", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)],
+  dados[`LADO DOR` == "B", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)]
+)
+dor$GRUPO <- rep("Doloroso", nrow(dor))
+
+controle <- rbind(
+  dados[`LADO DOR` == "D", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO E`, CAM =`CAM E`, PINCER =`PINCER E`, MISTO = `MISTO E`, IMPACTO = `IMPACTO E`)],
+  dados[`LADO DOR` == "E", .(ID, IDADE,SEXO, HHS, TORCAO = `TORCAO D`, CAM =`CAM D`, PINCER =`PINCER D`, MISTO = `MISTO D`, IMPACTO = `IMPACTO D`)]
+)
+controle$GRUPO <- rep("Controle", nrow(controle))
+quadris.dolorosos <- rbind(dor, controle)
+quadris.dolorosos$TORCAO.cat <- cut(quadris.dolorosos$TORCAO, c(0,4.9, 25.1, Inf), c("retro", "normal", "ante"))
+quadris.dolorosos$TORCAO.cat <- relevel(quadris.dolorosos$TORCAO.cat, "normal")
+quadris.dolorosos$TORCAO.cat2 <- quadris.dolorosos$TORCAO.cat
+levels(quadris.dolorosos$TORCAO.cat2) <- c("normal", "alterado", "alterado")
