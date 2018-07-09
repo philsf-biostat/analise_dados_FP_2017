@@ -2,6 +2,13 @@ library(readxl)
 library(data.table)
 
 dados.raw <- data.table(read_excel("dataset/Cabral FMP dados 2018-06-06.xlsx"))
+dados.raw <- dados.raw[, c(1:19,24:26)]
+names(dados.raw) <- c("ID", "SEXO", "IDADE", "RACA", "IMC", "LADO DOR", "HHS",
+                  "TORCAO D", "TORCAO E", "TONNIS D", "TONNIS E",
+                  "ACB D", "ACB E", "IA D", "IA E", "ACD D", "ACD E",
+                  "ALFA D", "ALFA E", "I. EXTRU D", "I. EXTRU E",
+                  "TIPO DE PATOLOGIA")
+
 ## Métodos: diagnósticos
 diag.CAM <- function(alfa) {
   diag.cam <- alfa > 50
@@ -18,16 +25,16 @@ diag.MISTO <- function(cam, pincer) {
 
 ## Grupos
 dor <- rbind(
-  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
-  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)],
-  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
-  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)]
+  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
+  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)],
+  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
+  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)]
 )
 dor$GRUPO <- rep("Doloroso", nrow(dor))
 
 controle <- rbind(
-  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, IA = `IA D`, ACB = `ACB E`, IE = `I. EXTRU E`)],
-  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)]
+  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA D`, ACB = `ACB E`, IE = `I. EXTRU E`)],
+  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)]
 )
 controle$GRUPO <- rep("Controle", nrow(controle))
 dados <- rbind(dor, controle)
