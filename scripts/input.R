@@ -35,4 +35,34 @@ dados$TORCAO.cat <- cut(dados$TORCAO, c(0,4.9, 25.1, Inf), c("retro", "normal", 
 dados$TORCAO.cat <- relevel(dados$TORCAO.cat, "normal")
 dados$TORCAO.alt <- dados$TORCAO.cat
 levels(dados$TORCAO.alt) <- c("normal", "alterado", "alterado")
+rm(dor, controle)
+
+# CAM ####
+dados$CAM <- diag.CAM(dados$ALFA)
+
+# exceção: P17 sem ALFA D
+# dados[ID == "P17"]$`CAM D` <- FALSE
+
+# PINCER ####
+dados$PINCER <- diag.PINCER(ia = dados$IA, acb = dados$ACB, extru = dados$IE)
+
+# exceção: P15 sem ACB D
+# dados[ID == "P15", `PINCER D` := `IA D` > 10 | `I. EXTRU D` < 10]
+# dados[ID == "P15"]$`PINCER D` <- FALSE
+
+# exceção: P28 sem I Extru D e E
+# dados[ID == "P28"]$`PINCER D` <- FALSE
+# dados[ID == "P28"]$`PINCER E` <- TRUE
+
+# MISTO
+dados$MISTO <- diag.MISTO(cam = dados$CAM, pincer = dados$PINCER)
+
+# influentes: checar valores de ALFA D
+# print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, `LADO DOR`, `TORCAO D`, `ALFA D`)])
+# dados <- dados[!(ID %in% c("P22", "P30", "P36"))]
+
+# PINCER influentes: TORCAO muito pequena?
+# print(dados[(ID %in% c("P3" )),.(ID, `IMPACTO D`, `TORCAO D`, `ALFA D`)])
+# print(dados[(ID %in% c("P17")),.(ID, `IMPACTO E`, `TORCAO E`, `ALFA E`)])
+# dados <- dados[!(ID %in% c("P3", "P17"))]
 
