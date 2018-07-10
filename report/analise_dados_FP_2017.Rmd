@@ -123,75 +123,40 @@ pander(tab1)
 Table: **Tabela 1** Descrição dos participantes do estudo (N = 26).
 sd = Desvio padrão,
 IMC = Índice de massa corpórea,
-HHS = Harris hip score (modificado).
+HHS = Harris hip score (modificado),
+p = teste t de Student para variáveis contínuas, e teste exato de Fisher para DOR.
+
+O IMC médio dos homens é significativamente maior que o das mulheres.
+A idade média, lado doloroso e o Harris Hip Score dos participantes de cada gênero apresentou boa homogeneidade quanto aos gêneros.
+
+A tabela 2 mostra as mensurações obtidas dos quadris classificados quanto aos grupos Doloroso e Controle.
 
 ```{r echo=FALSE}
-pander(sum.lado)
+pander(sum.grupo)
 panderOptions('table.split.table', 120)
 ```
 
-Table: **Tabela 2** Descrição das mensurações avaliadas e os tipos de impacto em cada lado do quadril.
+Table: **Tabela 2** Descrição das mensurações avaliadas e os tipos de impacto em cada grupo.
 sd = Desvio padrão,
 ALFA = ângulo alfa,
 IA = índice acetabular,
 ACB = ângulo centro-borda acetabular,
-EXTRU = índice de extrusão.
-p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
+IE = índice de extrusão.
+p = teste t de Student.
 
-Observou-se que, na média, o ângulo alfa foi significativamente maior no lado direito dos pacientes que o medido no lado esquerdo (Tabela 2).
-As outras mensurações parecem ser homogeneamente distribuídas em ambos os lados.
-O mesmo ocorre com a distribuição de frequências doso tipos de impacto em ambos os quadris de cada paciente.
-
-<!-- ## Características de cada gênero -->
-
-```{r}
-pander(sum.gen)
-```
-
-Table: **Tabela 3** Mensurações avaliadas e tipos de impacto observados por gênero.
-sd = Desvio padrão,
-IMC = Índice de massa corpórea,
-p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
-
-O IMC médio dos homens é significativamente maior que o das mulheres (tabela 3).
-A idade média, lado doloroso e o tipo de impacto dos participantes de cada gênero apresentou boa homogeneidade.
-
-<!-- ## Características pelo lado doloroso -->
-
-```{r}
-pander(sum.dor)
-```
-
-Table: **Tabela 4** Descrição dos participantes quanto ao lado doloroso.
-sd = Desvio padrão,
-IMC = Índice de massa corpórea,
-p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
-
-Não houve associação significativa entre idade, IMC ou a dsitribuição dos tipos de impacto e o lado doloroso (Tabela 4).
-
-Além disso, os participantes brancos e de outras raças tem distribuições semelhantes de gênero
-(p = `r format.pval(fisher.test(with(dados, table(RACA, SEXO)))$p.value, digits = 4)`),
-idade 
-(p = `r format.pval(with(dados, t.test(IDADE~RACA))$p.value, digits = 4)`).
-Os participantes brancos tem IMC ligeiramente menor que de outras raças
-(p = `r format.pval(with(dados, t.test(IMC~RACA))$p.value, digits = 4)`).
-Não houve diferença entre os participants brancos e de outras raças quanto à observação de CAM
-(p = `r format.pval(fisher.test(with(dados, table(RACA, CAM)))$p.value, digits = 4)`),
-PINCER
-(p = `r format.pval(fisher.test(with(dados, table(RACA, PINCER)))$p.value, digits = 4)`)
-ou impacto MISTO
-(p = `r format.pval(fisher.test(with(dados, table(RACA, MISTO)))$p.value, digits = 4)`).
+Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
+As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
 ## Frequências dos impactos
 
 ```{r}
-pander(with(impacto, table(CAM, PINCER)))
+pander(with(dados, table(CAM, PINCER)))
 ```
 
 Table: Impactos CAM x PINCER, p-value = 0.2631
 
 ```{r}
-pander(with(impacto.lat, table(CAM, PINCER)))
+# pander(with(impacto.lat, table(CAM, PINCER)))
 ```
 
 Table: Impactos CAM x PINCER, levando em conta lateralidade p-value = 0.1918
@@ -208,19 +173,19 @@ Os impactos ocorrem de forma diferenciada por sexo?
 ### Geral
 
 ```{r}
-pander(with(impacto, table(CAM, SEXO)))
+# pander(with(impacto, table(CAM, SEXO)))
 ```
 
 Table: CAM p-value = 0.04682
 
 ```{r}
-pander(with(impacto, table(PINCER, SEXO)))
+# pander(with(impacto, table(PINCER, SEXO)))
 ```
 
 Table: PINCER p-value = 0.3574
 
 ```{r}
-pander(with(impacto, table(MISTO, SEXO)))
+# pander(with(impacto, table(MISTO, SEXO)))
 ```
 
 Table: MISTO p-value = 1.000
@@ -228,19 +193,19 @@ Table: MISTO p-value = 1.000
 ### Controlado pelo lado do impacto
 
 ```{r}
-pander(with(impacto.lat[CAM != "N"], table(CAM, SEXO)))
+# pander(with(impacto.lat[CAM != "N"], table(CAM, SEXO)))
 ```
 
 Table: CAM p-value = 0.7014
 
 ```{r}
-pander(with(impacto.lat[PINCER != "N"], table(PINCER, SEXO)))
+# pander(with(impacto.lat[PINCER != "N"], table(PINCER, SEXO)))
 ```
 
 Table: PINCER p-value = 0.06238
 
 ```{r}
-pander(with(impacto.lat[MISTO != "N"], table(MISTO, SEXO)))
+# pander(with(impacto.lat[MISTO != "N"], table(MISTO, SEXO)))
 ```
 
 Table: MISTO p-value = 1.000
@@ -255,19 +220,19 @@ O impacto é um bom preditor para em que lado o participante sente dor?
 ### Geral
 
 ```{r}
-pander(with(impacto, table(CAM, DOR)))
+# pander(with(impacto, table(CAM, DOR)))
 ```
 
 Table: CAM p-value =  1.000
 
 ```{r}
-pander(with(impacto, table(PINCER, DOR)))
+# pander(with(impacto, table(PINCER, DOR)))
 ```
 
 Table: PINCER p-value = 0.8616
 
 ```{r}
-pander(with(impacto, table(MISTO, DOR)))
+# pander(with(impacto, table(MISTO, DOR)))
 ```
 
 Table: MISTO p-value = 0.5662
@@ -275,19 +240,19 @@ Table: MISTO p-value = 0.5662
 ### Controlado pelo lado do impacto
 
 ```{r}
-pander(with(impacto.lat[CAM != "N"], table(CAM, DOR)))
+# pander(with(impacto.lat[CAM != "N"], table(CAM, DOR)))
 ```
 
 Table: CAM p-value = 0.07675
 
 ```{r}
-pander(with(impacto.lat[PINCER != "N"], table(PINCER, DOR)))
+# pander(with(impacto.lat[PINCER != "N"], table(PINCER, DOR)))
 ```
 
 Table: PINCER p-value = 0.5243
 
 ```{r}
-pander(with(impacto.lat[MISTO != "N"], table(MISTO, DOR)))
+# pander(with(impacto.lat[MISTO != "N"], table(MISTO, DOR)))
 ```
 
 Table: MISTO p-value = 0.1333
