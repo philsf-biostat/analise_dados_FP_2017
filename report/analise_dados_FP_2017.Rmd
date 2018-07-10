@@ -150,13 +150,13 @@ O mesmo ocorre com a distribuição de frequências doso tipos de impacto em amb
 ## Frequências dos impactos
 
 ```{r}
-pander(with(impacto, table(CAM, PINCER)))
+pander(with(dados, table(CAM, PINCER)))
 ```
 
 Table: Impactos CAM x PINCER, p-value = 0.2631
 
 ```{r}
-pander(with(impacto.lat, table(CAM, PINCER)))
+# pander(with(impacto.lat, table(CAM, PINCER)))
 ```
 
 Table: Impactos CAM x PINCER, levando em conta lateralidade p-value = 0.1918
@@ -173,19 +173,19 @@ Os impactos ocorrem de forma diferenciada por sexo?
 ### Geral
 
 ```{r}
-pander(with(impacto, table(CAM, SEXO)))
+# pander(with(impacto, table(CAM, SEXO)))
 ```
 
 Table: CAM p-value = 0.04682
 
 ```{r}
-pander(with(impacto, table(PINCER, SEXO)))
+# pander(with(impacto, table(PINCER, SEXO)))
 ```
 
 Table: PINCER p-value = 0.3574
 
 ```{r}
-pander(with(impacto, table(MISTO, SEXO)))
+# pander(with(impacto, table(MISTO, SEXO)))
 ```
 
 Table: MISTO p-value = 1.000
@@ -193,19 +193,19 @@ Table: MISTO p-value = 1.000
 ### Controlado pelo lado do impacto
 
 ```{r}
-pander(with(impacto.lat[CAM != "N"], table(CAM, SEXO)))
+# pander(with(impacto.lat[CAM != "N"], table(CAM, SEXO)))
 ```
 
 Table: CAM p-value = 0.7014
 
 ```{r}
-pander(with(impacto.lat[PINCER != "N"], table(PINCER, SEXO)))
+# pander(with(impacto.lat[PINCER != "N"], table(PINCER, SEXO)))
 ```
 
 Table: PINCER p-value = 0.06238
 
 ```{r}
-pander(with(impacto.lat[MISTO != "N"], table(MISTO, SEXO)))
+# pander(with(impacto.lat[MISTO != "N"], table(MISTO, SEXO)))
 ```
 
 Table: MISTO p-value = 1.000
@@ -220,19 +220,19 @@ O impacto é um bom preditor para em que lado o participante sente dor?
 ### Geral
 
 ```{r}
-pander(with(impacto, table(CAM, DOR)))
+# pander(with(impacto, table(CAM, DOR)))
 ```
 
 Table: CAM p-value =  1.000
 
 ```{r}
-pander(with(impacto, table(PINCER, DOR)))
+# pander(with(impacto, table(PINCER, DOR)))
 ```
 
 Table: PINCER p-value = 0.8616
 
 ```{r}
-pander(with(impacto, table(MISTO, DOR)))
+# pander(with(impacto, table(MISTO, DOR)))
 ```
 
 Table: MISTO p-value = 0.5662
@@ -240,19 +240,19 @@ Table: MISTO p-value = 0.5662
 ### Controlado pelo lado do impacto
 
 ```{r}
-pander(with(impacto.lat[CAM != "N"], table(CAM, DOR)))
+# pander(with(impacto.lat[CAM != "N"], table(CAM, DOR)))
 ```
 
 Table: CAM p-value = 0.07675
 
 ```{r}
-pander(with(impacto.lat[PINCER != "N"], table(PINCER, DOR)))
+# pander(with(impacto.lat[PINCER != "N"], table(PINCER, DOR)))
 ```
 
 Table: PINCER p-value = 0.5243
 
 ```{r}
-pander(with(impacto.lat[MISTO != "N"], table(MISTO, DOR)))
+# pander(with(impacto.lat[MISTO != "N"], table(MISTO, DOR)))
 ```
 
 Table: MISTO p-value = 0.1333
