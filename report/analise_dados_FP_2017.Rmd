@@ -123,7 +123,11 @@ pander(tab1)
 Table: **Tabela 1** Descrição dos participantes do estudo (N = 26).
 sd = Desvio padrão,
 IMC = Índice de massa corpórea,
-HHS = Harris hip score (modificado).
+HHS = Harris hip score (modificado),
+p = teste t de Student para variáveis contínuas, e teste exato de Fisher para DOR.
+
+O IMC médio dos homens é significativamente maior que o das mulheres.
+A idade média, lado doloroso e o Harris Hip Score dos participantes de cada gênero apresentou boa homogeneidade quanto aos gêneros.
 
 ```{r echo=FALSE}
 pander(sum.grupo)
@@ -142,45 +146,6 @@ Observou-se que, na média, o ângulo alfa foi significativamente maior no lado 
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os lados.
 O mesmo ocorre com a distribuição de frequências doso tipos de impacto em ambos os quadris de cada paciente.
 
-<!-- ## Características de cada gênero -->
-
-```{r}
-pander(sum.gen)
-```
-
-Table: **Tabela 3** Mensurações avaliadas e tipos de impacto observados por gênero.
-sd = Desvio padrão,
-IMC = Índice de massa corpórea,
-p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
-
-O IMC médio dos homens é significativamente maior que o das mulheres (tabela 3).
-A idade média, lado doloroso e o tipo de impacto dos participantes de cada gênero apresentou boa homogeneidade.
-
-<!-- ## Características pelo lado doloroso -->
-
-```{r}
-pander(sum.dor)
-```
-
-Table: **Tabela 4** Descrição dos participantes quanto ao lado doloroso.
-sd = Desvio padrão,
-IMC = Índice de massa corpórea,
-p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
-
-Não houve associação significativa entre idade, IMC ou a dsitribuição dos tipos de impacto e o lado doloroso (Tabela 4).
-
-Além disso, os participantes brancos e de outras raças tem distribuições semelhantes de gênero
-(p = `r format.pval(fisher.test(with(dados, table(RACA, SEXO)))$p.value, digits = 4)`),
-idade 
-(p = `r format.pval(with(dados, t.test(IDADE~RACA))$p.value, digits = 4)`).
-Os participantes brancos tem IMC ligeiramente menor que de outras raças
-(p = `r format.pval(with(dados, t.test(IMC~RACA))$p.value, digits = 4)`).
-Não houve diferença entre os participants brancos e de outras raças quanto à observação de CAM
-(p = `r format.pval(fisher.test(with(dados, table(RACA, CAM)))$p.value, digits = 4)`),
-PINCER
-(p = `r format.pval(fisher.test(with(dados, table(RACA, PINCER)))$p.value, digits = 4)`)
-ou impacto MISTO
-(p = `r format.pval(fisher.test(with(dados, table(RACA, MISTO)))$p.value, digits = 4)`).
 
 ## Frequências dos impactos
 
