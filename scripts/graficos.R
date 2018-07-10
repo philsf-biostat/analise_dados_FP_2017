@@ -15,28 +15,24 @@ alftor.grupo <- ggplot(dados, aes(ALFA, TORCAO)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(~ GRUPO)
-ggsave("figures/painel_AlfTor_grupo.png")
 
 alftor.grupo.imp <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = GRUPO)) +
   theme(legend.position = "bottom") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(~ IMPACTO)
-ggsave("figures/painel_AlfTor_grupo_imp.png")
 
 alftor.grupo.imp.full <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(IMPACTO ~ GRUPO, margins = "IMPACTO")
-ggsave("figures/painel_AlfTor_grupo_imp_full.png")
 
 alftor.imp.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = IMPACTO)) +
   theme(legend.position = "bottom") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(~ GRUPO)
-ggsave("figures/painel_AlfTor_imp_grupo.png")
 
 # ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO)) +
 #   ggtitle("Impactos por gênero") +
@@ -60,4 +56,3 @@ bar.imp.sex.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO, fill = GRU
   scale_y_continuous(labels = scales::percent, limits = c(0, .5)) +
   xlab("") + ylab("") +
   theme(legend.position = "bottom")
-ggsave("figures/painel_sex_grupo.png")
