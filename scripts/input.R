@@ -9,6 +9,13 @@ names(dados.raw) <- c("ID", "SEXO", "IDADE", "RACA", "IMC", "LADO DOR", "HHS",
                   "ALFA D", "ALFA E", "I. EXTRU D", "I. EXTRU E",
                   "TIPO DE PATOLOGIA")
 
+dados.raw$ID <- factor(dados.raw$ID)
+dados.raw$SEXO <- factor(dados.raw$SEXO, labels = c("M", "F"))
+dados.raw$SEXO <- relevel(dados.raw$SEXO, "F")
+dados.raw$RACA <- factor(dados.raw$RACA, labels = c("Branca", "Outras"))
+dados.raw$RACA <- relevel(dados.raw$RACA, "Outras")
+dados.raw$`LADO DOR` <- factor(dados.raw$`LADO DOR`, labels = c("D", "E", "B"))
+
 ## Métodos: diagnósticos
 diag.CAM <- function(alfa) {
   diag.cam <- alfa > 50
@@ -25,20 +32,22 @@ diag.MISTO <- function(cam, pincer) {
 
 ## Grupos
 dor <- rbind(
-  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
-  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)],
-  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
-  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)]
+  dados.raw[`LADO DOR`== "D", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
+  dados.raw[`LADO DOR` == "E", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)],
+  dados.raw[`LADO DOR` == "B", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
+  dados.raw[`LADO DOR` == "B", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)]
 )
 dor$GRUPO <- rep("Doloroso", nrow(dor))
 
 controle <- rbind(
-  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA D`, ACB = `ACB E`, IE = `I. EXTRU E`)],
-  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)]
+  dados.raw[`LADO DOR`== "D", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA D`, ACB = `ACB E`, IE = `I. EXTRU E`)],
+  dados.raw[`LADO DOR` == "E", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)]
 )
 controle$GRUPO <- rep("Controle", nrow(controle))
 dados <- rbind(dor, controle)
 dados$LADO <- factor(dados$LADO)
+dados$GRUPO <- factor(dados$GRUPO)
+dados$GRUPO <- relevel(dados$GRUPO, "Controle")
 dados$TORCAO.cat <- cut(dados$TORCAO, c(0,4.9, 25.1, Inf), c("retro", "normal", "ante"))
 dados$TORCAO.cat <- relevel(dados$TORCAO.cat, "normal")
 dados$TORCAO.alt <- dados$TORCAO.cat
