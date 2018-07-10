@@ -9,7 +9,7 @@ sum.grupo <- print(CreateTableOne(data = dados[, .(GRUPO, TORCAO, ALFA, IA, ACB,
 
 # remover variável de estratificação, filtrar colunas
 tab1 <- tab1[-c(2:3), 1:4]
-sum.grupo <- sum.grupo[-c(2:3), 1:4]
+sum.grupo <- sum.grupo[-c(2:3), 2:4]
 # sum.dor <- sum.dor[-c(4:6), 1:5]
 # sum.rac <- sum.rac[-c(4:5), 1:4]
 
