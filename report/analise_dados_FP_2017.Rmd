@@ -126,7 +126,7 @@ IMC = Índice de massa corpórea,
 HHS = Harris hip score (modificado).
 
 ```{r echo=FALSE}
-pander(sum.lado)
+pander(sum.grupo)
 panderOptions('table.split.table', 120)
 ```
 
