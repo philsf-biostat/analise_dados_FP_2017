@@ -3,7 +3,7 @@ library(data.table)
 
 dados.raw <- data.table(read_excel("dataset/Cabral FMP dados 2018-06-06.xlsx"))
 dados.raw <- dados.raw[, c(1:19,24:26)]
-names(dados.raw) <- c("ID", "SEXO", "IDADE", "RACA", "IMC", "LADO DOR", "HHS",
+names(dados.raw) <- c("ID", "SEXO", "IDADE", "RACA", "IMC", "DOR", "HHS",
                   "TORCAO D", "TORCAO E", "TONNIS D", "TONNIS E",
                   "ACB D", "ACB E", "IA D", "IA E", "ACD D", "ACD E",
                   "ALFA D", "ALFA E", "I. EXTRU D", "I. EXTRU E",
@@ -14,7 +14,7 @@ dados.raw$SEXO <- factor(dados.raw$SEXO, labels = c("M", "F"))
 dados.raw$SEXO <- relevel(dados.raw$SEXO, "F")
 dados.raw$RACA <- factor(dados.raw$RACA, labels = c("Branca", "Outras"))
 dados.raw$RACA <- relevel(dados.raw$RACA, "Outras")
-dados.raw$`LADO DOR` <- factor(dados.raw$`LADO DOR`, labels = c("D", "E", "B"))
+dados.raw$DOR <- factor(dados.raw$DOR, labels = c("D", "E", "B"))
 
 ## Métodos: diagnósticos
 diag.CAM <- function(alfa) {
@@ -32,16 +32,16 @@ diag.MISTO <- function(cam, pincer) {
 
 ## Grupos
 dor <- rbind(
-  dados.raw[`LADO DOR`== "D", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
-  dados.raw[`LADO DOR` == "E", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)],
-  dados.raw[`LADO DOR` == "B", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
-  dados.raw[`LADO DOR` == "B", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)]
+  dados.raw[DOR== "D", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
+  dados.raw[DOR == "E", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)],
+  dados.raw[DOR == "B", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
+  dados.raw[DOR == "B", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)]
 )
 dor$GRUPO <- rep("Doloroso", nrow(dor))
 
 controle <- rbind(
-  dados.raw[`LADO DOR`== "D", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA D`, ACB = `ACB E`, IE = `I. EXTRU E`)],
-  dados.raw[`LADO DOR` == "E", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)]
+  dados.raw[DOR== "D", .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA D`, ACB = `ACB E`, IE = `I. EXTRU E`)],
+  dados.raw[DOR == "E", .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)]
 )
 controle$GRUPO <- rep("Controle", nrow(controle))
 dados <- rbind(dor, controle)
@@ -82,7 +82,7 @@ IMPACTO[dados$MISTO] <- "MISTO"
 dados$IMPACTO <- factor(IMPACTO)
 
 # influentes: checar valores de ALFA D
-# print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, `LADO DOR`, `TORCAO D`, `ALFA D`)])
+# print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, DOR, `TORCAO D`, `ALFA D`)])
 # dados <- dados[!(ID %in% c("P22", "P30", "P36"))]
 
 # PINCER influentes: TORCAO muito pequena?
