@@ -25,19 +25,20 @@ diag.MISTO <- function(cam, pincer) {
 
 ## Grupos
 dor <- rbind(
-  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
-  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)],
-  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
-  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)]
+  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
+  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)],
+  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)],
+  dados.raw[`LADO DOR` == 3, .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA E`, ACB = `ACB E`, IE = `I. EXTRU E`)]
 )
 dor$GRUPO <- rep("Doloroso", nrow(dor))
 
 controle <- rbind(
-  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA D`, ACB = `ACB E`, IE = `I. EXTRU E`)],
-  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)]
+  dados.raw[`LADO DOR` == 1, .(ID, IDADE, SEXO, IMC, HHS, LADO="E", TORCAO = `TORCAO E`, ALFA = `ALFA E`, IA = `IA D`, ACB = `ACB E`, IE = `I. EXTRU E`)],
+  dados.raw[`LADO DOR` == 2, .(ID, IDADE, SEXO, IMC, HHS, LADO="D", TORCAO = `TORCAO D`, ALFA = `ALFA D`, IA = `IA D`, ACB = `ACB D`, IE = `I. EXTRU D`)]
 )
 controle$GRUPO <- rep("Controle", nrow(controle))
 dados <- rbind(dor, controle)
+dados$LADO <- factor(dados$LADO)
 dados$TORCAO.cat <- cut(dados$TORCAO, c(0,4.9, 25.1, Inf), c("retro", "normal", "ante"))
 dados$TORCAO.cat <- relevel(dados$TORCAO.cat, "normal")
 dados$TORCAO.alt <- dados$TORCAO.cat
@@ -48,18 +49,17 @@ rm(dor, controle)
 dados$CAM <- diag.CAM(dados$ALFA)
 
 # exceção: P17 sem ALFA D
-# dados[ID == "P17"]$`CAM D` <- FALSE
+dados[ID == "P17" & LADO == "D"]$CAM <- FALSE
 
 # PINCER ####
 dados$PINCER <- diag.PINCER(ia = dados$IA, acb = dados$ACB, extru = dados$IE)
 
 # exceção: P15 sem ACB D
-# dados[ID == "P15", `PINCER D` := `IA D` > 10 | `I. EXTRU D` < 10]
-# dados[ID == "P15"]$`PINCER D` <- FALSE
+dados[ID == "P15" & LADO == "D"]$PINCER <- FALSE
 
 # exceção: P28 sem I Extru D e E
-# dados[ID == "P28"]$`PINCER D` <- FALSE
-# dados[ID == "P28"]$`PINCER E` <- TRUE
+dados[ID == "P28" & LADO == "D"]$PINCER <- FALSE
+dados[ID == "P28" & LADO == "E"]$PINCER <- TRUE
 
 # MISTO
 dados$MISTO <- diag.MISTO(cam = dados$CAM, pincer = dados$PINCER)
