@@ -129,23 +129,23 @@ p = teste t de Student para variáveis contínuas, e teste exato de Fisher para 
 O IMC médio dos homens é significativamente maior que o das mulheres.
 A idade média, lado doloroso e o Harris Hip Score dos participantes de cada gênero apresentou boa homogeneidade quanto aos gêneros.
 
+A tabela 2 mostra as mensurações obtidas dos quadris classificados quanto aos grupos Doloroso e Controle.
+
 ```{r echo=FALSE}
 pander(sum.grupo)
 panderOptions('table.split.table', 120)
 ```
 
-Table: **Tabela 2** Descrição das mensurações avaliadas e os tipos de impacto em cada lado do quadril.
+Table: **Tabela 2** Descrição das mensurações avaliadas e os tipos de impacto em cada grupo.
 sd = Desvio padrão,
 ALFA = ângulo alfa,
 IA = índice acetabular,
 ACB = ângulo centro-borda acetabular,
-EXTRU = índice de extrusão.
-p = teste t de Student para variáveis contínuas, e teste exato de Fisher para impacto.
+IE = índice de extrusão.
+p = teste t de Student.
 
-Observou-se que, na média, o ângulo alfa foi significativamente maior no lado direito dos pacientes que o medido no lado esquerdo (Tabela 2).
-As outras mensurações parecem ser homogeneamente distribuídas em ambos os lados.
-O mesmo ocorre com a distribuição de frequências doso tipos de impacto em ambos os quadris de cada paciente.
-
+Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
+As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
 ## Frequências dos impactos
 
