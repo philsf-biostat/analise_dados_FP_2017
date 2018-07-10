@@ -17,3 +17,23 @@ write.csv2(tab1, "results/tab1.csv")
 write.csv2(sum.grupo, "results/grupo.csv")
 # write.csv2(sum.dor, "results/dor.csv")
 # write.csv2(sum.rac, "results/raca.csv")
+
+## Associação de dados categóricos
+
+# Homens tem tipos de impacto != das mulheres?
+
+fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(SEXO, IMPACTO)))
+# R: sim
+
+fisher.test(with(dados, table(SEXO, CAM)))
+fisher.test(with(dados, table(SEXO, PINCER)))
+fisher.test(with(dados, table(SEXO, MISTO)))
+
+# Sentir dor é um bom preditor para o tipo do impacto?
+fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(GRUPO, IMPACTO)))
+# R: não
+
+fisher.test(with(dados, table(GRUPO, CAM)))
+fisher.test(with(dados, table(GRUPO, PINCER)))
+fisher.test(with(dados, table(GRUPO, MISTO)))
+
