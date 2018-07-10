@@ -73,6 +73,14 @@ dados[ID == "P28" & LADO == "E"]$PINCER <- TRUE
 # MISTO
 dados$MISTO <- diag.MISTO(cam = dados$CAM, pincer = dados$PINCER)
 
+# IMPACTO
+IMPACTO <- rep("AUSENTE", nrow(dados))
+IMPACTO[dados$PINCER] <- "PINCER"
+IMPACTO[dados$CAM] <- "CAM"
+IMPACTO[dados$MISTO] <- "MISTO"
+
+dados$IMPACTO <- factor(IMPACTO)
+
 # influentes: checar valores de ALFA D
 # print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, `LADO DOR`, `TORCAO D`, `ALFA D`)])
 # dados <- dados[!(ID %in% c("P22", "P30", "P36"))]
