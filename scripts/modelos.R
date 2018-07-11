@@ -1,10 +1,7 @@
 source('scripts/input.R', encoding = 'UTF-8')
 
 summary(lm(TORCAO ~ LADO, data = dados))
-summary(lm(TORCAO ~ LADO, data = dados))
 # summary(lm(TORCAO ~ ALFA + LADO - 1, data = dados))
-# summary(lm(TORCAO ~ ALFA + LADO - 1, data = dados))
-summary(lm(TORCAO ~ ALFA + LADO, data = dados))
 summary(lm(TORCAO ~ ALFA + LADO, data = dados))
 
 summary(lm(TORCAO ~ ALFA, data = dados))
@@ -26,22 +23,14 @@ summary(lm(IMC ~ MISTO + LADO, data = dados))
 # summary(lm(TORCAO ~ ALFA + IMC, data = dados))
 
 summary(lm(ALFA ~ LADO, data = dados))
-summary(lm(ALFA ~ LADO, data = dados))
 
 summary(lm(ALFA ~ CAM, data = dados))
-summary(lm(ALFA ~ CAM, data = dados))
 summary(lm(ALFA ~ PINCER, data = dados))
-summary(lm(ALFA ~ PINCER, data = dados))
-summary(lm(ALFA ~ MISTO, data = dados))
 summary(lm(ALFA ~ MISTO, data = dados))
 
 summary(lm(ALFA ~ CAM+PINCER, data = dados))
-summary(lm(ALFA ~ CAM+PINCER, data = dados))
-summary(lm(ALFA ~ CAM*PINCER, data = dados))
 summary(lm(ALFA ~ CAM*PINCER, data = dados))
 summary(lm(ALFA ~ CAM+PINCER+LADO, data = dados))
-summary(lm(ALFA ~ CAM+PINCER+LADO, data = dados))
-
 
 # ## casos positivos
 # summary(lm(ALFA ~ CAM, data = dados[CAM != "NORMAL"] ))
@@ -104,31 +93,21 @@ library(nnet)
 impacto.subsetcols <- dados[, .(TORCAO, TORCAO, LADO, IMPACTO, IMPACTO, HHS)]
 
 # Tipo de impacto
-multi.imp.tor.d <- multinom(IMPACTO ~ TORCAO, dados)
-multi.imp.tor.dor.d <- multinom(IMPACTO ~ TORCAO + LADO, dados)
-
-multi.imp.tor.e <- multinom(IMPACTO ~ TORCAO, dados)
-multi.imp.tor.dor.e <- multinom(IMPACTO ~ TORCAO + LADO, dados)
+multi.imp.tor <- multinom(IMPACTO ~ TORCAO, dados)
+multi.imp.tor.dor <- multinom(IMPACTO ~ TORCAO + LADO, dados)
 
 png("figures/painel_Tor_impacto.png")
-par(mfrow = c(2,1))
-with(dados, plot(TORCAO ~ IMPACTO, ylim = c(0, 40)))
-abline(h=c(5,25), lty = 4)
-stripchart(TORCAO ~ IMPACTO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
 with(dados, plot(TORCAO ~ IMPACTO, ylim = c(0, 40)))
 abline(h=c(5,25), lty = 4)
 stripchart(TORCAO ~ IMPACTO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
 dev.off()
 
 # HHS
-lm.hhs.tor.d <- lm(HHS ~ TORCAO, dados)
+lm.hhs.tor <- lm(HHS ~ TORCAO, dados)
 
-lm.hhs.tor.dor.d <- lm(HHS ~ TORCAO + LADO, dados)
+lm.hhs.tor.dor <- lm(HHS ~ TORCAO + LADO, dados)
 
 png("figures/painel_Tor_HHS.png")
-par(mfrow = c(2,1))
-with(dados, plot(TORCAO, HHS, xlim = c(1, 36)))
-abline(v=c(5,25), lty = 4)
 with(dados, plot(TORCAO, HHS, xlim = c(1, 36)))
 abline(v=c(5,25), lty = 4)
 dev.off()
