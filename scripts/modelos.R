@@ -96,21 +96,10 @@ impacto.subsetcols <- dados[, .(TORCAO, TORCAO, LADO, IMPACTO, IMPACTO, HHS)]
 multi.imp.tor <- multinom(IMPACTO ~ TORCAO, dados)
 multi.imp.tor.dor <- multinom(IMPACTO ~ TORCAO + LADO, dados)
 
-png("figures/painel_Tor_impacto.png")
-with(dados, plot(TORCAO ~ IMPACTO, ylim = c(0, 40)))
-abline(h=c(5,25), lty = 4)
-stripchart(TORCAO ~ IMPACTO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
-dev.off()
-
 # HHS
 lm.hhs.tor <- lm(HHS ~ TORCAO, dados)
 
 lm.hhs.tor.dor <- lm(HHS ~ TORCAO + LADO, dados)
-
-png("figures/painel_Tor_HHS.png")
-with(dados, plot(TORCAO, HHS, xlim = c(1, 36)))
-abline(v=c(5,25), lty = 4)
-dev.off()
 
 ## Desfecho DOR
 
