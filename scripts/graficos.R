@@ -9,6 +9,10 @@ library(ggplot2)
 # ggsave("figures/AlfTor_grupo.png")
 
 # paineis por grupo
+tor.imp <- ggplot(dados.impacto, aes(IMPACTO, TORCAO, col = IMPACTO)) +
+  geom_hline(yintercept = c(5, 25), lty = 4, col = "red") +
+  geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
+  theme(legend.position = "none")
 
 alftor.grupo <- ggplot(dados, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
