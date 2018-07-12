@@ -78,8 +78,8 @@ IMPACTO <- rep("AUSENTE", nrow(dados))
 IMPACTO[dados$PINCER] <- "PINCER"
 IMPACTO[dados$CAM] <- "CAM"
 IMPACTO[dados$MISTO] <- "MISTO"
-
 dados$IMPACTO <- factor(IMPACTO)
+rm(IMPACTO)
 
 # influentes: checar valores de ALFA D
 # print(dados[(ID %in% c("P22", "P30", "P36")), .(ID, DOR, `TORCAO D`, `ALFA D`)])
