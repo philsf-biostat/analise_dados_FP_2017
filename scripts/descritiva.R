@@ -2,100 +2,38 @@ source('scripts/input.R', encoding = 'UTF-8')
 
 library(tableone)
 
-tab1 <- print(CreateTableOne(data = dados[, c(2:7)]), showAllLevels = TRUE, printToggle = FALSE)
-sum.lado <- print(CreateTableOne(data = med.num,strata = "LADO"), showAllLevels = TRUE, exact = TRUE, printToggle = FALSE)
-sum.gen <- print(CreateTableOne(data = dados[, .(SEXO, IDADE, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "SEXO"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
-sum.dor <- print(CreateTableOne(data = dados[, .(IDADE, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "DOR"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
-sum.rac <- print(CreateTableOne(data = dados[, .(SEXO, RACA, IDADE, IMC, DOR = `LADO DOR`, CAM, PINCER, MISTO)], strata = "RACA"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
+tab1 <- print(CreateTableOne(data = dados.raw[, c(2:3, 5:7)], strata = "SEXO"), showAllLevels = TRUE, printToggle = FALSE)
+sum.grupo <- print(CreateTableOne(data = dados[, .(GRUPO, TORCAO, ALFA, IA, ACB, IE)],strata = "GRUPO"), showAllLevels = TRUE, exact = TRUE, printToggle = FALSE)
+# sum.dor <- print(CreateTableOne(data = dados[, .(IDADE, IMC, GRUPO, CAM, PINCER, MISTO)], strata = "GRUPO"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
+# sum.rac <- print(CreateTableOne(data = dados[, .(SEXO, RACA, IDADE, IMC, GRUPO, CAM, PINCER, MISTO)], strata = "RACA"), exact = TRUE, showAllLevels = TRUE, printToggle = FALSE)
 
 # remover variável de estratificação, filtrar colunas
-sum.lado <- sum.lado[-c(1:3), 1:4]
-sum.gen <- sum.gen[-c(2:3), 1:4]
-sum.dor <- sum.dor[-c(4:6), 1:5]
-sum.rac <- sum.rac[-c(4:5), 1:4]
+tab1 <- tab1[-c(2:3), 1:4]
+sum.grupo <- sum.grupo[-c(2:3), 2:4]
+# sum.dor <- sum.dor[-c(4:6), 1:5]
+# sum.rac <- sum.rac[-c(4:5), 1:4]
 
 write.csv2(tab1, "results/tab1.csv")
-write.csv2(sum.lado, "results/lado.csv")
-write.csv2(sum.gen, "results/gen.csv")
-write.csv2(sum.dor, "results/dor.csv")
-write.csv2(sum.rac, "results/raca.csv")
+write.csv2(sum.grupo, "results/grupo.csv")
+# write.csv2(sum.dor, "results/dor.csv")
+# write.csv2(sum.rac, "results/raca.csv")
 
-png("figures/painel_Alfa_Tor_dor.png")
-par(mfrow = c(2,2))
-stripchart(`ALFA D` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19)
-stripchart(`ALFA E` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19)
-stripchart(`TORCAO D` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19)
-stripchart(`TORCAO E` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19)
-dev.off()
+## Associação de dados categóricos
 
-png("figures/painel_Alfa_Tor_dor2.png")
-par(mfrow = c(2,2))
-with(dados, plot(`ALFA D` ~ `LADO DOR`, ylim = c(30, 100)))
-stripchart(`ALFA D` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19, add = TRUE)
-with(dados, plot(`ALFA E` ~ `LADO DOR`, ylim = c(30, 100)))
-stripchart(`ALFA E` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19, add = TRUE)
-with(dados, plot(`TORCAO D` ~ `LADO DOR`, ylim = c(0, 40)))
-stripchart(`TORCAO D` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
-with(dados, plot(`TORCAO E` ~ `LADO DOR`, ylim = c(0, 40)))
-stripchart(`TORCAO E` ~ `LADO DOR`, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
-dev.off()
+# Homens tem tipos de impacto != das mulheres?
 
-CreateTableOne(
-  data = dados[, .(`ALFA D`, `ALFA E`, `TORCAO D`, `TORCAO E`, DOR = `LADO DOR`, SEXO)],
-  strata = "DOR"
-  )
+fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(SEXO, IMPACTO)))
+# R: sim
 
-png("figures/painel_Alfa_Tor_sex2.png")
-par(mfrow = c(2,2))
-with(dados, plot(`ALFA D` ~ SEXO, ylim = c(30, 100)))
-stripchart(`ALFA D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19, add = TRUE)
-with(dados, plot(`ALFA E` ~ SEXO, ylim = c(30, 100)))
-stripchart(`ALFA E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19, add = TRUE)
-with(dados, plot(`TORCAO D` ~ SEXO, ylim = c(0, 40)))
-stripchart(`TORCAO D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
-with(dados, plot(`TORCAO E` ~ SEXO, ylim = c(0, 40)))
-stripchart(`TORCAO E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19, add = TRUE)
-dev.off()
+fisher.test(with(dados, table(SEXO, CAM)))
+fisher.test(with(dados, table(SEXO, PINCER)))
+fisher.test(with(dados, table(SEXO, MISTO)))
 
-png("figures/painel_Alfa_Tor_sex.png")
-par(mfrow = c(2,2))
-stripchart(`ALFA D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19)
-stripchart(`ALFA E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(30, 100), pch = 19)
-stripchart(`TORCAO D` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19)
-stripchart(`TORCAO E` ~ SEXO, data = dados, method = "stack", vertical = TRUE, ylim = c(0, 40), pch = 19)
-dev.off()
+# Sentir dor é um bom preditor para o tipo do impacto?
+fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(GRUPO, IMPACTO)))
+# R: não
 
-CreateTableOne(
-  data = dados[, .(`ALFA D`, `ALFA E`, `TORCAO D`, `TORCAO E`, DOR = `LADO DOR`, SEXO)],
-  strata = "SEXO"
-  )
+fisher.test(with(dados, table(GRUPO, CAM)))
+fisher.test(with(dados, table(GRUPO, PINCER)))
+fisher.test(with(dados, table(GRUPO, MISTO)))
 
-# IMPACTO (geral)
-fisher.test(with(impacto, table(SEXO, CAM)))
-fisher.test(with(impacto, table(SEXO, PINCER)))
-fisher.test(with(impacto, table(SEXO, MISTO)))
-
-fisher.test(with(impacto, table(CAM, SEXO)))
-fisher.test(with(impacto, table(PINCER, SEXO)))
-fisher.test(with(impacto, table(MISTO, SEXO)))
-
-# controlando pelo lado do impacto
-fisher.test(with(impacto.lat[CAM != "N"], table(CAM, SEXO)))
-fisher.test(with(impacto.lat[PINCER != "N"], table(PINCER, SEXO)))
-fisher.test(with(impacto.lat[MISTO != "Simples"], table(MISTO, SEXO)))
-
-# png("figures/impactos_sexo.png", 1200, 500)
-# par(mfrow = c(1,3))
-# mybarplot(with(impacto, table(CAM, SEXO)), "GENERO", "Impacto", ylim = c(0,20))
-# mybarplot(with(impacto, table(PINCER, SEXO)), "GENERO", "Impacto", ylim = c(0,20))
-# mybarplot(with(impacto, table(MISTO, SEXO)), "GENERO", "Impacto", ylim = c(0,20))
-# dev.off()
-
-# Lado de dor é um bom preditor para impacto?
-fisher.test(with(impacto, table(DOR, CAM)))
-fisher.test(with(impacto, table(DOR, PINCER)))
-fisher.test(with(impacto, table(DOR, MISTO)))
-
-fisher.test(with(impacto.lat[CAM != "N"], table(DOR, CAM)))
-fisher.test(with(impacto.lat[PINCER != "N"], table(DOR, PINCER)))
-fisher.test(with(impacto.lat[MISTO != "Simples"], table(DOR, MISTO)))
