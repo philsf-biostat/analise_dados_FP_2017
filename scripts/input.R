@@ -90,3 +90,4 @@ rm(IMPACTO)
 # print(dados[(ID %in% c("P17")),.(ID, `IMPACTO E`, `TORCAO E`, `ALFA E`)])
 # dados <- dados[!(ID %in% c("P3", "P17"))]
 
+dados.impacto <- droplevels(dados[IMPACTO != "AUSENTE"])

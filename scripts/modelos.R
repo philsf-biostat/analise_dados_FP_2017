@@ -1,7 +1,5 @@
 source('scripts/input.R', encoding = 'UTF-8')
 
-dados.impacto <- droplevels(dados[IMPACTO != "AUSENTE"])
-
 # Desfecho numérico -------------------------------------------------------
 
 # Torção
