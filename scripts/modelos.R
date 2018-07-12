@@ -1,66 +1,64 @@
 source('scripts/input.R', encoding = 'UTF-8')
 
-summary(lm(TORCAO ~ GRUPO, data = dados))
-# summary(lm(TORCAO ~ ALFA + GRUPO - 1, data = dados))
-summary(lm(TORCAO ~ ALFA + GRUPO, data = dados))
+dados.impacto <- droplevels(dados[IMPACTO != "AUSENTE"])
 
+# Desfecho numérico -------------------------------------------------------
+
+# Torção
 summary(lm(TORCAO ~ ALFA, data = dados))
 summary(lm(TORCAO ~ ALFA + GRUPO, data = dados))
+summary(lm(TORCAO ~ ALFA + IMPACTO, data = dados))
+summary(lm(TORCAO ~ ALFA + GRUPO + IMPACTO, data = dados))
 
-# summary(lm(IMC ~ GRUPO, data = dados))
+# IMC
+summary(lm(IMC ~ IMPACTO, data = dados))
 summary(lm(IMC ~ CAM, data = dados))
 summary(lm(IMC ~ PINCER, data = dados))
 summary(lm(IMC ~ MISTO, data = dados))
 
+summary(lm(IMC ~ IMPACTO + GRUPO, data = dados))
 summary(lm(IMC ~ CAM + GRUPO, data = dados))
 summary(lm(IMC ~ PINCER + GRUPO, data = dados))
 summary(lm(IMC ~ MISTO + GRUPO, data = dados))
 
+# HHS
+lm.hhs.tor <- lm(HHS ~ TORCAO, dados)
+lm.hhs.tor.dor <- lm(HHS ~ TORCAO + GRUPO, dados)
+
+# Idade
+summary(lm(TORCAO ~ ALFA + IDADE, dados))
 
 # summary(lm(TORCAO ~ IMC, data = dados))
-# summary(lm(TORCAO ~ IMC, data = dados))
-# summary(lm(TORCAO ~ ALFA + IMC, data = dados))
 # summary(lm(TORCAO ~ ALFA + IMC, data = dados))
 
-summary(lm(ALFA ~ GRUPO, data = dados))
-
+# ALFA
 summary(lm(ALFA ~ CAM, data = dados))
 summary(lm(ALFA ~ PINCER, data = dados))
 summary(lm(ALFA ~ MISTO, data = dados))
-
 summary(lm(ALFA ~ CAM+PINCER, data = dados))
-summary(lm(ALFA ~ CAM*PINCER, data = dados))
 summary(lm(ALFA ~ CAM+PINCER+GRUPO, data = dados))
 
-# ## casos positivos
-# summary(lm(ALFA ~ CAM, data = dados[CAM != "NORMAL"] ))
-# summary(lm(ALFA ~ CAM, data = dados[CAM != "NORMAL"]))
-# summary(lm(ALFA ~ PINCER, data = dados[PINCER != "N"]))
-# summary(lm(ALFA ~ PINCER, data = dados[PINCER != "N"]))
-# summary(lm(ALFA ~ MISTO, data = dados[MISTO != "Simples"]))
-# summary(lm(ALFA ~ MISTO, data = dados[MISTO != "Simples"]))
-
 ## ANOVAs
-# summary(aov(TORCAO ~  CAM, dados))
-# TukeyHSD(aov(TORCAO ~  CAM, dados))
-# 
-# summary(aov(TORCAO ~  PINCER, dados))
-# TukeyHSD(aov(TORCAO ~  PINCER, dados))
-# 
-# summary(aov(TORCAO ~  MISTO, dados))
-# TukeyHSD(aov(TORCAO ~  MISTO, dados))
+summary(aov(TORCAO ~ IMPACTO, dados.impacto))
+TukeyHSD(aov(TORCAO ~ IMPACTO, dados.impacto))
+
+summary(aov(TORCAO ~ IMPACTO + GRUPO, dados.impacto))
+TukeyHSD(aov(TORCAO ~ IMPACTO + GRUPO, dados.impacto))
+
+summary(aov(TORCAO ~ IMPACTO * GRUPO, dados.impacto))
+TukeyHSD(aov(TORCAO ~ IMPACTO * GRUPO, dados.impacto))
+
+aov(HHS ~ TORCAO.cat, dados.impacto)
+TukeyHSD(aov(HHS ~ TORCAO.cat, dados.impacto))
+
+aov(HHS ~ TORCAO.alt, dados.impacto)
+TukeyHSD(aov(HHS ~ TORCAO.alt, dados.impacto))
 
 # correlação sem filtro ---------------------------------------------------
 
 with(dados, cor.test(TORCAO , ALFA))
 
-# correlação com filtro de lateralidade -----------------------------------
-
-with(dados[LADO %in% c("D", "B")], cor.test(TORCAO , ALFA))
-with(dados[LADO %in% c("E", "B")], cor.test(TORCAO , ALFA))
-
-
-# desfecho categórico -----------------------------------------------------
+# Desfecho categórico -----------------------------------------------------
 
 library(nnet)
 
@@ -90,50 +88,41 @@ library(nnet)
 # round(exp(coef(multinom(MISTO ~ GRUPO -1 + LADO, dados))), 1)
 
 ## Desfecho Impacto
-impacto.subsetcols <- dados[, .(TORCAO, TORCAO, LADO, IMPACTO, IMPACTO, HHS)]
 
 # Tipo de impacto
-multi.imp.tor <- multinom(IMPACTO ~ TORCAO, dados)
+multi.imp.tor <- multinom(IMPACTO ~ TORCAO.alt, dados)
 multi.imp.tor.dor <- multinom(IMPACTO ~ TORCAO + GRUPO, dados)
 
-# HHS
-lm.hhs.tor <- lm(HHS ~ TORCAO, dados)
+# Cada impacto
+summary(glm(CAM ~ TORCAO.alt, binomial, dados))
+summary(glm(PINCER ~ TORCAO.alt, binomial, dados))
+summary(glm(MISTO ~ TORCAO.alt, binomial, dados))
 
-lm.hhs.tor.dor <- lm(HHS ~ TORCAO + GRUPO, dados)
+summary(glm(CAM ~ TORCAO.cat, binomial, dados))
+summary(glm(PINCER ~ TORCAO.cat, binomial, dados))
+summary(glm(MISTO ~ TORCAO.cat, binomial, dados))
 
 ## Desfecho DOR
 
 dor.cam <- multinom(GRUPO ~ CAM, dados)
-dor.cam.lat <- multinom(GRUPO ~ CAM + LADO, dados)
 
 summary(dor.cam)
 exp(coef(dor.cam))
-summary(dor.cam.lat)
-exp(coef(dor.cam.lat))
 
 dor.pinc <- multinom(GRUPO ~ PINCER, dados)
-dor.pinc.lat <- multinom(GRUPO ~ PINCER + LADO, dados)
 
 summary(dor.pinc)
 exp(coef(dor.pinc))
-summary(dor.pinc.lat)
-exp(coef(dor.pinc.lat))
 
 dor.mst <- multinom(GRUPO ~ MISTO, dados)
-dor.mst.lat <- multinom(GRUPO ~ MISTO + LADO, dados)
 
 summary(dor.mst)
 exp(coef(dor.mst))
-summary(dor.mst.lat)
-exp(coef(dor.mst.lat))
 
 mult.imp <- multinom(GRUPO ~ CAM + PINCER, dados)
-mult.imp.lat <- multinom(GRUPO ~ CAM + PINCER + LADO, dados)
 
 summary(mult.imp)
 exp(coef(mult.imp))
-summary(mult.imp.lat)
-exp(coef(mult.imp.lat))
 
 z <- summary(mult.imp)$coefficients/summary(mult.imp)$standard.errors
 # z
@@ -197,4 +186,3 @@ pc2
 pc2 < 0.05
 
 exp(coef(mult.cam2))
-
