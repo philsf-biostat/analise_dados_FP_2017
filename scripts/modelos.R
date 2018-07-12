@@ -1,20 +1,20 @@
 source('scripts/input.R', encoding = 'UTF-8')
 
-summary(lm(TORCAO ~ LADO, data = dados))
-# summary(lm(TORCAO ~ ALFA + LADO - 1, data = dados))
-summary(lm(TORCAO ~ ALFA + LADO, data = dados))
+summary(lm(TORCAO ~ GRUPO, data = dados))
+# summary(lm(TORCAO ~ ALFA + GRUPO - 1, data = dados))
+summary(lm(TORCAO ~ ALFA + GRUPO, data = dados))
 
 summary(lm(TORCAO ~ ALFA, data = dados))
-summary(lm(TORCAO ~ ALFA + LADO, data = dados))
+summary(lm(TORCAO ~ ALFA + GRUPO, data = dados))
 
-# summary(lm(IMC ~ LADO, data = dados))
+# summary(lm(IMC ~ GRUPO, data = dados))
 summary(lm(IMC ~ CAM, data = dados))
 summary(lm(IMC ~ PINCER, data = dados))
 summary(lm(IMC ~ MISTO, data = dados))
 
-summary(lm(IMC ~ CAM + LADO, data = dados))
-summary(lm(IMC ~ PINCER + LADO, data = dados))
-summary(lm(IMC ~ MISTO + LADO, data = dados))
+summary(lm(IMC ~ CAM + GRUPO, data = dados))
+summary(lm(IMC ~ PINCER + GRUPO, data = dados))
+summary(lm(IMC ~ MISTO + GRUPO, data = dados))
 
 
 # summary(lm(TORCAO ~ IMC, data = dados))
@@ -22,7 +22,7 @@ summary(lm(IMC ~ MISTO + LADO, data = dados))
 # summary(lm(TORCAO ~ ALFA + IMC, data = dados))
 # summary(lm(TORCAO ~ ALFA + IMC, data = dados))
 
-summary(lm(ALFA ~ LADO, data = dados))
+summary(lm(ALFA ~ GRUPO, data = dados))
 
 summary(lm(ALFA ~ CAM, data = dados))
 summary(lm(ALFA ~ PINCER, data = dados))
@@ -30,7 +30,7 @@ summary(lm(ALFA ~ MISTO, data = dados))
 
 summary(lm(ALFA ~ CAM+PINCER, data = dados))
 summary(lm(ALFA ~ CAM*PINCER, data = dados))
-summary(lm(ALFA ~ CAM+PINCER+LADO, data = dados))
+summary(lm(ALFA ~ CAM+PINCER+GRUPO, data = dados))
 
 # ## casos positivos
 # summary(lm(ALFA ~ CAM, data = dados[CAM != "NORMAL"] ))
@@ -94,12 +94,12 @@ impacto.subsetcols <- dados[, .(TORCAO, TORCAO, LADO, IMPACTO, IMPACTO, HHS)]
 
 # Tipo de impacto
 multi.imp.tor <- multinom(IMPACTO ~ TORCAO, dados)
-multi.imp.tor.dor <- multinom(IMPACTO ~ TORCAO + LADO, dados)
+multi.imp.tor.dor <- multinom(IMPACTO ~ TORCAO + GRUPO, dados)
 
 # HHS
 lm.hhs.tor <- lm(HHS ~ TORCAO, dados)
 
-lm.hhs.tor.dor <- lm(HHS ~ TORCAO + LADO, dados)
+lm.hhs.tor.dor <- lm(HHS ~ TORCAO + GRUPO, dados)
 
 ## Desfecho DOR
 
