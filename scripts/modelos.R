@@ -8,6 +8,15 @@ summary(lm(TORCAO ~ ALFA + GRUPO, data = dados))
 summary(lm(TORCAO ~ ALFA + IMPACTO, data = dados))
 summary(lm(TORCAO ~ ALFA + GRUPO + IMPACTO, data = dados))
 
+summary(lm(TORCAO ~ CAM, data = dados))
+summary(lm(TORCAO ~ CAM + GRUPO, data = dados))
+
+summary(lm(TORCAO ~ PINCER, data = dados))
+summary(lm(TORCAO ~ PINCER + GRUPO, data = dados))
+
+summary(lm(TORCAO ~ MISTO, data = dados))
+summary(lm(TORCAO ~ MISTO + GRUPO, data = dados))
+
 # IMC
 summary(lm(IMC ~ IMPACTO, data = dados))
 summary(lm(IMC ~ CAM, data = dados))
