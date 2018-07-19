@@ -2,6 +2,8 @@ source('scripts/input.R', encoding = 'UTF-8')
 
 library(ggplot2)
 
+set.seed(1)
+
 # alftor <- ggplot(dados, aes(ALFA, TORCAO, col = GRUPO)) +
 #   geom_point() + theme(legend.position = "bottom") +
 #   # geom_smooth(method = "lm", se = F)
