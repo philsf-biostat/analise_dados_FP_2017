@@ -160,11 +160,14 @@ Os impactos ocorrem de forma diferenciada por sexo?
 
 ![**Figura xx** Frequências dos tipos de impacto](analise_dados_FP_2017_files/figure-html/freq-sex-grupo-1.png)
 
-CAM (p = 0.019)
 
-PINCER (p = 0.00174)
 
-MISTO (p = 0.738)
+
+CAM é 3.8 vezes vezes mais frequente em homens que em mulheres (p = 0.019).
+
+PINCER é 93% menos frequente em homens que em mulheres (p = 0.00174).
+
+MISTO não tem diferença significativa (p = 0.738).
 
 
 ## Por grupo
@@ -172,11 +175,13 @@ MISTO (p = 0.738)
 O tipo de impacto está associado com a dor?
 <!-- (p = 0.0852) -->
 
-CAM (p = 0.025)
 
-PINCER (p = 0.767)
 
-MISTO (p = 0.0554)
+CAM é 3.4 vezes mais frequente nos quadris dolorosos (p = 0.025).
+
+PINCER não é significativo (p = 0.767).
+
+MISTO não é significativo (p = 0.0554).
 
 # Conclusões
 
