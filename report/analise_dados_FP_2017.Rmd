@@ -168,11 +168,18 @@ Os impactos ocorrem de forma diferenciada por sexo?
 bar.imp.sex.grupo
 ```
 
-CAM (p = `r pv(ft.sexo.cam)`)
+```{r include=FALSE}
+fisher.OR(ft.sexo.cam, 1)
+fisher.OR(ft.sexo.pincer, 2)
+fisher.OR(ft.sexo.misto,1 )
+```
 
-PINCER (p = `r pv(ft.sexo.pincer)`)
 
-MISTO (p = `r pv(ft.sexo.misto)`)
+CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes vezes mais frequente em homens que em mulheres (p = `r pv(ft.sexo.cam)`).
+
+PINCER é 93% menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pincer)`).
+
+MISTO não tem diferença significativa (p = `r pv(ft.sexo.misto)`).
 
 
 ## Por grupo
@@ -180,11 +187,17 @@ MISTO (p = `r pv(ft.sexo.misto)`)
 O tipo de impacto está associado com a dor?
 <!-- (p = `r pv(ft.grupo.imp)`) -->
 
-CAM (p = `r pv(ft.grupo.cam)`)
+```{r include=FALSE}
+fisher.OR(ft.grupo.cam, 1)
+fisher.OR(ft.grupo.pincer, 1)
+fisher.OR(ft.grupo.misto, 1)
+```
 
-PINCER (p = `r pv(ft.grupo.pincer)`)
+CAM é `r fisher.OR(ft.grupo.cam, 1)` vezes mais frequente nos quadris dolorosos (p = `r pv(ft.grupo.cam)`).
 
-MISTO (p = `r pv(ft.grupo.misto)`)
+PINCER não é significativo (p = `r pv(ft.grupo.pincer)`).
+
+MISTO não é significativo (p = `r pv(ft.grupo.misto)`).
 
 # Conclusões
 
