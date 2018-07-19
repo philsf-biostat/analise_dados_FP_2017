@@ -144,15 +144,7 @@ p = teste t de Student.
 Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
-## Frequências dos impactos
-
-
-|  &nbsp;   | FALSE | TRUE |
-|:---------:|:-----:|:----:|
-| **FALSE** |   2   |  14  |
-| **TRUE**  |  20   |  16  |
-
-Table: Impactos CAM x PINCER, p-value = 0.2631
+p = 0.019
 
 
 
@@ -164,68 +156,27 @@ Por isso, não são contabilizados como casos de impacto MISTO.
 ## Por sexo
 
 Os impactos ocorrem de forma diferenciada por sexo?
+(p = 0.00266)
 
-### Geral
+![**Figura xx** Frequências dos tipos de impacto](analise_dados_FP_2017_files/figure-html/freq-sex-grupo-1.png)
 
+CAM (p = 0.019)
 
+PINCER (p = 0.00174)
 
-Table: CAM p-value = 0.04682
-
-
-
-Table: PINCER p-value = 0.3574
-
+MISTO (p = 0.738)
 
 
-Table: MISTO p-value = 1.000
+## Por grupo
 
-### Controlado pelo lado do impacto
+O tipo de impacto está associado com a dor?
+<!-- (p = 0.0852) -->
 
+CAM (p = 0.025)
 
+PINCER (p = 0.767)
 
-Table: CAM p-value = 0.7014
-
-
-
-Table: PINCER p-value = 0.06238
-
-
-
-Table: MISTO p-value = 1.000
-
-## Por lado de dor
-
-O impacto é um bom preditor para em que lado o participante sente dor?
-
-### Geral
-
-
-
-Table: CAM p-value =  1.000
-
-
-
-Table: PINCER p-value = 0.8616
-
-
-
-Table: MISTO p-value = 0.5662
-
-### Controlado pelo lado do impacto
-
-
-
-Table: CAM p-value = 0.07675
-
-
-
-Table: PINCER p-value = 0.5243
-
-
-
-Table: MISTO p-value = 0.1333
-
-<!-- # Exceções e Desvios do teste -->
+MISTO (p = 0.0554)
 
 # Conclusões
 
