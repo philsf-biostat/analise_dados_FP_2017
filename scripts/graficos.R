@@ -56,7 +56,7 @@ alftor.imp.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = 
 
 bar.imp.sex.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO, fill = GRUPO)) +
   ggtitle("Impactos por gênero") +
-  geom_bar(aes(y = (..count..)/sum(..count..))) + facet_grid(~ SEXO) +
-  scale_y_continuous(labels = scales::percent, limits = c(0, .5)) +
+  geom_bar() + facet_grid(~ SEXO) +
+  scale_y_continuous(limits = c(0, 20)) +
   xlab("") + ylab("") +
   theme(legend.position = "bottom")
