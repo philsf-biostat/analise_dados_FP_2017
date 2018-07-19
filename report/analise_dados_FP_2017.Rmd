@@ -110,6 +110,7 @@ Todas as análises foram realizadas utilizando-se o software `R` versão `r getR
 
 ```{r include=FALSE}
 source('scripts/descritiva.R', encoding = 'UTF-8')
+source('scripts/graficos.R', encoding = 'UTF-8')
 ```
 
 ## Descrição dos participantes do estudo
@@ -161,6 +162,8 @@ Por isso, não são contabilizados como casos de impacto MISTO.
 
 Os impactos ocorrem de forma diferenciada por sexo?
 
+```{r freq-sex-grupo, fig.cap="**Figura xx** Frequências dos tipos de impacto"}
+bar.imp.sex.grupo
 ```
 
 
