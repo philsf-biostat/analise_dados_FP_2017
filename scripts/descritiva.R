@@ -48,5 +48,5 @@ pv <- function(x, digits = 3) {
 fisher.OR <- function(x, digits = 2) {
   # x é um objeto htest (fisher.test)
   # formata a diferença entre os grupos, e não a relação ( - 1 )
-  format.float(x$estimate - 1)
+  format.float(x$estimate - 1, digits = digits)
 }
