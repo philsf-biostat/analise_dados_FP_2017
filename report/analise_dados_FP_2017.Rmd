@@ -148,6 +148,7 @@ p = teste t de Student.
 Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
+p = `r pv(fisher.test(with(dados, table(CAM, SEXO))))`
 
 ```{r}
 # pander(with(impacto.lat, table(CAM, PINCER)))
@@ -161,19 +162,29 @@ Por isso, não são contabilizados como casos de impacto MISTO.
 ## Por sexo
 
 Os impactos ocorrem de forma diferenciada por sexo?
+(p = `r pv(ft.sexo.imp)`)
 
 ```{r freq-sex-grupo, fig.cap="**Figura xx** Frequências dos tipos de impacto"}
 bar.imp.sex.grupo
 ```
 
+CAM (p = `r pv(ft.sexo.cam)`)
+
+PINCER (p = `r pv(ft.sexo.pincer)`)
+
+MISTO (p = `r pv(ft.sexo.misto)`)
 
 
+## Por grupo
 
+O tipo de impacto está associado com a dor?
+<!-- (p = `r pv(ft.grupo.imp)`) -->
 
+CAM (p = `r pv(ft.grupo.cam)`)
 
+PINCER (p = `r pv(ft.grupo.pincer)`)
 
-
-
+MISTO (p = `r pv(ft.grupo.misto)`)
 
 # Conclusões
 
