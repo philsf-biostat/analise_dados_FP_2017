@@ -37,3 +37,9 @@ fisher.test(with(dados, table(GRUPO, CAM)))
 fisher.test(with(dados, table(GRUPO, PINCER)))
 fisher.test(with(dados, table(GRUPO, MISTO)))
 
+# formatar p-valores ------------------------------------------------------
+
+pv <- function(x, digits = 3) {
+  # x é um objeto htest
+  format.pval(x$p.value, scientific = FALSE, eps = 10^-digits, digits = digits)
+}
