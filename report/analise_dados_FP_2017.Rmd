@@ -159,7 +159,9 @@ Table: Impactos CAM x PINCER, levando em conta lateralidade p-value = 0.1918
 Há 2 participantes que tem simultaneamente CAM e PINCER, mas em lados diferentes (1 participante tem CAM D e PINCER E, e o outro tem CAM E e PINCER D).
 Por isso, não são contabilizados como casos de impacto MISTO.
 
-## Por sexo
+## Associação da frequência dos impactos por grupo de estudo e por sexo
+
+### Frequências dos impactos por sexo
 
 Os impactos ocorrem de forma diferenciada por sexo?
 (p = `r pv(ft.sexo.imp)`)
@@ -181,8 +183,7 @@ PINCER é 93% menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pince
 
 MISTO não tem diferença significativa (p = `r pv(ft.sexo.misto)`).
 
-
-## Por grupo
+### Frequências dos impactos por grupo
 
 O tipo de impacto está associado com a dor?
 <!-- (p = `r pv(ft.grupo.imp)`) -->
