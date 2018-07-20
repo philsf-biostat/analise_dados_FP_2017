@@ -97,13 +97,13 @@ library(nnet)
 ## Desfecho Impacto
 
 # Tipo de impacto
-multi.imp.tor <- multinom(IMPACTO ~ TORCAO.alt, dados)
-multi.imp.tor.dor <- multinom(IMPACTO ~ TORCAO + GRUPO, dados)
+# multi.imp.tor <- multinom(IMPACTO ~ TORCAO.alt, dados)
+# multi.imp.tor.dor <- multinom(IMPACTO ~ TORCAO + GRUPO, dados)
 
 # Cada impacto
-summary(glm(CAM ~ TORCAO.alt, binomial, dados))
-summary(glm(PINCER ~ TORCAO.alt, binomial, dados))
-summary(glm(MISTO ~ TORCAO.alt, binomial, dados))
+summary(glm(TORCAO.alt ~ CAM, binomial, dados))
+summary(glm(TORCAO.alt ~ PINCER, binomial, dados))
+summary(glm(TORCAO.alt ~ MISTO, binomial, dados))
 
 summary(glm(CAM ~ TORCAO.cat, binomial, dados))
 summary(glm(PINCER ~ TORCAO.cat, binomial, dados))
