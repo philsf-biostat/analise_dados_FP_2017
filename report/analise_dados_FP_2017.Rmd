@@ -200,6 +200,25 @@ PINCER não é significativo (p = `r pv(ft.grupo.pincer)`).
 
 MISTO não é significativo (p = `r pv(ft.grupo.misto)`).
 
+## Torção femoro-acetabular
+
+### Associação entre os tipos de impacto e a torção femoro-acetabular
+
+### Correlação entre a torção femoro-acetabular e o ângulo alfa
+
+```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"}
+alftor.grupo
+```
+
+<!-- ```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"} -->
+<!-- alftor.grupo.imp -->
+<!-- ``` -->
+
+
+```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"}
+alftor.imp.grupo
+```
+
 # Conclusões
 
 
