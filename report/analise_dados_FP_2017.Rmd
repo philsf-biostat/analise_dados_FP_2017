@@ -238,6 +238,8 @@ Quando controlamos pelo tipo de impacto, não é mais possível identificar asso
 Esta aparente correlação negativa no grupo controle parece ter sido afetada pelo baixo número de pacientes com impacto misto - há apenas 2 pacientes nesta categoria.
 Isto impede uma estimativa representativa para este cenário em particular, e perturba a estimativa o modelo global.
 
+<!-- Obs: na verdade, retirar todos os pacientes MISTO não impacta nos resultados e conclusões. -->
+
 ```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"}
 alftor.imp.grupo
 ```
