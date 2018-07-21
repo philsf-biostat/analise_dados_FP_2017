@@ -35,9 +35,11 @@ alftor.grupo.imp.full <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO)) 
   facet_grid(IMPACTO ~ GRUPO, margins = "IMPACTO")
 
 alftor.imp.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = IMPACTO)) +
+  # theme_bw() +
   theme(legend.position = "bottom") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
+  # scale_color_brewer(palette = "Paired") +
   facet_grid(~ GRUPO)
 
 # ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO)) +
