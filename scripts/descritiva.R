@@ -37,6 +37,10 @@ ft.grupo.cam <- fisher.test(with(dados, table(GRUPO, CAM)))
 ft.grupo.pincer <- fisher.test(with(dados, table(GRUPO, PINCER)))
 ft.grupo.misto <- fisher.test(with(dados, table(GRUPO, MISTO)))
 
+tt.tor.cam <- with(dados, t.test(TORCAO ~ CAM))
+tt.tor.pincer <- with(dados, t.test(TORCAO ~ PINCER))
+tt.tor.misto <- with(dados, t.test(TORCAO ~ MISTO))
+
 # formatar p-valores ------------------------------------------------------
 
 pv <- function(x, digits = 3) {
