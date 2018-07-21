@@ -167,7 +167,7 @@ Por isso, não são contabilizados como casos de impacto MISTO.
 Os impactos ocorrem de forma diferenciada por sexo?
 (p = `r pv(ft.sexo.imp)`)
 
-```{r freq-sex-grupo, fig.cap="**Figura xx** Frequências dos tipos de impacto"}
+```{r freq-sex-grupo, fig.cap="**Figura 32** Frequências dos tipos de impacto"}
 bar.imp.sex.grupo
 ```
 
@@ -221,12 +221,12 @@ A torção média dos quadris que possuem impacto do tipo MISTO não é signific
 O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = `r format.float(corr.tor.alf$estimate)`, p = `r pv(corr.tor.alf)`).
 
 Sob a hioótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustou-se modelos de regressão linear para cada grupo.
-A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura xx).
+A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura 33).
 Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle (p = `r format.pval(summary(lm.tor.alfa.con)$coefficients[2, 4], digits = 2)`).
 Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente `r format.float(-coef(lm.tor.alfa.con)[2])` graus no ângulo de torção.
 Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos (p = `r format.pval(summary(lm.tor.alfa.dor)$coefficients[2, 4], digits = 2)`).
 
-```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"}
+```{r echo=FALSE, warning=FALSE, fig.cap="**Figura 33** Correlação entre Torção e Alfa, por grupo"}
 alftor.grupo
 ```
 
@@ -234,13 +234,13 @@ alftor.grupo
 <!-- alftor.grupo.imp -->
 <!-- ``` -->
 
-Quando controlamos pelo tipo de impacto, não é mais possível identificar associação entre os ângulos (figura xx).
+Quando controlamos pelo tipo de impacto, não é mais possível identificar associação entre os ângulos (figura 34).
 Esta aparente correlação negativa no grupo controle parece ter sido afetada pelo baixo número de pacientes com impacto misto - há apenas 2 pacientes nesta categoria.
 Isto impede uma estimativa representativa para este cenário em particular, e perturba a estimativa o modelo global.
 
 <!-- Obs: na verdade, retirar todos os pacientes MISTO não impacta nos resultados e conclusões. -->
 
-```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"}
+```{r echo=FALSE, warning=FALSE, fig.cap="**Figura 34** Correlação entre Torção e Alfa, por grupo"}
 alftor.imp.grupo
 ```
 
