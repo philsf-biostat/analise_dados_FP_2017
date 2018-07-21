@@ -22,18 +22,35 @@ write.csv2(sum.grupo, "results/grupo.csv")
 
 # Homens tem tipos de impacto != das mulheres?
 
-fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(SEXO, IMPACTO)))
+ft.sexo.imp <- fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(SEXO, IMPACTO)))
 # R: sim
 
-fisher.test(with(dados, table(SEXO, CAM)))
-fisher.test(with(dados, table(SEXO, PINCER)))
-fisher.test(with(dados, table(SEXO, MISTO)))
+ft.sexo.cam <- fisher.test(with(dados, table(SEXO, CAM)))
+ft.sexo.pincer <- fisher.test(with(dados, table(SEXO, PINCER)))
+ft.sexo.misto <- fisher.test(with(dados, table(SEXO, MISTO)))
 
 # Sentir dor é um bom preditor para o tipo do impacto?
-fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(GRUPO, IMPACTO)))
+ft.grupo.imp <- fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(GRUPO, IMPACTO)))
 # R: não
 
-fisher.test(with(dados, table(GRUPO, CAM)))
-fisher.test(with(dados, table(GRUPO, PINCER)))
-fisher.test(with(dados, table(GRUPO, MISTO)))
+ft.grupo.cam <- fisher.test(with(dados, table(GRUPO, CAM)))
+ft.grupo.pincer <- fisher.test(with(dados, table(GRUPO, PINCER)))
+ft.grupo.misto <- fisher.test(with(dados, table(GRUPO, MISTO)))
 
+tt.tor.cam <- with(dados, t.test(TORCAO ~ CAM))
+tt.tor.pincer <- with(dados, t.test(TORCAO ~ PINCER))
+tt.tor.misto <- with(dados, t.test(TORCAO ~ MISTO))
+
+# formatar p-valores ------------------------------------------------------
+
+pv <- function(x, digits = 3) {
+  # x é um objeto htest
+  # formata o p-valor
+  format.pval(x$p.value, scientific = FALSE, eps = 10^-digits, digits = digits)
+}
+
+fisher.OR <- function(x, digits = 2) {
+  # x é um objeto htest (fisher.test)
+  # formata a diferença entre os grupos, e não a relação ( - 1 )
+  format.float(x$estimate - 1, digits = digits)
+}

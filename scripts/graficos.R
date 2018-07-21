@@ -2,6 +2,8 @@ source('scripts/input.R', encoding = 'UTF-8')
 
 library(ggplot2)
 
+set.seed(1)
+
 # alftor <- ggplot(dados, aes(ALFA, TORCAO, col = GRUPO)) +
 #   geom_point() + theme(legend.position = "bottom") +
 #   # geom_smooth(method = "lm", se = F)
@@ -33,9 +35,11 @@ alftor.grupo.imp.full <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO)) 
   facet_grid(IMPACTO ~ GRUPO, margins = "IMPACTO")
 
 alftor.imp.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = IMPACTO)) +
+  # theme_bw() +
   theme(legend.position = "bottom") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
+  # scale_color_brewer(palette = "Paired") +
   facet_grid(~ GRUPO)
 
 # ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO)) +
@@ -56,7 +60,7 @@ alftor.imp.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = 
 
 bar.imp.sex.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO, fill = GRUPO)) +
   ggtitle("Impactos por gênero") +
-  geom_bar(aes(y = (..count..)/sum(..count..))) + facet_grid(~ SEXO) +
-  scale_y_continuous(labels = scales::percent, limits = c(0, .5)) +
+  geom_bar() + facet_grid(~ SEXO) +
+  scale_y_continuous(limits = c(0, 20)) +
   xlab("") + ylab("") +
   theme(legend.position = "bottom")

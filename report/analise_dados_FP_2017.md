@@ -144,15 +144,7 @@ p = teste t de Student.
 Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
-## Frequências dos impactos
-
-
-|  &nbsp;   | FALSE | TRUE |
-|:---------:|:-----:|:----:|
-| **FALSE** |   2   |  14  |
-| **TRUE**  |  20   |  16  |
-
-Table: Impactos CAM x PINCER, p-value = 0.2631
+p = 0.019
 
 
 
@@ -161,71 +153,71 @@ Table: Impactos CAM x PINCER, levando em conta lateralidade p-value = 0.1918
 Há 2 participantes que tem simultaneamente CAM e PINCER, mas em lados diferentes (1 participante tem CAM D e PINCER E, e o outro tem CAM E e PINCER D).
 Por isso, não são contabilizados como casos de impacto MISTO.
 
-## Por sexo
+## Associação da frequência dos impactos por grupo de estudo e por sexo
+
+### Frequências dos impactos por sexo
 
 Os impactos ocorrem de forma diferenciada por sexo?
+(p = 0.00266)
 
-### Geral
-
-
-
-Table: CAM p-value = 0.04682
+![**Figura 32** Frequências dos tipos de impacto](analise_dados_FP_2017_files/figure-html/freq-sex-grupo-1.png)
 
 
 
-Table: PINCER p-value = 0.3574
+CAM é 3.8 vezes vezes mais frequente em homens que em mulheres (p = 0.019).
+
+PINCER é 93% menos frequente em homens que em mulheres (p = 0.00174).
+
+MISTO não tem diferença significativa (p = 0.738).
+
+### Frequências dos impactos por grupo
+
+O tipo de impacto está associado com a dor?
+<!-- (p = 0.0852) -->
 
 
 
-Table: MISTO p-value = 1.000
+CAM é 3.4 vezes mais frequente nos quadris dolorosos (p = 0.025).
 
-### Controlado pelo lado do impacto
+PINCER não é significativo (p = 0.767).
 
+MISTO não é significativo (p = 0.0554).
 
+## Torção femoro-acetabular
 
-Table: CAM p-value = 0.7014
-
-
-
-Table: PINCER p-value = 0.06238
+### Associação entre os tipos de impacto e a torção femoro-acetabular
 
 
 
-Table: MISTO p-value = 1.000
+A torção média dos quadris que possuem impacto do tipo CAM não é significativamente dos controles (p= 0.234).
 
-## Por lado de dor
+A torção média dos quadris que possuem impacto do tipo PINCER observada foi de 16.63, maior que a média dos controles de 11.77 (p= 0.0455).
 
-O impacto é um bom preditor para em que lado o participante sente dor?
+A torção média dos quadris que possuem impacto do tipo MISTO não é significativamente dos controles (p= 0.314).
 
-### Geral
+### Correlação entre a torção femoro-acetabular e o ângulo alfa
 
+O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = -0.31, p = 0.0289).
 
+Sob a hioótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustou-se modelos de regressão linear para cada grupo.
+A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura 33).
+Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle (p = 0.0093).
+Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente 0.40 graus no ângulo de torção.
+Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos (p = 0.23).
 
-Table: CAM p-value =  1.000
+![**Figura 33** Correlação entre Torção e Alfa, por grupo](analise_dados_FP_2017_files/figure-html/unnamed-chunk-9-1.png)
 
+<!-- ```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"} -->
+<!-- alftor.grupo.imp -->
+<!-- ``` -->
 
+Quando controlamos pelo tipo de impacto, não é mais possível identificar associação entre os ângulos (figura 34).
+Esta aparente correlação negativa no grupo controle parece ter sido afetada pelo baixo número de pacientes com impacto misto - há apenas 2 pacientes nesta categoria.
+Isto impede uma estimativa representativa para este cenário em particular, e perturba a estimativa o modelo global.
 
-Table: PINCER p-value = 0.8616
+<!-- Obs: na verdade, retirar todos os pacientes MISTO não impacta nos resultados e conclusões. -->
 
-
-
-Table: MISTO p-value = 0.5662
-
-### Controlado pelo lado do impacto
-
-
-
-Table: CAM p-value = 0.07675
-
-
-
-Table: PINCER p-value = 0.5243
-
-
-
-Table: MISTO p-value = 0.1333
-
-<!-- # Exceções e Desvios do teste -->
+![**Figura 34** Correlação entre Torção e Alfa, por grupo](analise_dados_FP_2017_files/figure-html/unnamed-chunk-10-1.png)
 
 # Conclusões
 
