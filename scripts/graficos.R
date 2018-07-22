@@ -16,11 +16,13 @@ tor.imp <- ggplot(dados.impacto, aes(IMPACTO, TORCAO, col = IMPACTO)) +
   geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
   theme(legend.position = "none")
 
-alftor.grupo <- ggplot(dados, aes(ALFA, TORCAO)) +
+alftor.global <- ggplot(dados, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
   geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  facet_grid(~ GRUPO)
+  # geom_point(aes(col = IMPACTO)) + # protótipo, col por impacto
+  geom_smooth(method = "lm", se = FALSE)
+
+alftor.grupo <- alftor.global + facet_grid(~ GRUPO)
 
 alftor.grupo.imp <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = GRUPO)) +
   theme(legend.position = "bottom") +

@@ -5,6 +5,11 @@ source('scripts/input.R', encoding = 'UTF-8')
 corr.tor.alf <- with(dados, cor.test(TORCAO , ALFA))
 corr.tor.alf
 
+corr.tor.alf.con <- with(dados[GRUPO == "Controle"], cor.test(TORCAO , ALFA))
+corr.tor.alf.dor <- with(dados[GRUPO == "Doloroso"], cor.test(TORCAO , ALFA))
+corr.tor.alf.con
+corr.tor.alf.dor
+
 # Desfecho numérico -------------------------------------------------------
 
 # Torção
