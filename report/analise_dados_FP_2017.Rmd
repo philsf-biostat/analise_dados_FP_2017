@@ -164,7 +164,10 @@ fisher.OR(ft.sexo.pincer, 2)
 fisher.OR(ft.sexo.misto,1 )
 ```
 
-CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes vezes mais frequente em homens que em mulheres (p = `r pv(ft.sexo.cam)`).
+A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
+
+Nossos resultados indicam que o impacto do tipo CAM realmente acomete mais homens.
+Em nossa amostra, CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes vezes mais frequente em homens que em mulheres (p = `r pv(ft.sexo.cam)`).
 
 PINCER é 93% menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pincer)`).
 
