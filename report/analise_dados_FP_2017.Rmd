@@ -149,17 +149,6 @@ p = teste t de Student.
 Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
-p = `r pv(fisher.test(with(dados, table(CAM, SEXO))))`
-
-```{r}
-# pander(with(impacto.lat, table(CAM, PINCER)))
-```
-
-Table: Impactos CAM x PINCER, levando em conta lateralidade p-value = 0.1918
-
-Há 2 participantes que tem simultaneamente CAM e PINCER, mas em lados diferentes (1 participante tem CAM D e PINCER E, e o outro tem CAM E e PINCER D).
-Por isso, não são contabilizados como casos de impacto MISTO.
-
 ## Associação da frequência dos impactos por grupo de estudo e por sexo
 
 ### Frequências dos impactos por sexo
