@@ -149,11 +149,11 @@ p = teste t de Student.
 Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
-## Associação da frequência dos impactos por grupo de estudo e por sexo
+## Quadris com impacto fêmoro-acetabular
 
-### Frequências dos impactos por sexo
+### Associação da frequência dos impactos por gênero
 
-Os impactos ocorrem de forma diferenciada por sexo?
+Os impactos ocorrem de forma diferenciada por gênero?
 (p = `r pv(ft.sexo.imp)`)
 
 ```{r freq-sex-grupo, fig.cap="**Figura 32** Frequências dos tipos de impacto"}
@@ -172,7 +172,7 @@ PINCER é 93% menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pince
 
 MISTO não tem diferença significativa (p = `r pv(ft.sexo.misto)`).
 
-### Frequências dos impactos por grupo
+### Associação da frequência dos impactos por grupo de estudo
 
 O tipo de impacto está associado com a dor?
 <!-- (p = `r pv(ft.grupo.imp)`) -->
@@ -189,9 +189,9 @@ PINCER não é significativo (p = `r pv(ft.grupo.pincer)`).
 
 MISTO não é significativo (p = `r pv(ft.grupo.misto)`).
 
-## Torção femoro-acetabular
+## Torção femoral
 
-### Associação entre os tipos de impacto e a torção femoro-acetabular
+### Associação entre a torção femoral e os tipos de impacto fêmoro-acetabular
 
 ```{r include=FALSE}
 tt.tor.cam
@@ -205,7 +205,7 @@ A torção média dos quadris que possuem impacto do tipo PINCER observada foi d
 
 A torção média dos quadris que possuem impacto do tipo MISTO não é significativamente dos controles (p= `r pv(tt.tor.misto)`).
 
-### Correlação entre a torção femoro-acetabular e o ângulo alfa
+### Correlação entre a torção femoral e o ângulo alfa
 
 O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = `r format.float(corr.tor.alf$estimate)`, p = `r pv(corr.tor.alf)`).
 
@@ -232,6 +232,8 @@ Isto impede uma estimativa representativa para este cenário em particular, e pe
 ```{r echo=FALSE, warning=FALSE, fig.cap="**Figura 34** Correlação entre Torção e Alfa, por grupo"}
 alftor.imp.grupo
 ```
+
+### Quadris com ângulo de torção femoral alterada
 
 # Conclusões
 
