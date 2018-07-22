@@ -176,7 +176,7 @@ Em nossa amostra, CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes vezes mais frequent
 Nossa amostra também indica que impactos do tipo PINCER é 93% menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pincer)`).
 Confirma-se a maior prevalência de PINCER em mulheres.
 
-MISTO não tem diferença significativa (p = `r pv(ft.sexo.misto)`).
+Não há evidências em nossa amostra de o impacto do tipo MISTO acometa mais homens que mulheres (p = `r pv(ft.sexo.misto)`).
 
 ### Associação da frequência dos impactos por grupo de estudo
 
