@@ -168,6 +168,8 @@ fisher.OR(ft.sexo.pincer, 2)
 fisher.OR(ft.sexo.misto,1 )
 ```
 
+Tomando o gênero feminino como referência apresentamos os resultados relativos para os homens.
+
 Nossos resultados indicam que o impacto do tipo CAM realmente acomete mais homens.
 Em nossa amostra, CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes vezes mais frequente em homens que em mulheres (p = `r pv(ft.sexo.cam)`).
 
