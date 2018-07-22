@@ -210,9 +210,7 @@ A figura 33 mostra a reta de regressão que associa as mensurações destes âng
 
 [FIXME: observar que esta correlação é global]
 
-```{r echo=FALSE, warning=FALSE, fig.cap="**Figura 33** Correlação entre Torção e Alfa"}
-alftor.global
-```
+![**Figura 33** Correlação entre Torção e Alfa](../figures/painel_AlfTor_global.png)
 
 [FIXME: descrever o resultado da regressão linear torção ~ alfa global]
 
