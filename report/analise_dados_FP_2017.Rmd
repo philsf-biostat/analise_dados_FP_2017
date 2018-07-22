@@ -153,8 +153,12 @@ As outras mensurações parecem ser homogeneamente distribuídas em ambos os gru
 
 ### Associação da frequência dos impactos por gênero
 
+[FIXME: retirar]
 Os impactos ocorrem de forma diferenciada por gênero?
 (p = `r pv(ft.sexo.imp)`)
+
+A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
+As prevalências observadas neste estudo podem ser vistas na figura 32.
 
 ![**Figura 32** Frequências dos tipos de impacto](../figures/painel_sex_grupo.png)
 
@@ -163,8 +167,6 @@ fisher.OR(ft.sexo.cam, 1)
 fisher.OR(ft.sexo.pincer, 2)
 fisher.OR(ft.sexo.misto,1 )
 ```
-
-A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
 
 Nossos resultados indicam que o impacto do tipo CAM realmente acomete mais homens.
 Em nossa amostra, CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes vezes mais frequente em homens que em mulheres (p = `r pv(ft.sexo.cam)`).
