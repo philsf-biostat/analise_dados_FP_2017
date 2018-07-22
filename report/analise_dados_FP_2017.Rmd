@@ -80,7 +80,7 @@ Um participante não teve seu ângulo alfa mensurado no lado direito, ele foi di
 
 **PINCER**
 
-Um segundo participante não teve seu ângulo centro-borda cetabular mensurado no lado direito, e seu diagnóstico clínico foi de que não possuía PINCER.
+Um segundo participante não teve seu ângulo centro-borda acetabular mensurado no lado direito, e seu diagnóstico clínico foi de que não possuía PINCER.
 Um terceiro participante não teve seus índices de extrusão mensurados em ambos os lados.
 Seu diagnóstico clínico foi de que possuía PINCER apenas no quadril esquerdo.
 
@@ -94,7 +94,7 @@ As diferenças médias entre dois grupos de medidas foram avaliadas com o teste 
 Além dos testes de significância, diversos modelos estatísticos foram criados para avaliar hipóteses sobre a relação entre os desfechos de interesse e os ângulos mensurados, como torção.
 
 <!-- Para as hipóteses em que o desfecho era uma variável categórica binária, foi utilizado o modelo de regressão logística. -->
-Quando o desfecho era uma variável categória com 3 ou mais categorias, como por exemplo o lado doloroso (direito, esquerdo ou bilateral) usou-se o modelo de regressão multinomial.
+Quando o desfecho era uma variável categórica com 3 ou mais categorias, como por exemplo o lado doloroso (direito, esquerdo ou bilateral) usou-se o modelo de regressão multinomial.
 
 Esta estratégia de modelagem permite estimar a Razão de Chance de uma determinada combinação de fatores e medidas afetar a probabilidade de trocar de uma categoria para outra.
 Por exemplo, o tipo de impacto que o participante apresenta pode aumentar a chance do participante sentir dor naquele lado, mas isso pode ocorrer de forma diferenciada para cada gênero, ou ser influenciada pelo ângulo de torção, IMC, etc.
@@ -209,7 +209,7 @@ A torção média dos quadris que possuem impacto do tipo MISTO não é signific
 
 O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = `r format.float(corr.tor.alf$estimate)`, p = `r pv(corr.tor.alf)`).
 
-Sob a hioótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustou-se modelos de regressão linear para cada grupo.
+Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustou-se modelos de regressão linear para cada grupo.
 A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura 33).
 Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle (p = `r format.pval(summary(lm.tor.alfa.con)$coefficients[2, 4], digits = 2)`).
 Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente `r format.float(-coef(lm.tor.alfa.con)[2])` graus no ângulo de torção.
