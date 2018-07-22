@@ -19,6 +19,7 @@ tor.imp <- ggplot(dados.impacto, aes(IMPACTO, TORCAO, col = IMPACTO)) +
 alftor.grupo <- ggplot(dados, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
   geom_point() +
+  # geom_point(aes(col = IMPACTO)) + # protótipo, col por impacto
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(~ GRUPO)
 
