@@ -156,9 +156,7 @@ As outras mensurações parecem ser homogeneamente distribuídas em ambos os gru
 Os impactos ocorrem de forma diferenciada por gênero?
 (p = `r pv(ft.sexo.imp)`)
 
-```{r freq-sex-grupo, fig.cap="**Figura 32** Frequências dos tipos de impacto"}
-bar.imp.sex.grupo
-```
+![**Figura 32** Frequências dos tipos de impacto](../figures/painel_sex_grupo.png)
 
 ```{r include=FALSE}
 fisher.OR(ft.sexo.cam, 1)
