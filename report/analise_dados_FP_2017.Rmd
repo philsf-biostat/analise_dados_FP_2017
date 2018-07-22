@@ -224,9 +224,7 @@ Controlando pelo grupo de estudo, a associação permanece significativamente ne
 Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente `r format.float(-coef(lm.tor.alfa.con)[2])` graus no ângulo de torção.
 Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos (p = `r format.pval(summary(lm.tor.alfa.dor)$coefficients[2, 4], digits = 2)`).
 
-```{r echo=FALSE, warning=FALSE, fig.cap="**Figura 34** Correlação entre Torção e Alfa, por grupo"}
-alftor.grupo
-```
+![**Figura 34** Correlação entre Torção e Alfa, por grupo](../figures/painel_AlfTor_grupo.png)
 
 <!-- ```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"} -->
 <!-- alftor.grupo.imp -->
