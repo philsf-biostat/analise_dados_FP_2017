@@ -149,9 +149,24 @@ p = teste t de Student.
 Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
-## Quadris com impacto fêmoro-acetabular
+## Ocorrência dos tipos de impacto fêmoro-acetabular
 
-### Associação da frequência dos impactos por gênero
+A figura xx mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
+
+![**Figura xx** Frequências dos tipos de impacto](../figures/impacto_freq.png)
+
+```{r include=FALSE}
+ppt.imp <- pairwise.prop.test(c(36, 16, 30), c(52, 52, 52), p.adjust.method = "bonf")
+```
+
+Os impactos do tipo CAM e PINCER parecem ocorrer com frequências semelhantes (p = `r pv(ppt.imp)[2]`).
+
+Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum (FIXME: REF).
+Isto não foi observado neste estudo.
+Quadris com impacto MISTO por outro lado são significativamente menores que os impactos CAM (p = `r pv(ppt.imp)[1]`) e PINCER (p = `r pv(ppt.imp)[4]`).
+Os quadris com impacto MISTO são os menos frequentes na amostra aqui estudada.
+
+### Associação da ocorrência do impacto fêmoro-acetabular por gênero
 
 [FIXME: retirar]
 Os impactos ocorrem de forma diferenciada por gênero?
@@ -178,7 +193,7 @@ Confirma-se a maior prevalência de PINCER em mulheres.
 
 Não há evidências em nossa amostra de o impacto do tipo MISTO acometa mais homens que mulheres (p = `r pv(ft.sexo.misto)`).
 
-### Associação da frequência dos impactos por grupo de estudo
+### Associação da ocorrência do impacto fêmoro-acetabular por grupo de estudo
 
 O tipo de impacto está associado com a dor?
 <!-- (p = `r pv(ft.grupo.imp)`) -->
