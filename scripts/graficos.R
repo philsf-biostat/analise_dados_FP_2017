@@ -16,6 +16,13 @@ tor.imp <- ggplot(dados.impacto, aes(IMPACTO, TORCAO, col = IMPACTO)) +
   geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
   theme(legend.position = "none")
 
+alftor.var <- ggplot(tidyr::gather(dados.impacto[,.(TORCAO, ALFA)], Angulo, Valor), aes(Angulo, Valor)) +
+  # geom_hline(yintercept = c(5, 25), lty = 4, col = "red") +
+  geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
+  ggtitle("Variabilidade dos ângulos alfa e torção femoral") +
+  xlab("") + ylab("") +
+  theme(legend.position = "none")
+
 alftor.global <- ggplot(dados, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
   geom_point() +
