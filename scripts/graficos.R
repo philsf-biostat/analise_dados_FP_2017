@@ -31,19 +31,19 @@ alftor.global <- ggplot(dados, aes(ALFA, TORCAO)) +
 
 alftor.grupo <- alftor.global + facet_grid(~ GRUPO)
 
-alftor.grupo.imp <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = GRUPO)) +
+alftor.grupo.imp <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = GRUPO)) +
   theme(legend.position = "bottom") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(~ IMPACTO)
 
-alftor.grupo.imp.full <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO)) +
+alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(IMPACTO ~ GRUPO, margins = "IMPACTO")
 
-alftor.imp.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = IMPACTO)) +
+alftor.imp.grupo <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = IMPACTO)) +
   # theme_bw() +
   theme(legend.position = "bottom") +
   geom_point() +
@@ -51,14 +51,14 @@ alftor.imp.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = 
   # scale_color_brewer(palette = "Paired") +
   facet_grid(~ GRUPO)
 
-# ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO)) +
+# ggplot(dados.impacto, aes(IMPACTO)) +
 #   ggtitle("Impactos por gênero") +
 #   ylab("Participantes") +
 #   geom_bar(aes(fill = SEXO), position = "dodge") +
 #   theme(legend.position = "bottom")
 # ggsave("figures/impacto_sex.png")
 
-# ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO, fill = SEXO)) +
+# ggplot(dados.impacto, aes(IMPACTO, fill = SEXO)) +
 #   ggtitle("Impactos por gênero") +
 #   ylab("Participantes") +
 #   geom_bar(aes(y = (..count..)/sum(..count..))) + #facet_grid(~ TIPO) +
@@ -67,7 +67,7 @@ alftor.imp.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(ALFA, TORCAO, col = 
 #   theme(legend.position = "bottom")
 # ggsave("figures/impacto_sex.png")
 
-bar.imp.sex.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO, fill = GRUPO)) +
+bar.imp.sex.grupo <- ggplot(dados.impacto, aes(IMPACTO, fill = GRUPO)) +
   ggtitle("Impactos por gênero") +
   geom_bar() + facet_grid(~ SEXO) +
   scale_y_continuous(limits = c(0, 20)) +

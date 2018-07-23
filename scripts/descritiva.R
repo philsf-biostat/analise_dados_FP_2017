@@ -22,7 +22,7 @@ write.csv2(sum.grupo, "results/grupo.csv")
 
 # Homens tem tipos de impacto != das mulheres?
 
-ft.sexo.imp <- fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(SEXO, IMPACTO)))
+ft.sexo.imp <- fisher.test(with(droplevels(dados.impacto), table(SEXO, IMPACTO)))
 # R: sim
 
 ft.sexo.cam <- fisher.test(with(dados, table(SEXO, CAM)))
@@ -30,7 +30,7 @@ ft.sexo.pincer <- fisher.test(with(dados, table(SEXO, PINCER)))
 ft.sexo.misto <- fisher.test(with(dados, table(SEXO, MISTO)))
 
 # Sentir dor é um bom preditor para o tipo do impacto?
-ft.grupo.imp <- fisher.test(with(droplevels(dados[IMPACTO != "AUSENTE"]), table(GRUPO, IMPACTO)))
+ft.grupo.imp <- fisher.test(with(droplevels(dados.impacto), table(GRUPO, IMPACTO)))
 # R: não
 
 ft.grupo.cam <- fisher.test(with(dados, table(GRUPO, CAM)))
