@@ -144,24 +144,45 @@ p = teste t de Student.
 Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
-## Quadris com impacto fêmoro-acetabular
+## Ocorrência dos tipos de impacto fêmoro-acetabular
 
-### Associação da frequência dos impactos por gênero
+A figura xx mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
 
+![**Figura xx** Frequências dos tipos de impacto](../figures/impacto_freq.png)
+
+
+
+Os impactos do tipo CAM e PINCER parecem ocorrer com frequências semelhantes (p = 0.9258).
+
+Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum (FIXME: REF).
+Isto não foi observado neste estudo.
+Quadris com impacto MISTO por outro lado são significativamente menores que os impactos CAM (p = <0.001) e PINCER (p = 0.0308).
+Os quadris com impacto MISTO são os menos frequentes na amostra aqui estudada.
+
+### Associação da ocorrência do impacto fêmoro-acetabular por gênero
+
+[FIXME: retirar]
 Os impactos ocorrem de forma diferenciada por gênero?
 (p = 0.00266)
+
+A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
+As prevalências observadas neste estudo podem ser vistas na figura 32.
 
 ![**Figura 32** Frequências dos tipos de impacto](../figures/painel_sex_grupo.png)
 
 
 
-CAM é 3.8 vezes vezes mais frequente em homens que em mulheres (p = 0.019).
+Tomando o gênero feminino como referência apresentamos os resultados relativos para os homens.
 
-PINCER é 93% menos frequente em homens que em mulheres (p = 0.00174).
+Nossos resultados indicam que o impacto do tipo CAM realmente acomete mais homens.
+Em nossa amostra, CAM é 3.8 vezes vezes mais frequente em homens que em mulheres (p = 0.019).
 
-MISTO não tem diferença significativa (p = 0.738).
+Nossa amostra também indica que impactos do tipo PINCER é 93% menos frequente em homens que em mulheres (p = 0.00174).
+Confirma-se a maior prevalência de PINCER em mulheres.
 
-### Associação da frequência dos impactos por grupo de estudo
+Não há evidências em nossa amostra de o impacto do tipo MISTO acometa mais homens que mulheres (p = 0.738).
+
+### Associação da ocorrência do impacto fêmoro-acetabular por grupo de estudo
 
 O tipo de impacto está associado com a dor?
 <!-- (p = 0.0852) -->
