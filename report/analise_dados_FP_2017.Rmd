@@ -153,6 +153,13 @@ As outras mensurações parecem ser homogeneamente distribuídas em ambos os gru
 
 ![**Figura xx** Frequências dos tipos de impacto](../figures/impacto_freq.png)
 
+```{r include=FALSE}
+ppt.imp <- pairwise.prop.test(c(36, 16, 30), c(52, 52, 52))
+```
+
+Os impactos do tipo CAM e PINCER parecem ocorrer com frequências semelhantes (p = `r pv(ppt.imp)[2]`).
+Quadris com impacto MISTO por outro lado são significativamente menores que os impactos CAM (p = `r pv(ppt.imp)[1]`) e PINCER (p = `r pv(ppt.imp)[4]`).
+
 ### Associação da ocorrência do impacto fêmoro-acetabular por gênero
 
 [FIXME: retirar]
