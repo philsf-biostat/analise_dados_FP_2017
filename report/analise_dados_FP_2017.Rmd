@@ -151,6 +151,8 @@ As outras mensurações parecem ser homogeneamente distribuídas em ambos os gru
 
 ## Quadris com impacto fêmoro-acetabular
 
+![**Figura xx** Frequências dos tipos de impacto](../figures/impacto_freq.png)
+
 ### Associação da frequência dos impactos por gênero
 
 [FIXME: retirar]

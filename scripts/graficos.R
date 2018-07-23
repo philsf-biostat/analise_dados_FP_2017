@@ -66,3 +66,9 @@ bar.imp.sex.grupo <- ggplot(dados[IMPACTO != "AUSENTE"], aes(IMPACTO, fill = GRU
   scale_y_continuous(limits = c(0, 20)) +
   xlab("") + ylab("") +
   theme(legend.position = "bottom")
+
+bar.imp <- ggplot(
+  dados[, .(IMPACTO = c("CAM", "MISTO", "PINCER"), N = c(sum(CAM), sum(PINCER), sum(MISTO)))],
+  aes(IMPACTO, N, fill = IMPACTO)) +
+  xlab("") + ylab("") +
+  geom_col() + theme(legend.position = "none")
