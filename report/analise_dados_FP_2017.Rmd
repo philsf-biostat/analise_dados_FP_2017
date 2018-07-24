@@ -151,9 +151,9 @@ As outras mensurações parecem ser homogeneamente distribuídas em ambos os gru
 
 ## Ocorrência dos tipos de impacto fêmoro-acetabular
 
-A figura xx mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
+A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
 
-![**Figura xx** Frequências dos tipos de impacto](../figures/impacto_freq.png)
+![**Figura 32** Frequências dos tipos de impacto](../figures/impacto_freq.png)
 
 ```{r include=FALSE}
 ppt.imp <- pairwise.prop.test(c(36, 16, 30), c(52, 52, 52), p.adjust.method = "bonf")
@@ -173,9 +173,9 @@ Os impactos ocorrem de forma diferenciada por gênero?
 (p = `r pv(ft.sexo.imp)`)
 
 A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
-As prevalências observadas neste estudo podem ser vistas na figura 32.
+As prevalências observadas neste estudo podem ser vistas na figura 33
 
-![**Figura 32** Frequências dos tipos de impacto](../figures/painel_sex_grupo.png)
+![**Figura 33** Frequências dos tipos de impacto](../figures/painel_sex_grupo.png)
 
 ```{r include=FALSE}
 fisher.OR(ft.sexo.cam, 1)
@@ -204,6 +204,8 @@ fisher.OR(ft.grupo.pincer, 1)
 fisher.OR(ft.grupo.misto, 1)
 ```
 
+(figura 33)
+
 CAM é `r fisher.OR(ft.grupo.cam, 1)` vezes mais frequente nos quadris dolorosos (p = `r pv(ft.grupo.cam)`).
 
 PINCER não é significativo (p = `r pv(ft.grupo.pincer)`).
@@ -229,11 +231,11 @@ A torção média dos quadris que possuem impacto do tipo MISTO não é signific
 ### Correlação entre a torção femoral e o ângulo alfa
 
 O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = `r format.float(corr.tor.alf$estimate)`, p = `r pv(corr.tor.alf)`).
-A figura 33 mostra a reta de regressão que associa as mensurações destes ângulos.
+A figura 34 mostra a reta de regressão que associa as mensurações destes ângulos.
 
 [FIXME: observar que esta correlação é global]
 
-![**Figura 33** Correlação entre Torção e Alfa](../figures/painel_AlfTor_global.png)
+![**Figura 34** Correlação entre Torção e Alfa](../figures/painel_AlfTor_global.png)
 
 [FIXME: descrever o resultado da regressão linear torção ~ alfa global]
 
@@ -242,24 +244,24 @@ O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = `r
 (r = `r format.float(corr.tor.alf.dor$estimate)`, p = `r pv(corr.tor.alf.dor)`).
 
 Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustou-se modelos de regressão linear para cada grupo.
-A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura 34).
+A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura 35).
 Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle (p = `r format.pval(summary(lm.tor.alfa.con)$coefficients[2, 4], digits = 2)`).
 Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente `r format.float(-coef(lm.tor.alfa.con)[2])` graus no ângulo de torção.
 Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos (p = `r format.pval(summary(lm.tor.alfa.dor)$coefficients[2, 4], digits = 2)`).
 
-![**Figura 34** Correlação entre Torção e Alfa, por grupo](../figures/painel_AlfTor_grupo.png)
+![**Figura 35** Correlação entre Torção e Alfa, por grupo](../figures/painel_AlfTor_grupo.png)
 
 <!-- ```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"} -->
 <!-- alftor.grupo.imp -->
 <!-- ``` -->
 
-Quando controlamos pelo tipo de impacto, não é mais possível identificar associação entre os ângulos (figura 35).
+Quando controlamos pelo tipo de impacto, não é mais possível identificar associação entre os ângulos (figura 36).
 Esta aparente correlação negativa no grupo controle parece ter sido afetada pelo baixo número de pacientes com impacto misto - há apenas 2 pacientes nesta categoria.
 Isto impede uma estimativa representativa para este cenário em particular, e perturba a estimativa o modelo global.
 
 <!-- Obs: na verdade, retirar todos os pacientes MISTO não impacta nos resultados e conclusões. -->
 
-![**Figura 35** Correlação entre Torção e Alfa, por grupo e por impacto](../figures/painel_AlfTor_imp_grupo.png)
+![**Figura 36** Correlação entre Torção e Alfa, por grupo e por impacto](../figures/painel_AlfTor_imp_grupo.png)
 
 ### Quadris com ângulo de torção femoral alterada
 
