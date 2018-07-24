@@ -13,10 +13,20 @@ sum.grupo <- sum.grupo[-c(2:3), 2:4]
 # sum.dor <- sum.dor[-c(4:6), 1:5]
 # sum.rac <- sum.rac[-c(4:5), 1:4]
 
+require(philsfmisc)
+
+CV <- function(x) { sd(x, na.rm = TRUE)/mean(x, na.rm = TRUE)}
+
+tab.cv <- dados[, .(
+  "%CV TORCAO" = format.pct(CV(TORCAO)),
+  "%CV ALFA" = format.pct(CV(ALFA))
+  ), by = .(GRUPO)]
+
 write.csv2(tab1, "results/tab1.csv")
 write.csv2(sum.grupo, "results/grupo.csv")
 # write.csv2(sum.dor, "results/dor.csv")
 # write.csv2(sum.rac, "results/raca.csv")
+write.csv2(tab.cv, "results/tab_cv.csv")
 
 ## Associação de dados categóricos
 
