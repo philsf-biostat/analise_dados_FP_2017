@@ -72,7 +72,7 @@ alftor.imp.grupo <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = IMPACTO)) +
 # ggsave("figures/impacto_sex.png")
 
 bar.imp.sex.grupo <- ggplot(dados.impacto, aes(IMPACTO, fill = GRUPO)) +
-  ggtitle("Impactos por gênero") +
+  # ggtitle("Impactos por gênero") +
   geom_bar() + facet_grid(~ SEXO) +
   scale_y_continuous(limits = c(0, 20)) +
   xlab("") + ylab("N") +
