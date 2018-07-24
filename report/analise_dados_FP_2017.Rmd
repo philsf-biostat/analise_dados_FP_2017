@@ -245,7 +245,7 @@ A figura 34 mostra a reta de regressão que associa as mensurações destes âng
 
 [FIXME: observar que esta correlação é global]
 
-![**Figura 34** Correlação entre Torção e Alfa](../figures/painel_AlfTor_global.png)
+![**Figura 34** Regressão linear entre o ângulo de torção femoral e o ângulo alfa](../figures/painel_AlfTor_global.png)
 
 O modelo de regressão linear apresentado na figura 34 representa como o ângulo de torção femoral varia em função do ângulo alfa.
 Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente `r format.float(-coef(lm.tor.alfa)[2])` graus no ângulo de torção (p = `r format.pval(summary(lm.tor.alfa)$coefficients[2, 4], digits = 2)`).
