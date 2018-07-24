@@ -45,7 +45,7 @@ alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
 
 alftor.imp.grupo <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = IMPACTO)) +
   # theme_bw() +
-  theme(legend.position = "bottom") +
+  # theme(legend.position = "bottom") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   # scale_color_brewer(palette = "Paired") +
