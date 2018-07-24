@@ -277,7 +277,7 @@ Isto pode ter sido afetado pela diferença entre as variabilidades relativas ent
 
 <!-- Obs: na verdade, retirar todos os pacientes MISTO não impacta nos resultados e conclusões. -->
 
-![**Figura 36** Correlação entre Torção e Alfa, por grupo e por impacto](../figures/painel_AlfTor_imp_grupo.png)
+![**Figura 36** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle e para cada tipo de impacto fêmoro-acetabular](../figures/painel_AlfTor_imp_grupo.png)
 
 ### Quadris com ângulo de torção femoral alterada
 
