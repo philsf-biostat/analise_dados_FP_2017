@@ -281,6 +281,11 @@ Isto pode ter sido afetado pela diferença entre as variabilidades relativas ent
 
 ### Quadris com ângulo de torção femoral alterada
 
+FIXME: Análise qualitativa
+
+- torção femoral alterada x tipos de impacto (regressão logística)
+- tipos de alteração de torção x tipos de impacto (regressão multinomial)
+
 # Conclusões
 
 # Referências
