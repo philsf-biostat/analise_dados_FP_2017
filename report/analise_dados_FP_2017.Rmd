@@ -185,7 +185,7 @@ Os impactos ocorrem de forma diferenciada por gênero?
 A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
 As prevalências observadas neste estudo podem ser vistas na figura 33
 
-![**Figura 33** Frequências dos tipos de impacto](../figures/painel_sex_grupo.png)
+![**Figura 33** Número de quadris, por gênero e por grupo de estudo, com cada tipo de impacto fêmoro-acetabular (N = 52)](../figures/painel_sex_grupo.png)
 
 ```{r include=FALSE}
 fisher.OR(ft.sexo.cam, 1)
