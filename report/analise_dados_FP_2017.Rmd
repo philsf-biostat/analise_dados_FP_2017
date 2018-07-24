@@ -149,6 +149,16 @@ p = teste t de Student.
 Observou-se que, na média, o ângulo alfa foi significativamente maior nos quadris dolorosos.
 As outras mensurações parecem ser homogeneamente distribuídas em ambos os grupos.
 
+A tabela 3 mostra a variabilidade relativa do ângulo de torção e do ângulo alfa, expressas em CV (coeficiente de variação), avaliados por grupo de estudo.
+Observa-se que há grande diferença entre o CV do ângulo de torção (CV em torno de 60% tanto nos quadris dolorosos e nos quadris controle) e ângulo alfa (CV em torno 22% em ambos os grupos estudados).
+Veremos o impacto desta diferença, na seção 4.3.2.
+
+```{r}
+pander(tab.cv)
+```
+
+Table: **Tabela 3** Variabilidades relativas (%CV) do ângulo de torção femoral e do ângulo alfa em cada grupo de estudo.
+
 ## Ocorrência dos tipos de impacto fêmoro-acetabular
 
 A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
