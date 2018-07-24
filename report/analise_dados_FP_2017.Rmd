@@ -266,6 +266,7 @@ Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos 
 <!-- ``` -->
 
 Quando controlamos pelo tipo de impacto, não é mais possível identificar associação entre os ângulos (figura 36).
+Isto pode ter sido afetado pela diferença entre as variabilidades relativas entre os ângulos estudados (tabela 3).
 
 <!-- FIXME: mover para a DISCUSSÃO -->
 <!-- Esta aparente correlação negativa no grupo controle parece ter sido afetada pelo baixo número de pacientes com impacto misto - há apenas 2 pacientes nesta categoria. -->
