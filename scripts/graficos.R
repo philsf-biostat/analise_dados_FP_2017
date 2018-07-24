@@ -2,7 +2,7 @@ source('scripts/input.R', encoding = 'UTF-8')
 
 library(ggplot2)
 
-set.seed(1)
+# set.seed(1)
 
 # alftor <- ggplot(dados, aes(ALFA, TORCAO, col = GRUPO)) +
 #   geom_point() + theme(legend.position = "bottom") +
@@ -10,42 +10,46 @@ set.seed(1)
 #   geom_smooth(method = "lm", se = F, mapping = aes(col = GRUPO))
 # ggsave("figures/AlfTor_grupo.png")
 
-# paineis por grupo
-tor.imp <- ggplot(dados.impacto, aes(IMPACTO, TORCAO, col = IMPACTO)) +
-  geom_hline(yintercept = c(5, 25), lty = 4, col = "red") +
-  geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
-  theme(legend.position = "none")
+# tor.imp <- ggplot(dados.impacto, aes(IMPACTO, TORCAO, col = IMPACTO)) +
+#   geom_hline(yintercept = c(5, 25), lty = 4, col = "red") +
+#   geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
+#   xlab("Tipo de impacto") + ylab("Ângulo de torção") +
+#   theme(legend.position = "none")
 
-alftor.var <- ggplot(tidyr::gather(dados.impacto[,.(TORCAO, ALFA)], Angulo, Valor), aes(Angulo, Valor)) +
-  # geom_hline(yintercept = c(5, 25), lty = 4, col = "red") +
-  geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
-  ggtitle("Variabilidade dos ângulos alfa e torção femoral") +
-  xlab("") + ylab("") +
-  theme(legend.position = "none")
+# alftor.var <- ggplot(tidyr::gather(dados.impacto[,.(TORCAO, ALFA)], Angulo, Valor), aes(Angulo, Valor)) +
+#   # geom_hline(yintercept = c(5, 25), lty = 4, col = "red") +
+#   geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
+#   ggtitle("Variabilidade dos ângulos alfa e torção femoral") +
+#   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
+#   theme(legend.position = "none")
 
 alftor.global <- ggplot(dados, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
+  xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   # geom_point(aes(col = IMPACTO)) + # protótipo, col por impacto
   geom_smooth(method = "lm", se = FALSE)
 
 alftor.grupo <- alftor.global + facet_grid(~ GRUPO)
 
-alftor.grupo.imp <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = GRUPO)) +
-  theme(legend.position = "bottom") +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  facet_grid(~ IMPACTO)
+# alftor.grupo.imp <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = GRUPO)) +
+#   theme(legend.position = "bottom", legend.title = element_blank()) +
+#   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
+#   geom_point() +
+#   geom_smooth(method = "lm", se = FALSE) +
+#   facet_grid(~ IMPACTO)
 
-alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
-  theme(legend.position = "bottom") +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  facet_grid(IMPACTO ~ GRUPO, margins = "IMPACTO")
+# alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
+#   theme(legend.position = "bottom", legend.title = element_blank()) +
+#   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
+#   geom_point() +
+#   geom_smooth(method = "lm", se = FALSE) +
+#   facet_grid(IMPACTO ~ GRUPO, margins = "IMPACTO")
 
 alftor.imp.grupo <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = IMPACTO)) +
   # theme_bw() +
-  theme(legend.position = "bottom") +
+  theme(legend.position = "bottom", legend.title = element_blank()) +
+  xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   # scale_color_brewer(palette = "Paired") +
@@ -68,14 +72,14 @@ alftor.imp.grupo <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = IMPACTO)) +
 # ggsave("figures/impacto_sex.png")
 
 bar.imp.sex.grupo <- ggplot(dados.impacto, aes(IMPACTO, fill = GRUPO)) +
-  ggtitle("Impactos por gênero") +
+  # ggtitle("Impactos por gênero") +
   geom_bar() + facet_grid(~ SEXO) +
   scale_y_continuous(limits = c(0, 20)) +
-  xlab("") + ylab("") +
-  theme(legend.position = "bottom")
+  xlab("") + ylab("N") +
+  theme(legend.position = "bottom", legend.title = element_blank())
 
 bar.imp <- ggplot(
   dados[, .(IMPACTO = c("CAM", "MISTO", "PINCER"), N = c(sum(CAM), sum(MISTO), sum(PINCER)))],
   aes(IMPACTO, N, fill = IMPACTO)) +
-  xlab("") + ylab("") +
+  xlab("") + ylab("N") +
   geom_col() + theme(legend.position = "none")
