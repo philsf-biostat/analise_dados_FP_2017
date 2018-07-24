@@ -71,11 +71,11 @@ bar.imp.sex.grupo <- ggplot(dados.impacto, aes(IMPACTO, fill = GRUPO)) +
   ggtitle("Impactos por gênero") +
   geom_bar() + facet_grid(~ SEXO) +
   scale_y_continuous(limits = c(0, 20)) +
-  xlab("") + ylab("") +
+  xlab("") + ylab("N") +
   theme(legend.position = "bottom")
 
 bar.imp <- ggplot(
   dados[, .(IMPACTO = c("CAM", "MISTO", "PINCER"), N = c(sum(CAM), sum(MISTO), sum(PINCER)))],
   aes(IMPACTO, N, fill = IMPACTO)) +
-  xlab("") + ylab("") +
+  xlab("") + ylab("N") +
   geom_col() + theme(legend.position = "none")
