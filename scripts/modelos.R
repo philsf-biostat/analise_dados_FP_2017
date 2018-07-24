@@ -13,7 +13,9 @@ corr.tor.alf.dor
 # Desfecho numérico -------------------------------------------------------
 
 # Torção
-summary(lm(TORCAO ~ ALFA, data = dados))
+lm.tor.alfa <- lm(TORCAO ~ ALFA, data = dados)
+summary(lm.tor.alfa)
+
 lm.tor.alfa.con <- lm(TORCAO ~ ALFA, data = dados[GRUPO == "Controle"])
 lm.tor.alfa.dor <- lm(TORCAO ~ ALFA, data = dados[GRUPO == "Doloroso"])
 

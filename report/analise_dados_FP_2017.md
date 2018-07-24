@@ -230,7 +230,10 @@ A figura 34 mostra a reta de regressão que associa as mensurações destes âng
 
 ![**Figura 34** Correlação entre Torção e Alfa](../figures/painel_AlfTor_global.png)
 
-[FIXME: descrever o resultado da regressão linear torção ~ alfa global]
+O modelo de regressão linear apresentado na figura 34 representa como o ângulo de torção femoral varia em função do ângulo alfa.
+Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente 0.20 graus no ângulo de torção (p = 0.029).
+O ângulo alfa sozinho, no entanto, explica apenas $r^2=$ 9.4% da variabilidade observada no ângulo de torção femoral.
+É necessário investigar outros fatores que possam ajudar a explicar esta variabilidade observada.
 
 Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este resultado é inconsistente (figura 33).
 O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = -0.63, p = 0.00933) no grupo controle, mas a correlação não é significativa no grupo de quadris dolorosos
