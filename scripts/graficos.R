@@ -34,14 +34,14 @@ alftor.global <- ggplot(dados, aes(ALFA, TORCAO)) +
 alftor.grupo <- alftor.global + facet_grid(~ GRUPO)
 
 alftor.grupo.imp <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = GRUPO)) +
-  theme(legend.position = "bottom") +
+  theme(legend.position = "bottom", legend.title = element_blank()) +
   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(~ IMPACTO)
 
 alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
-  theme(legend.position = "bottom") +
+  theme(legend.position = "bottom", legend.title = element_blank()) +
   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
@@ -49,7 +49,7 @@ alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
 
 alftor.imp.grupo <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = IMPACTO)) +
   # theme_bw() +
-  # theme(legend.position = "bottom") +
+  theme(legend.title = element_blank()) +
   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
@@ -77,7 +77,7 @@ bar.imp.sex.grupo <- ggplot(dados.impacto, aes(IMPACTO, fill = GRUPO)) +
   geom_bar() + facet_grid(~ SEXO) +
   scale_y_continuous(limits = c(0, 20)) +
   xlab("") + ylab("N") +
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom", legend.title = element_blank())
 
 bar.imp <- ggplot(
   dados[, .(IMPACTO = c("CAM", "MISTO", "PINCER"), N = c(sum(CAM), sum(MISTO), sum(PINCER)))],
