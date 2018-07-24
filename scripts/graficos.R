@@ -49,7 +49,7 @@ alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
 
 alftor.imp.grupo <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = IMPACTO)) +
   # theme_bw() +
-  theme(legend.title = element_blank()) +
+  theme(legend.position = "bottom", legend.title = element_blank()) +
   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
