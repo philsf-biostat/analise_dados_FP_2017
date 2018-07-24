@@ -166,16 +166,16 @@ A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadri
 
 Os impactos do tipo CAM e PINCER parecem ocorrer com frequências semelhantes (p = 0.9258).
 
-Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum (FIXME: REF).
+Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum.
 Isto não foi observado neste estudo.
 Quadris com impacto MISTO por outro lado são significativamente menores que os impactos CAM (p = <0.001) e PINCER (p = 0.0308).
 Os quadris com impacto MISTO são os menos frequentes na amostra aqui estudada.
 
 ### Associação da ocorrência do impacto fêmoro-acetabular por gênero
 
-[FIXME: retirar]
-Os impactos ocorrem de forma diferenciada por gênero?
-(p = 0.00266)
+<!-- [FIXME: retirar] -->
+<!-- Os impactos ocorrem de forma diferenciada por gênero? -->
+<!-- (p = 0.00266) -->
 
 A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
 As prevalências observadas neste estudo podem ser vistas na figura 33
@@ -226,7 +226,7 @@ A torção média dos quadris que possuem impacto do tipo MISTO não é signific
 O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = -0.31, p = 0.0289).
 A figura 34 mostra a reta de regressão que associa as mensurações destes ângulos.
 
-[FIXME: observar que esta correlação é global]
+<!-- [FIXME: observar que esta correlação é global] -->
 
 ![**Figura 34** Regressão linear entre o ângulo de torção femoral e o ângulo alfa](../figures/painel_AlfTor_global.png)
 
@@ -262,12 +262,12 @@ Isto pode ter sido afetado pela diferença entre as variabilidades relativas ent
 
 ![**Figura 36** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle e para cada tipo de impacto fêmoro-acetabular](../figures/painel_AlfTor_imp_grupo.png)
 
-### Quadris com ângulo de torção femoral alterada
+<!-- ### Quadris com ângulo de torção femoral alterada -->
 
-FIXME: Análise qualitativa
+<!-- FIXME: Análise qualitativa -->
 
-- torção femoral alterada x tipos de impacto (regressão logística)
-- tipos de alteração de torção x tipos de impacto (regressão multinomial)
+<!-- - torção femoral alterada x tipos de impacto (regressão logística) -->
+<!-- - tipos de alteração de torção x tipos de impacto (regressão multinomial) -->
 
 # Conclusões
 
