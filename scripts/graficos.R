@@ -14,17 +14,19 @@ set.seed(1)
 tor.imp <- ggplot(dados.impacto, aes(IMPACTO, TORCAO, col = IMPACTO)) +
   geom_hline(yintercept = c(5, 25), lty = 4, col = "red") +
   geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
+  xlab("Tipo de impacto") + ylab("Ângulo de torção") +
   theme(legend.position = "none")
 
 alftor.var <- ggplot(tidyr::gather(dados.impacto[,.(TORCAO, ALFA)], Angulo, Valor), aes(Angulo, Valor)) +
   # geom_hline(yintercept = c(5, 25), lty = 4, col = "red") +
   geom_boxplot() + geom_jitter(height = 0.01, width = .05, alpha = .4) +
   ggtitle("Variabilidade dos ângulos alfa e torção femoral") +
-  xlab("") + ylab("") +
+  xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   theme(legend.position = "none")
 
 alftor.global <- ggplot(dados, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
+  xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   # geom_point(aes(col = IMPACTO)) + # protótipo, col por impacto
   geom_smooth(method = "lm", se = FALSE)
@@ -33,12 +35,14 @@ alftor.grupo <- alftor.global + facet_grid(~ GRUPO)
 
 alftor.grupo.imp <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = GRUPO)) +
   theme(legend.position = "bottom") +
+  xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(~ IMPACTO)
 
 alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
+  xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_grid(IMPACTO ~ GRUPO, margins = "IMPACTO")
@@ -46,6 +50,7 @@ alftor.grupo.imp.full <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
 alftor.imp.grupo <- ggplot(dados.impacto, aes(ALFA, TORCAO, col = IMPACTO)) +
   # theme_bw() +
   # theme(legend.position = "bottom") +
+  xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   # scale_color_brewer(palette = "Paired") +
