@@ -86,14 +86,23 @@ Seu diagnóstico clínico foi de que possuía PINCER apenas no quadril esquerdo.
 
 ## Análises estatísticas
 
+### Análise descritiva
+
 As variáveis categóricas foram avaliadas quanto às suas ocorrências, sendo apresentadas em frequência e porcentagem.
 As variáveis contínuas foram descritas com médias e desvio padrão.
 
+### Ocorrência dos tipos de impacto fêmoro-acetabular
+
 As diferenças entre as ocorrências dos impactos foi testada com teste de proporções, aplicando a correção de múltiplos p-valores de Bonferroni.
 Associações entre duas variáveis categóricas foram avaliadas usando-se o teste exato de Fisher, e apresentamos a razão de chance das associações significativas.
+
+### Torção femoral
+
 As diferenças médias entre dois grupos de medidas foram avaliadas com o teste t de Student.
 
 Além dos testes de significância, diversos modelos estatísticos foram criados para avaliar hipóteses sobre a relação entre os desfechos de interesse e os ângulos mensurados, como torção.
+
+<!-- ### Quadris com ângulo de torção femoral alterada -->
 
 <!-- Para as hipóteses em que o desfecho era uma variável categórica binária, foi utilizado o modelo de regressão logística. -->
 <!-- Quando o desfecho era uma variável categórica com 3 ou mais categorias, como por exemplo o lado doloroso (direito, esquerdo ou bilateral) usou-se o modelo de regressão multinomial. -->
