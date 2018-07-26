@@ -59,18 +59,23 @@ pander(history, split.cells = 70)
 
 # Metodologia
 
-## Diagnóstico sistemático
+## Algoritmo de classificação dos impactos nos quadris
 
 As medidas obtidas por avaliação clínica e radiológica foram utilizadas para classificar sistematicamente o tipo de impacto.
-Foram considerados impactos CAM aqueles participantes que tinham ângulo alfa maior que 50 graus.
-Para classificar o impacto do tipo PINCER foi considerada qualquer uma das seguintes medidas:
+Os três tipos de impacto (CAM, PINCER e MISTO) foram determinados a partir das mensurações obtidas, conforme os seguintes critérios:
 
-- índice acetabular negativo;
-- ângulo centro-borda acetabular maior que 39 graus;
-- índice de extrusão menor que 10 graus.
+- Impacto do tipo CAM
+    - ângulo alfa maior que 50 graus.
+- Impacto do tipo PINCER
+    - índice acetabular negativo;
+    - ângulo centro-borda acetabular maior que 39 graus;
+    - índice de extrusão menor que 10 graus.
+- Impacto do tipo MISTO
+    - Identificação simultânea de impacto CAM e PINCER
 
-Participantes que possuíam tanto impacto CAM quanto PINCER no mesmo lado do quadril foram posteriormente classificados como impacto MISTO.
-Observe que isto não considera um paciente com CAM em um lado e PINCER no outro como um paciente de impacto MISTO.
+As mensurações foram obtidas de forma independente para o quadril direito e esquerdo de cada participante (N = 26).
+Com isso, estes critérios foram aplicados a cada quadril (N = 52).
+Assim, um paciente com impacto CAM em um lado e PINCER no outro não teve classificação de impacto MISTO em nenhum dos lados.
 
 ### Exceções
 
