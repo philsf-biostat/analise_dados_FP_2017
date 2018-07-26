@@ -59,20 +59,28 @@ pander(history, split.cells = 70)
 
 # Metodologia
 
-## Diagnóstico sistemático
+## Algoritmo de classificação dos impactos nos quadris
 
 As medidas obtidas por avaliação clínica e radiológica foram utilizadas para classificar sistematicamente o tipo de impacto.
-Foram considerados impactos CAM aqueles participantes que tinham ângulo alfa maior que 50 graus.
-Para classificar o impacto do tipo PINCER foi considerada qualquer uma das seguintes medidas:
+Os três tipos de impacto (CAM, PINCER e MISTO) foram determinados a partir das mensurações obtidas, conforme os seguintes critérios:
 
-- índice acetabular negativo;
-- ângulo centro-borda acetabular maior que 39 graus;
-- índice de extrusão menor que 10 graus.
+- Impacto do tipo CAM
+    - ângulo alfa maior que 50 graus.
+- Impacto do tipo PINCER
+    - índice acetabular negativo;
+    - ângulo centro-borda acetabular maior que 39 graus;
+    - índice de extrusão menor que 10 graus.
+- Impacto do tipo MISTO
+    - Identificação simultânea de impacto CAM e PINCER
 
-Participantes que possuíam tanto impacto CAM quanto PINCER no mesmo lado do quadril foram posteriormente classificados como impacto MISTO.
-Observe que isto não considera um paciente com CAM em um lado e PINCER no outro como um paciente de impacto MISTO.
+As mensurações foram obtidas de forma independente para o quadril direito e esquerdo de cada participante (N = 26).
+Com isso, estes critérios foram aplicados a cada quadril (N = 52).
+Assim, um paciente com impacto CAM em um lado e PINCER no outro não teve classificação de impacto MISTO em nenhum dos lados.
 
 ### Exceções
+
+Três participantes não tiveram todas as mensurações obtidas, o que inviabilizou a classificação de CAM ou PINCER com a metodologia acima descrita.
+Estas exceções foram tratadas caso a caso, conforme descrito a seguir.
 
 **CAM**
 
@@ -81,30 +89,45 @@ Um participante não teve seu ângulo alfa mensurado no lado direito, ele foi di
 **PINCER**
 
 Um segundo participante não teve seu ângulo centro-borda acetabular mensurado no lado direito, e seu diagnóstico clínico foi de que não possuía PINCER.
+
 Um terceiro participante não teve seus índices de extrusão mensurados em ambos os lados.
 Seu diagnóstico clínico foi de que possuía PINCER apenas no quadril esquerdo.
 
 ## Análises estatísticas
 
-As variáveis categóricas foram avaliadas quanto às suas frequências, sendo apresentadas em porcentagem.
-Associações entre duas variáveis categóricas foram avaliadas usando-se o teste exato de Fisher.
+Todas as análises foram realizadas utilizando-se o software `R` versão `r getRversion()`.
+O critério de significância estatística foi p-valor < 0.05.
+
+### Análise descritiva
+
+As variáveis categóricas foram avaliadas quanto às suas ocorrências, sendo apresentadas em frequência e porcentagem.
 As variáveis contínuas foram descritas com médias e desvio padrão.
+Para avaliar a diferença entre as variabilidades observadas no ângulo de torção femoral e no ângulo alfa, calculamos seus respectivos coeficientes de variação (desvio padrão relativo).
+
+### Ocorrência dos tipos de impacto fêmoro-acetabular
+
+As diferenças entre as ocorrências dos impactos foi testada com teste de proporções, aplicando a correção de múltiplos p-valores de Bonferroni.
+Associações entre duas variáveis categóricas foram avaliadas usando-se o teste exato de Fisher, e apresentamos a razão de chance das associações significativas.
+
+### Torção femoral
+
 As diferenças médias entre dois grupos de medidas foram avaliadas com o teste t de Student.
 
-Além dos testes de significância, diversos modelos estatísticos foram criados para avaliar hipóteses sobre a relação entre os desfechos de interesse e os ângulos mensurados, como torção.
+Avaliamos a associação entre o ângulo de torção femoral e o ângulo alfa com a correlação linear de Pearson e regressão linear simples.
+
+<!-- Além dos testes de significância, diversos modelos estatísticos foram criados para avaliar hipóteses sobre a relação entre os desfechos de interesse e os ângulos mensurados, como torção. -->
+
+Para avaliar se a dor ou o tipo de impacto influencia a relação entre o ângulo de torção femoral e o ângulo foi usado um modelo de regressão linear múltipla.
+Esta abordagem permite investigar se estes fatores contribuem para a percepção do efeito observado, globalmente, na correlação e na regressão linear simples.
+
+<!-- ### Quadris com ângulo de torção femoral alterada -->
 
 <!-- Para as hipóteses em que o desfecho era uma variável categórica binária, foi utilizado o modelo de regressão logística. -->
-Quando o desfecho era uma variável categórica com 3 ou mais categorias, como por exemplo o lado doloroso (direito, esquerdo ou bilateral) usou-se o modelo de regressão multinomial.
+<!-- Quando o desfecho era uma variável categórica com 3 ou mais categorias, como por exemplo o lado doloroso (direito, esquerdo ou bilateral) usou-se o modelo de regressão multinomial. -->
 
-Esta estratégia de modelagem permite estimar a Razão de Chance de uma determinada combinação de fatores e medidas afetar a probabilidade de trocar de uma categoria para outra.
-Por exemplo, o tipo de impacto que o participante apresenta pode aumentar a chance do participante sentir dor naquele lado, mas isso pode ocorrer de forma diferenciada para cada gênero, ou ser influenciada pelo ângulo de torção, IMC, etc.
-Assim é possível controlar o efeito observado por outros fatores que possam estar relacionados.
-
-Para avaliar a influência de diversos fatores na medida do ângulo de torção, foram usados modelos de regressão linear múltipla, o que permite controlar a observação do efeito por fatores adicionais que possivelmente influenciam no valor deste ângulo.
-
-Todas as análises foram realizadas utilizando-se o software `R` versão `r getRversion()`.
-
-<!-- The exact confidence intervals (CIs) of binomial proportions were calculated using package `exactci` (version `r packageVersion("exactci")`). -->
+<!-- Esta estratégia de modelagem permite estimar a Razão de Chance de uma determinada combinação de fatores e medidas afetar a probabilidade de trocar de uma categoria para outra. -->
+<!-- Por exemplo, o tipo de impacto que o participante apresenta pode aumentar a chance do participante sentir dor naquele lado, mas isso pode ocorrer de forma diferenciada para cada gênero, ou ser influenciada pelo ângulo de torção, IMC, etc. -->
+<!-- Assim é possível controlar o efeito observado por outros fatores que possam estar relacionados. -->
 
 # Resultados
 
