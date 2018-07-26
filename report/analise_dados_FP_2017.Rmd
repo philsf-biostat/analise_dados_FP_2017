@@ -86,6 +86,9 @@ Seu diagnóstico clínico foi de que possuía PINCER apenas no quadril esquerdo.
 
 ## Análises estatísticas
 
+Todas as análises foram realizadas utilizando-se o software `R` versão `r getRversion()`.
+O critério de significância estatística foi p-valor < 0.05.
+
 ### Análise descritiva
 
 As variáveis categóricas foram avaliadas quanto às suas ocorrências, sendo apresentadas em frequência e porcentagem.
@@ -112,10 +115,6 @@ Além dos testes de significância, diversos modelos estatísticos foram criados
 <!-- Assim é possível controlar o efeito observado por outros fatores que possam estar relacionados. -->
 
 Para avaliar a influência de diversos fatores na medida do ângulo de torção, foram usados modelos de regressão linear múltipla, o que permite controlar a observação do efeito por fatores adicionais que possivelmente influenciam no valor deste ângulo.
-
-Todas as análises foram realizadas utilizando-se o software `R` versão `r getRversion()`.
-
-<!-- The exact confidence intervals (CIs) of binomial proportions were calculated using package `exactci` (version `r packageVersion("exactci")`). -->
 
 # Resultados
 
