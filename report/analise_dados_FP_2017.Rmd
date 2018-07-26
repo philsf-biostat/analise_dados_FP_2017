@@ -103,7 +103,11 @@ Associações entre duas variáveis categóricas foram avaliadas usando-se o tes
 
 As diferenças médias entre dois grupos de medidas foram avaliadas com o teste t de Student.
 
-Além dos testes de significância, diversos modelos estatísticos foram criados para avaliar hipóteses sobre a relação entre os desfechos de interesse e os ângulos mensurados, como torção.
+Avaliamos a associação entre o ângulo de torção femoral e o ângulo alfa com a correlação linear de Pearson e regressão linear simples.
+
+<!-- Além dos testes de significância, diversos modelos estatísticos foram criados para avaliar hipóteses sobre a relação entre os desfechos de interesse e os ângulos mensurados, como torção. -->
+
+Para avaliar a influência de diversos fatores na medida do ângulo de torção, foram usados modelos de regressão linear múltipla, o que permite controlar a observação do efeito por fatores adicionais que possivelmente influenciam no valor deste ângulo.
 
 <!-- ### Quadris com ângulo de torção femoral alterada -->
 
@@ -113,8 +117,6 @@ Além dos testes de significância, diversos modelos estatísticos foram criados
 <!-- Esta estratégia de modelagem permite estimar a Razão de Chance de uma determinada combinação de fatores e medidas afetar a probabilidade de trocar de uma categoria para outra. -->
 <!-- Por exemplo, o tipo de impacto que o participante apresenta pode aumentar a chance do participante sentir dor naquele lado, mas isso pode ocorrer de forma diferenciada para cada gênero, ou ser influenciada pelo ângulo de torção, IMC, etc. -->
 <!-- Assim é possível controlar o efeito observado por outros fatores que possam estar relacionados. -->
-
-Para avaliar a influência de diversos fatores na medida do ângulo de torção, foram usados modelos de regressão linear múltipla, o que permite controlar a observação do efeito por fatores adicionais que possivelmente influenciam no valor deste ângulo.
 
 # Resultados
 
