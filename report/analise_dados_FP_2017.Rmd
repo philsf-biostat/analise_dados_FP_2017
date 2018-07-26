@@ -93,7 +93,7 @@ O critério de significância estatística foi p-valor < 0.05.
 
 As variáveis categóricas foram avaliadas quanto às suas ocorrências, sendo apresentadas em frequência e porcentagem.
 As variáveis contínuas foram descritas com médias e desvio padrão.
-Para comparar a variabilidade relativa do ângulo de torção femoral e do ângulo alfa calculamos seus coeficientes de variação (desvio padrão relativo).
+Para avaliar a diferença entre as variabilidades observadas no ângulo de torção femoral e no ângulo alfa, calculamos seus respectivos coeficientes de variação (desvio padrão relativo).
 
 ### Ocorrência dos tipos de impacto fêmoro-acetabular
 
