@@ -79,6 +79,9 @@ Assim, um paciente com impacto CAM em um lado e PINCER no outro não teve classi
 
 ### Exceções
 
+Três participantes não tiveram todas as mensurações obtidas, o que inviabilizou a classificação de CAM ou PINCER com a metodologia acima descrita.
+Estas exceções foram tratadas caso a caso, conforme descrito a seguir.
+
 **CAM**
 
 Um participante não teve seu ângulo alfa mensurado no lado direito, ele foi diagnosticado clinicamente como não possuindo impacto CAM.
@@ -86,6 +89,7 @@ Um participante não teve seu ângulo alfa mensurado no lado direito, ele foi di
 **PINCER**
 
 Um segundo participante não teve seu ângulo centro-borda acetabular mensurado no lado direito, e seu diagnóstico clínico foi de que não possuía PINCER.
+
 Um terceiro participante não teve seus índices de extrusão mensurados em ambos os lados.
 Seu diagnóstico clínico foi de que possuía PINCER apenas no quadril esquerdo.
 
