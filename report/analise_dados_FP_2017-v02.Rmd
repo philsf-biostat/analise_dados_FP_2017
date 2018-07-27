@@ -1,7 +1,7 @@
 ---
 title: "Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-acetabulares"
 author: '**De:** Felipe Figueiredo **Para:** Fernando Pina Cabral'
-date: '**Data: ** 26/07/2018'
+date: '**Data: ** dd/mm/aaaa'
 output:
   html_document:
     fig_caption: yes
@@ -19,7 +19,7 @@ output:
     fig_width: 6
     reference_docx: misc/style.docx
     toc: yes
-subtitle: 'CÓDIGO: analise_dados_FP_2017-v01'
+subtitle: 'CÓDIGO: analise_dados_FP_2017-v02'
 toc-title: "Sumário"
 ---
 
