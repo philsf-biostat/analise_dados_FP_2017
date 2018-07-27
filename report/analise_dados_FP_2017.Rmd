@@ -216,7 +216,7 @@ Tomando o gênero feminino como referência, demostramos os resultados relativos
 Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens.
 Em nossa amostra, o CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes mais frequente em homens que em mulheres (p = `r pv(ft.sexo.cam)`).
 
-Nossa amostra também indica que impacto do tipo Pincer é 93% menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pincer)`).
+Nossa amostra também indica que impacto do tipo Pincer é `r format.pct(-as.numeric(fisher.OR(ft.sexo.pincer, 2)), 0)`  menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pincer)`).
 Isso confirma que a maior prevalência de Pincer é em mulheres.
 
 Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (p = `r pv(ft.sexo.misto)`).
