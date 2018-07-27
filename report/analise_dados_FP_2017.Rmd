@@ -218,8 +218,8 @@ Isso confirma que a maior prevalência de Pincer é em mulheres.
 Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (p = `r pv(ft.sexo.misto)`).
 
 Nós analisamos também a relação da dor com cada tipo de impacto fêmoro-acetabular.
-Observamos que a presença de CAM é 3,4 vezes mais frequente nos quadris dolorosos (p = 0.025) que no grupo controle.
-Não houve diferença significativa nas ocorrências para Pincer (p = 0.767) e misto (p = 0.0554) (Figura 33).
+Observamos que a presença de CAM é `r fisher.OR(ft.grupo.cam, 1)` vezes mais frequente nos quadris dolorosos (p = `r pv(ft.grupo.cam)`) que no grupo controle.
+Não houve diferença significativa nas ocorrências para Pincer (p = `r pv(ft.grupo.pincer)`) e misto (p = `r pv(ft.grupo.misto)`) (Figura 33).
 
 A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
 As prevalências observadas neste estudo podem ser vistas na figura 33
