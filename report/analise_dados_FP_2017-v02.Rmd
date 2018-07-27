@@ -95,16 +95,16 @@ Seu diagnóstico clínico foi de que possuía PINCER apenas no quadril esquerdo.
 
 ## Análises estatísticas
 
-Todas as análises foram realizadas utilizando-se o software `R` versão `r getRversion()`.
+Todas as análises foram realizadas utilizando-se o software `R` versão `r getRversion()` (https://www.r-project.org/).
 O critério de significância estatística foi p-valor < 0.05.
 
 ### Análise descritiva
 
 As variáveis categóricas foram avaliadas quanto às suas ocorrências, sendo apresentadas em frequência e porcentagem.
-As variáveis contínuas foram descritas com médias e desvio padrão.
+As variáveis contínuas foram descritas com média e desvio padrão.
 Para avaliar a diferença entre as variabilidades observadas no ângulo de torção femoral e no ângulo alfa, calculamos seus respectivos coeficientes de variação (desvio padrão relativo).
 
-### Ocorrência dos tipos de impacto fêmoro-acetabular
+### Impactos fêmoro-acetabulares
 
 As diferenças entre as ocorrências dos impactos foi testada com teste de proporções, aplicando a correção de múltiplos p-valores de Bonferroni.
 Associações entre duas variáveis categóricas foram avaliadas usando-se o teste exato de Fisher, e apresentamos a razão de chance das associações significativas.
@@ -137,7 +137,7 @@ source('scripts/modelos.R', encoding = 'UTF-8')
 source('scripts/graficos.R', encoding = 'UTF-8')
 ```
 
-## Descrição dos participantes do estudo
+## Análise descritiva
 
 A Tabela 1 apresenta as características gerais dos participantes do estudo.
 
