@@ -104,7 +104,7 @@ As variáveis categóricas foram avaliadas quanto às suas ocorrências, sendo a
 As variáveis contínuas foram descritas com médias e desvio padrão.
 Para avaliar a diferença entre as variabilidades observadas no ângulo de torção femoral e no ângulo alfa, calculamos seus respectivos coeficientes de variação (desvio padrão relativo).
 
-### Ocorrência dos tipos de impacto fêmoro-acetabular
+### Impactos fêmoro-acetabulares
 
 As diferenças entre as ocorrências dos impactos foi testada com teste de proporções, aplicando a correção de múltiplos p-valores de Bonferroni.
 Associações entre duas variáveis categóricas foram avaliadas usando-se o teste exato de Fisher, e apresentamos a razão de chance das associações significativas.
@@ -137,7 +137,7 @@ source('scripts/modelos.R', encoding = 'UTF-8')
 source('scripts/graficos.R', encoding = 'UTF-8')
 ```
 
-## Descrição dos participantes do estudo
+## Análise descritiva
 
 A Tabela 1 apresenta as características gerais dos participantes do estudo.
 
