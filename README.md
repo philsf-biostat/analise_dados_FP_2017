@@ -4,9 +4,9 @@ Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-
 
 ## Análises realizadas
 
-1. Análise qualitativa dos impactos fêmoro-acetabulares ([Etapas][proj-impacto])
-2. Análise quantitativa da torção femoral ([Etapas][proj-quant-tor])
-3. Análise qualitativa da torção femoral ([Etapas][proj-qual-tor])
+1. Análise qualitativa dos impactos fêmoro-acetabulares ([Planejamento][proj-impacto])
+2. Análise quantitativa da torção femoral ([Planejamento][proj-quant-tor])
+3. Análise qualitativa da torção femoral ([Planejamento][proj-qual-tor])
 
 [proj-impacto]: https://github.com/philsf-biostat/analise_dados_FP_2017/projects/3
 [proj-quant-tor]: https://github.com/philsf-biostat/analise_dados_FP_2017/projects/1
@@ -21,14 +21,14 @@ Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-
 - [Visualização online][reportviz-v01]
 - [Download][docx-v01]
 
-[Planejamento da atividade][v01-project].
+[Planejamento][v01-project].
 
 **Versão 02 - Defesa** - [Em elaboração][milestone-posqual].
 
 - [Visualização online][reportviz-v02]
 - Download
 
-[Planejamento da atividade][v02-project].
+[Planejamento][v02-project].
 
 [releases]: https://github.com/philsf-biostat/analise_dados_FP_2017/releases/
 [milestone-prequal]: https://github.com/philsf-biostat/analise_dados_FP_2017/milestone/5
