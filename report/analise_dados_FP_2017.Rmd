@@ -182,7 +182,9 @@ pander(tab.cv)
 
 Table: **Tabela 3** Variabilidades relativas (%CV) do ângulo de torção femoral e do ângulo alfa em cada grupo de estudo.
 
-## Ocorrência dos tipos de impacto fêmoro-acetabular
+## Impactos fêmoro-acetabulares
+
+### Ocorrência dos tipos de impacto fêmoro-acetabular
 
 A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
 
