@@ -30,9 +30,10 @@ toc-title: "Sumário"
 **Histórico do documento**
 
 
-| Versão |   Alterações   |
-|:------:|:--------------:|
-|   01   | Versão inicial |
+| Versão |                    Alterações                    |
+|:------:|:------------------------------------------------:|
+|   01   |                  Versão inicial                  |
+|   02   | Análise qualitativa da torção femoral e impactos |
 
 ---
 
