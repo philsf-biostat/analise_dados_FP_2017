@@ -2,6 +2,16 @@
 
 Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-acetabulares
 
+## Análises realizadas
+
+1. [Análise qualitativa dos impactos fêmoro-acetabulares][proj-impacto]
+2. [Análise quantitativa da torção femoral][proj-quant-tor]
+3. [Análise qualitativa da torção femoral][proj-qual-tor]
+
+[proj-impacto]: projects/3
+[proj-quant-tor]: projects/1
+[proj-qual-tor]: projects/2
+
 ## Relatório da análise de dados:
 
 [Ver as etapas desta análise][releases].
