@@ -1,7 +1,7 @@
 ---
-title: "Análise Estatística de ..."
-author: '**De:** Felipe Figueiredo **Para:** ___'
-date: '**Data: ** dd/mm/aaaa'
+title: "Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-acetabulares"
+author: '**De:** Felipe Figueiredo **Para:** Fernando Pina Cabral'
+date: '**Data: ** 26/07/2018'
 output:
   html_document:
     fig_caption: yes
@@ -179,7 +179,9 @@ Veremos o impacto desta diferença, na seção 4.3.2.
 
 Table: **Tabela 3** Variabilidades relativas (%CV) do ângulo de torção femoral e do ângulo alfa em cada grupo de estudo.
 
-## Ocorrência dos tipos de impacto fêmoro-acetabular
+## Impactos fêmoro-acetabulares
+
+### Ocorrência dos tipos de impacto fêmoro-acetabular
 
 A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
 
@@ -194,43 +196,29 @@ Isto não foi observado neste estudo.
 Quadris com impacto MISTO por outro lado são significativamente menores que os impactos CAM (p = <0.001) e PINCER (p = 0.0308).
 Os quadris com impacto MISTO são os menos frequentes na amostra aqui estudada.
 
-### Associação da ocorrência do impacto fêmoro-acetabular por gênero
+### Associação da ocorrência do impacto fêmoro-acetabular por gênero e por grupo de estudo
 
-<!-- [FIXME: retirar] -->
-<!-- Os impactos ocorrem de forma diferenciada por gênero? -->
-<!-- (p = 0.00266) -->
 
-A fim de confirmar as hipóteses documentadas na literatura, avaliamos a diferença entre as prevalências dos impactos do tipo CAM e PINCER em cada gênero.
-As prevalências observadas neste estudo podem ser vistas na figura 33
+
+Os impactos ocorreram de forma diferenciada por gênero (p = 0.00266).
+Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer em cada um dos gêneros.
+A prevalência do impacto tipo CAM foi maior no gênero masculino e o impacto do tipo Pincer foram observados principalmente em indivíduos do gênero feminino.
+Tomando o gênero feminino como referência, demostramos os resultados relativos para os homens.
+Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens.
+Em nossa amostra, o CAM é 3.8 vezes mais frequente em homens que em mulheres (p = 0.019).
+
+Nossa amostra também indica que impacto do tipo Pincer é 93%  menos frequente em homens que em mulheres (p = 0.00174).
+Isso confirma que a maior prevalência de Pincer é em mulheres.
+
+Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (p = 0.738).
+
+
+
+Nós analisamos também a relação da dor com cada tipo de impacto fêmoro-acetabular.
+Observamos que a presença de CAM é 3.4 vezes mais frequente nos quadris dolorosos (p = 0.025) que no grupo controle.
+Não houve diferença significativa nas ocorrências para Pincer (p = 0.767) e misto (p = 0.0554) (Figura 33).
 
 ![**Figura 33** Número de quadris, por gênero e por grupo de estudo, com cada tipo de impacto fêmoro-acetabular (N = 52)](../figures/painel_sex_grupo.png)
-
-
-
-Tomando o gênero feminino como referência apresentamos os resultados relativos para os homens.
-
-Nossos resultados indicam que o impacto do tipo CAM realmente acomete mais homens.
-Em nossa amostra, CAM é 3.8 vezes vezes mais frequente em homens que em mulheres (p = 0.019).
-
-Nossa amostra também indica que impactos do tipo PINCER é 93% menos frequente em homens que em mulheres (p = 0.00174).
-Confirma-se a maior prevalência de PINCER em mulheres.
-
-Não há evidências em nossa amostra de o impacto do tipo MISTO acometa mais homens que mulheres (p = 0.738).
-
-### Associação da ocorrência do impacto fêmoro-acetabular por grupo de estudo
-
-O tipo de impacto está associado com a dor?
-<!-- (p = 0.0852) -->
-
-
-
-(figura 33)
-
-CAM é 3.4 vezes mais frequente nos quadris dolorosos (p = 0.025).
-
-PINCER não é significativo (p = 0.767).
-
-MISTO não é significativo (p = 0.0554).
 
 ## Torção femoral
 
