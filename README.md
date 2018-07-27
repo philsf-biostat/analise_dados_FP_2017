@@ -8,13 +8,13 @@ Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-
 
 **Versão 01 - Qualificação** - Concluído em 26/07/2018.
 
-- [Versão 01 - Qualificação][reportviz-v01] ([DOCX][docx-v01])
+- [Visualização online][reportviz-v01]
+- [Download][docx-v01]
 
-**Versão 02 - Defesa**
+**Versão 02 - Defesa** - Em elaboração.
 
-Em elaboração
-
-- [Versão 02 - Defesa][reportviz-v02] (DOCX)
+- [Visualização online][reportviz-v02]
+- Download
 
 [releases]: releases/
 [reportviz-v01]: report/analise_dados_FP_2017-v01.md
