@@ -4,7 +4,7 @@ Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-
 
 ## Relatório da análise de dados:
 
-[Ver as entregas desta análise][releases].
+[Ver as etapas desta análise][releases].
 
 **Versão 01 - Qualificação** - Concluído em 26/07/2018.
 
