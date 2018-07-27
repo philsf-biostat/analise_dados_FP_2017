@@ -95,7 +95,7 @@ Seu diagnóstico clínico foi de que possuía PINCER apenas no quadril esquerdo.
 
 ## Análises estatísticas
 
-Todas as análises foram realizadas utilizando-se o software `R` versão `r getRversion()`.
+Todas as análises foram realizadas utilizando-se o software `R` versão `r getRversion()` (https://www.r-project.org/).
 O critério de significância estatística foi p-valor < 0.05.
 
 ### Análise descritiva
