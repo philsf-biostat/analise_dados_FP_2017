@@ -1,5 +1,5 @@
 ---
-title: "Análise Estatística de ..."
+title: "Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-acetabulares"
 author: '**De:** Felipe Figueiredo **Para:** Fernando Pina Cabral'
 date: '**Data: ** 26/07/2018'
 output:
