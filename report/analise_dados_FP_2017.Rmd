@@ -199,7 +199,7 @@ Isto não foi observado neste estudo.
 Quadris com impacto MISTO por outro lado são significativamente menores que os impactos CAM (p = `r pv(ppt.imp)[1]`) e PINCER (p = `r pv(ppt.imp)[4]`).
 Os quadris com impacto MISTO são os menos frequentes na amostra aqui estudada.
 
-### Associação da ocorrência do impacto fêmoro-acetabular por gênero
+### Associação da ocorrência do impacto fêmoro-acetabular por gênero e por grupo de estudo
 
 <!-- [FIXME: retirar] -->
 <!-- Os impactos ocorrem de forma diferenciada por gênero? -->
