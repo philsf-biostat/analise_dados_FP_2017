@@ -41,10 +41,6 @@ toc-title: "Sumário"
 
 # Introdução
 
-## Objetivos
-
-## Recepção e tratamento dos dados
-
 # Metodologia
 
 ## Algoritmo de classificação dos impactos nos quadris
