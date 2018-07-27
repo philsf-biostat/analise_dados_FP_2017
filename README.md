@@ -2,9 +2,16 @@
 
 Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-acetabulares
 
-Relatórios de análise de dados:
+## Relatório da análise de dados:
+
+**Versão 01 - Qualificação** - Concluído em 26/07/2018.
 
 - [Versão 01 - Qualificação][reportviz-v01] ([DOCX][docx-v01])
+
+**Versão 02 - Defesa**
+
+Em elaboração
+
 - [Versão 02 - Defesa][reportviz-v02] (DOCX)
 
 [reportviz-v01]: report/analise_dados_FP_2017-v01.md
