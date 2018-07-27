@@ -8,4 +8,4 @@ Relatórios de análise de dados:
 - analise_dados_FP_2017-v02 (DOCX)
 
 [reportviz-v01]: report/analise_dados_FP_2017-v01.md
-[DOCX-v01]: report/analise_dados_FP_2017-v01.docx
+[DOCX-v01]: report/analise_dados_FP_2017-v01.docx?raw=true
