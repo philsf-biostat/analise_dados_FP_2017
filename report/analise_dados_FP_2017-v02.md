@@ -182,7 +182,7 @@ Table: **Tabela 3** Variabilidades relativas (%CV) do ângulo de torção femora
 
 A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
 
-![**Figura 32** Número de quadris com cada tipo de impacto fêmoro-acetabular (N total de quadris = 52)](../figures/impacto_freq.png)
+![**Figura 32** Proporção de quadris com cada tipo de impacto fêmoro-acetabular. (N total de quadris = 52)](../figures/impacto_freq.png)
 
 
 
