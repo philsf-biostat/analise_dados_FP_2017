@@ -122,15 +122,14 @@ Esta abordagem permite investigar se estes fatores contribuem para a percepção
 A Tabela 1 apresenta as características gerais dos participantes do estudo.
 
 
-|        &nbsp;         | level |       F       |       M       |   p    |
-|:---------------------:|:-----:|:-------------:|:-------------:|:------:|
-|         **n**         |       |       7       |      19       |        |
-| **IDADE (mean (sd))** |       | 35.00 (6.38)  | 35.00 (6.98)  | 1.000  |
-|  **IMC (mean (sd))**  |       | 19.54 (2.44)  | 25.67 (3.36)  | <0.001 |
-|      **DOR (%)**      |   D   |   4 ( 57.1)   |   9 ( 47.4)   | 0.415  |
-|                       |   E   |   0 (  0.0)   |   4 ( 21.1)   |        |
-|                       |   B   |   3 ( 42.9)   |   6 ( 31.6)   |        |
-|  **HHS (mean (sd))**  |       | 73.71 (14.58) | 64.68 (12.23) | 0.125  |
+|        &nbsp;         | level |   Controle    |   Doloroso    |   p   |
+|:---------------------:|:-----:|:-------------:|:-------------:|:-----:|
+|         **n**         |       |      17       |      35       |       |
+| **IDADE (mean (sd))** |       | 34.88 (7.53)  | 35.06 (6.27)  | 0.930 |
+|  **IMC (mean (sd))**  |       | 24.26 (4.37)  | 23.91 (4.04)  | 0.771 |
+|     **SEXO (%)**      |   F   |   4 ( 23.5)   |  10 ( 28.6)   | 0.959 |
+|                       |   M   |  13 ( 76.5)   |  25 ( 71.4)   |       |
+|  **HHS (mean (sd))**  |       | 65.53 (12.22) | 67.89 (13.64) | 0.549 |
 
 Table: **Tabela 1** Descrição dos participantes do estudo (N = 26).
 sd = Desvio padrão,
