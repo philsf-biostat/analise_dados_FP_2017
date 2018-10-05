@@ -212,7 +212,7 @@ Tomando o gênero feminino como referência, demostramos os resultados relativos
 Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens.
 Em nossa amostra, o CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes mais frequente em homens que em mulheres (p = `r pv(ft.sexo.cam)`).
 
-Nossa amostra também indica que impacto do tipo Pincer é `r format.pct(-as.numeric(fisher.OR(ft.sexo.pincer, 2)), 0)`  menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pincer)`).
+Nossa amostra também indica que impacto do tipo Pincer é `r format.pct(-as.numeric(fisher.OR(ft.sexo.pincer, 2)), 0, pct.symbol = TRUE)`  menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pincer)`).
 Isso confirma que a maior prevalência de Pincer é em mulheres.
 
 Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (p = `r pv(ft.sexo.misto)`).
@@ -256,7 +256,7 @@ A figura 34 mostra a reta de regressão que associa as mensurações destes âng
 
 O modelo de regressão linear apresentado na figura 34 representa como o ângulo de torção femoral varia em função do ângulo alfa.
 Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente `r format.float(-coef(lm.tor.alfa)[2])` graus no ângulo de torção (p = `r format.pval(summary(lm.tor.alfa)$coefficients[2, 4], digits = 2)`).
-O ângulo alfa sozinho, no entanto, explica apenas $r^2=$ `r format.pct(corr.tor.alf$estimate^2)` da variabilidade observada no ângulo de torção femoral.
+O ângulo alfa sozinho, no entanto, explica apenas $r^2=$ `r format.pct(corr.tor.alf$estimate^2, pct.symbol = TRUE)` da variabilidade observada no ângulo de torção femoral.
 É necessário investigar outros fatores que possam ajudar a explicar esta variabilidade observada.
 
 Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este resultado é inconsistente (figura 33).
