@@ -79,7 +79,7 @@ bar.imp.sex.grupo <- ggplot(dados.impacto, aes(IMPACTO, fill = GRUPO)) +
   theme(legend.position = "bottom", legend.title = element_blank())
 
 bar.imp <- ggplot(
-  dados[, .(IMPACTO = c("CAM", "MISTO", "PINCER"), N = c(sum(CAM), sum(MISTO), sum(PINCER)))],
-  aes(IMPACTO, N, fill = IMPACTO)) +
+  dados[, .(IMPACTO = c("CAM", "MISTO", "PINCER"), P = c(sum(CAM)/length(IMPACTO), sum(MISTO)/length(IMPACTO), sum(PINCER)/length(IMPACTO)))],
+  aes(IMPACTO, P, fill = IMPACTO)) +
   xlab("") + ylab("Quadris por tipo de impacto (N = 52)") +
   geom_col() + theme(legend.position = "none")
