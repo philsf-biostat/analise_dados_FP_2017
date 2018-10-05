@@ -18,8 +18,8 @@ require(philsfmisc)
 CV <- function(x) { sd(x, na.rm = TRUE)/mean(x, na.rm = TRUE)}
 
 tab.cv <- dados[, .(
-  "%CV TORCAO" = format.pct(CV(TORCAO)),
-  "%CV ALFA" = format.pct(CV(ALFA))
+  "%CV TORCAO" = format.pct(CV(TORCAO), pct.symbol = TRUE),
+  "%CV ALFA" = format.pct(CV(ALFA), pct.symbol = TRUE)
   ), by = .(GRUPO)]
 
 write.csv2(tab1, "results/tab1.csv")
