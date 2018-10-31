@@ -79,6 +79,6 @@ bar.imp.sex.grupo <- ggplot(dados.impacto, aes(IMPACTO, fill = GRUPO)) +
   theme(legend.position = "bottom", legend.title = element_blank())
 
 bar.imp <- ggplot(dados.impacto, aes(IMPACTO)) +
-  geom_bar() +
+  geom_bar(fill = c("red", "green", "blue")) +
   xlab("") + ylab("Quadris por tipo de impacto (N = 50)") +
   theme(legend.position = "bottom")
