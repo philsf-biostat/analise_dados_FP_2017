@@ -210,12 +210,12 @@ Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer 
 A prevalência do impacto tipo CAM foi maior no gênero masculino e o impacto do tipo Pincer foram observados principalmente em indivíduos do gênero feminino.
 Tomando o gênero feminino como referência, demostramos os resultados relativos para os homens.
 Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens.
-Em nossa amostra, o CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes mais frequente em homens que em mulheres (p = `r pv(ft.sexo.cam)`).
+Em nossa amostra, o CAM é `r fisher.OR(ft.sexo.cam, 1)` vezes mais frequente em homens que em mulheres (`r format.OR(ft.sexo.cam)`).
 
-Nossa amostra também indica que impacto do tipo Pincer é `r format.pct(-as.numeric(fisher.OR(ft.sexo.pincer, 2)), 0, pct.symbol = TRUE)`  menos frequente em homens que em mulheres (p = `r pv(ft.sexo.pincer)`).
+Nossa amostra também indica que impacto do tipo Pincer é `r format.pct(-as.numeric(fisher.OR(ft.sexo.pincer, 2)), 0, pct.symbol = TRUE)`  menos frequente em homens que em mulheres (`r format.OR(ft.sexo.pincer)`).
 Isso confirma que a maior prevalência de Pincer é em mulheres.
 
-Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (p = `r pv(ft.sexo.misto)`).
+Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (`r format.OR(ft.sexo.misto)`).
 
 ```{r include=FALSE}
 fisher.OR(ft.grupo.cam, 1)
@@ -224,8 +224,8 @@ fisher.OR(ft.grupo.misto, 1)
 ```
 
 Nós analisamos também a relação da dor com cada tipo de impacto fêmoro-acetabular.
-Observamos que a presença de CAM é `r fisher.OR(ft.grupo.cam, 1)` vezes mais frequente nos quadris dolorosos (p = `r pv(ft.grupo.cam)`) que no grupo controle.
-Não houve diferença significativa nas ocorrências para Pincer (p = `r pv(ft.grupo.pincer)`) e misto (p = `r pv(ft.grupo.misto)`) (Figura 33).
+Observamos que a presença de CAM é `r fisher.OR(ft.grupo.cam, 1)` vezes mais frequente nos quadris dolorosos (`r format.OR(ft.grupo.cam)`) que no grupo controle.
+Não houve diferença significativa nas ocorrências para Pincer (`r format.OR(ft.grupo.pincer)`) e misto (`r format.OR(ft.grupo.misto)`) (Figura 33).
 
 ![**Figura 33** Número de quadris, por gênero e por grupo de estudo, com cada tipo de impacto fêmoro-acetabular (N = 52)](../figures/painel_sex_grupo.png)
 
