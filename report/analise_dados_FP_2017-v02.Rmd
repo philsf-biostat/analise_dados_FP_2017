@@ -144,8 +144,8 @@ pander(tab1)
 Table: **Tabela 1** Descrição dos participantes do estudo (N = 26).
 sd = Desvio padrão,
 IMC = Índice de massa corpórea,
-HHS = Harris hip score (modificado),
-p = teste t de Student para variáveis contínuas, e teste exato de Fisher para DOR.
+HHS = Harris hip score (modificado).
+<!-- p = teste t de Student para variáveis contínuas, e teste exato de Fisher para DOR. -->
 
 O IMC médio dos homens é significativamente maior que o das mulheres.
 A idade média, lado doloroso e o Harris Hip Score dos participantes de cada gênero apresentou boa homogeneidade quanto aos gêneros.
