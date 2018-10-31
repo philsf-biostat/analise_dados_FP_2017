@@ -63,3 +63,7 @@ fisher.OR <- function(x, digits = 2) {
   # formata a diferença entre os grupos, e não a relação ( - 1 )
   format.float(x$estimate - 1, digits = digits)
 }
+
+format.OR <- function(x, digits = 2) {
+  paste("OR:", format.float(x$estimate, digits = digits), "IC:", format.interval(x$conf.int, digits = digits))
+}
