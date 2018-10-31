@@ -122,20 +122,20 @@ Esta abordagem permite investigar se estes fatores contribuem para a percepção
 A Tabela 1 apresenta as características gerais dos participantes do estudo.
 
 
-|        &nbsp;         | level |   Controle    |   Doloroso    |   p   |
-|:---------------------:|:-----:|:-------------:|:-------------:|:-----:|
-|         **n**         |       |      17       |      35       |       |
-| **IDADE (mean (sd))** |       | 34.88 (7.53)  | 35.06 (6.27)  | 0.930 |
-|  **IMC (mean (sd))**  |       | 24.26 (4.37)  | 23.91 (4.04)  | 0.771 |
-|     **SEXO (%)**      |   F   |   4 ( 23.5)   |  10 ( 28.6)   | 0.959 |
-|                       |   M   |  13 ( 76.5)   |  25 ( 71.4)   |       |
-|  **HHS (mean (sd))**  |       | 65.53 (12.22) | 67.89 (13.64) | 0.549 |
+|        &nbsp;         | level |    Overall    |
+|:---------------------:|:-----:|:-------------:|
+|         **n**         |       |      26       |
+| **IDADE (mean (sd))** |       | 35.00 (6.70)  |
+|  **IMC (mean (sd))**  |       | 24.02 (4.15)  |
+|     **SEXO (%)**      |   F   |   7 (26.9)    |
+|                       |   M   |   19 (73.1)   |
+|  **HHS (mean (sd))**  |       | 67.12 (13.25) |
 
 Table: **Tabela 1** Descrição dos participantes do estudo (N = 26).
 sd = Desvio padrão,
 IMC = Índice de massa corpórea,
-HHS = Harris hip score (modificado),
-p = teste t de Student para variáveis contínuas, e teste exato de Fisher para DOR.
+HHS = Harris hip score (modificado).
+<!-- p = teste t de Student para variáveis contínuas, e teste exato de Fisher para DOR. -->
 
 O IMC médio dos homens é significativamente maior que o das mulheres.
 A idade média, lado doloroso e o Harris Hip Score dos participantes de cada gênero apresentou boa homogeneidade quanto aos gêneros.
@@ -201,18 +201,18 @@ Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer 
 A prevalência do impacto tipo CAM foi maior no gênero masculino e o impacto do tipo Pincer foram observados principalmente em indivíduos do gênero feminino.
 Tomando o gênero feminino como referência, demostramos os resultados relativos para os homens.
 Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens.
-Em nossa amostra, o CAM é 3.8 vezes mais frequente em homens que em mulheres (p = 0.019).
+Em nossa amostra, o CAM é 3.8 vezes mais frequente em homens que em mulheres (OR: 4.82 IC: [1.11, 22.78]).
 
-Nossa amostra também indica que impacto do tipo Pincer é 93%  menos frequente em homens que em mulheres (p = 0.00174).
+Nossa amostra também indica que impacto do tipo Pincer é 93%  menos frequente em homens que em mulheres (OR: 0.07 IC: [0.00, 0.52]).
 Isso confirma que a maior prevalência de Pincer é em mulheres.
 
-Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (p = 0.738).
+Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (OR: 0.74 IC: [0.17, 3.46]).
 
 
 
 Nós analisamos também a relação da dor com cada tipo de impacto fêmoro-acetabular.
-Observamos que a presença de CAM é 3.4 vezes mais frequente nos quadris dolorosos (p = 0.025) que no grupo controle.
-Não houve diferença significativa nas ocorrências para Pincer (p = 0.767) e misto (p = 0.0554) (Figura 33).
+Observamos que a presença de CAM é 3.4 vezes mais frequente nos quadris dolorosos (OR: 4.35 IC: [1.07, 19.11]) que no grupo controle.
+Não houve diferença significativa nas ocorrências para Pincer (OR: 1.33 IC: [0.35, 4.99]) e misto (OR: 4.86 IC: [0.90, 50.43]) (Figura 33).
 
 ![**Figura 33** Número de quadris, por gênero e por grupo de estudo, com cada tipo de impacto fêmoro-acetabular (N = 52)](../figures/painel_sex_grupo.png)
 
