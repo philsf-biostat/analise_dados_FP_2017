@@ -282,7 +282,11 @@ A torção média dos quadris que possuem impacto do tipo MISTO não é signific
 
 ### Correlação entre a torção femoral e o ângulo alfa
 
-O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = `r format.float(corr.tor.alf$estimate)`, p = `r pv(corr.tor.alf)`).
+O ângulo de torção é negativamente correlacionado com o ângulo alfa
+(r = `r format.float(corr.tor.alf$estimate)`
+,
+p = `r pv(corr.tor.alf)`)
+.
 A figura 34 mostra a reta de regressão que associa as mensurações destes ângulos.
 
 <!-- [FIXME: observar que esta correlação é global] -->
@@ -290,19 +294,38 @@ A figura 34 mostra a reta de regressão que associa as mensurações destes âng
 ![**Figura 34** Regressão linear entre o ângulo de torção femoral e o ângulo alfa](../figures/painel_AlfTor_global.png)
 
 O modelo de regressão linear apresentado na figura 34 representa como o ângulo de torção femoral varia em função do ângulo alfa.
-Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente `r format.float(-coef(lm.tor.alfa)[2])` graus no ângulo de torção (p = `r format.pval(summary(lm.tor.alfa)$coefficients[2, 4], digits = 2)`).
-O ângulo alfa sozinho, no entanto, explica apenas $r^2=$ `r format.pct(corr.tor.alf$estimate^2, pct.symbol = TRUE)` da variabilidade observada no ângulo de torção femoral.
+Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
+`r format.float(-coef(lm.tor.alfa)[2])`
+graus no ângulo de torção
+(p = `r format.pval(summary(lm.tor.alfa)$coefficients[2, 4], digits = 2)`)
+.
+O ângulo alfa sozinho, no entanto, explica apenas $r^2=$
+`r format.pct(corr.tor.alf$estimate^2, pct.symbol = TRUE)`
+da variabilidade observada no ângulo de torção femoral.
 É necessário investigar outros fatores que possam ajudar a explicar esta variabilidade observada.
 
 Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este resultado é inconsistente (figura 33).
-O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = `r format.float(corr.tor.alf.con$estimate)`, p = `r pv(corr.tor.alf.con)`) no grupo controle, mas a correlação não é significativa no grupo de quadris dolorosos
-(r = `r format.float(corr.tor.alf.dor$estimate)`, p = `r pv(corr.tor.alf.dor)`).
+O ângulo de torção é negativamente correlacionado com o ângulo alfa
+(r = `r format.float(corr.tor.alf.con$estimate)`
+,
+p = `r pv(corr.tor.alf.con)`)
+no grupo controle, mas a correlação não é significativa no grupo de quadris dolorosos
+(r = `r format.float(corr.tor.alf.dor$estimate)`
+,
+p = `r pv(corr.tor.alf.dor)`)
+.
 
 Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustou-se modelos de regressão linear para cada grupo.
 A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura 35).
-Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle (p = `r format.pval(summary(lm.tor.alfa.con)$coefficients[2, 4], digits = 2)`).
-Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente `r format.float(-coef(lm.tor.alfa.con)[2])` graus no ângulo de torção.
-Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos (p = `r format.pval(summary(lm.tor.alfa.dor)$coefficients[2, 4], digits = 2)`).
+Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle
+(p = `r format.pval(summary(lm.tor.alfa.con)$coefficients[2, 4], digits = 2)`)
+.
+Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
+`r format.float(-coef(lm.tor.alfa.con)[2])`
+graus no ângulo de torção.
+Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos
+(p = `r format.pval(summary(lm.tor.alfa.dor)$coefficients[2, 4], digits = 2)`)
+.
 
 ![**Figura 35** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle)](../figures/painel_AlfTor_grupo.png)
 
