@@ -182,9 +182,9 @@ Table: **Tabela 3** Variabilidades relativas (%CV) do ângulo de torção femora
 
 ### Ocorrência dos tipos de impacto fêmoro-acetabular
 
-A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
+A figura 38 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
 
-![**Figura 32** Proporção de quadris com cada tipo de impacto fêmoro-acetabular. (N total de quadris = 50)](../figures/impacto_freq.png)
+![**Figura 38** Número de quadris com cada tipo de impacto fêmoro-acetabular, sendo dividivos quanto ao tipo de impacto (N total de quadris = 50).](../figures/impacto_freq.png)
 
 Os três tipos de impactos parecem ocorrer com proporções semelhantes
 (p = `r pv(pt.imp)`)
@@ -247,9 +247,9 @@ Não houve diferença significativa nas ocorrências para Pincer
 (`r format.OR(ft.grupo.pincer)`)
 e Misto
 (`r format.OR(ft.grupo.misto)`)
-(Figura 33).
+(Figura 39).
 
-![**Figura 33** Número de quadris, por gênero e por grupo de estudo, com cada tipo de impacto fêmoro-acetabular (N = 52)](../figures/painel_sex_grupo.png)
+![**Figura 39** Número de quadris estratificados por gênero e por grupo de estudo com diferentes tipos de impacto fêmoro-acetabular e manifestações clínicas (N = 50).](../figures/painel_sex_grupo.png)
 
 ## Torção femoral
 
@@ -281,13 +281,14 @@ Na avaliação global dos quadris estudados, o ângulo de torção demonstrou se
 (r = `r format.float(corr.tor.alf$estimate)`
 ,
 p = `r pv(corr.tor.alf)`)
-, como podemos observar na reta de regressão que associa as mensurações destes ângulos (figura 34).
+,
+como podemos observar na reta de regressão que associa as mensurações destes ângulos (figura 40).
 
 <!-- [FIXME: observar que esta correlação é global] -->
 
-![**Figura 34** Regressão linear entre o ângulo de torção femoral e o ângulo alfa](../figures/painel_AlfTor_global.png)
+![**Figura 40** Regressão linear entre torção femoral e o ângulo alfa.](../figures/painel_AlfTor_global.png)
 
-O modelo de regressão linear apresentado na figura 34 representa como o ângulo de torção femoral varia em função do ângulo alfa.
+O modelo de regressão linear apresentado na figura 40 representa como o ângulo de torção femoral varia em função do ângulo alfa.
 Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
 `r format.float(-coef(lm.tor.alfa)[2])`
 graus no ângulo de torção
@@ -318,7 +319,7 @@ Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos
 (p = `r format.pval(summary(lm.tor.alfa.dor)$coefficients[2, 4], digits = 2)`)
 .
 
-![**Figura 35** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle)](../figures/painel_AlfTor_grupo.png)
+![**Figura 41** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle).](../figures/painel_AlfTor_grupo.png)
 
 <!-- ```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"} -->
 <!-- alftor.grupo.imp -->
@@ -333,7 +334,7 @@ Isto pode ter sido afetado pela diferença entre as variabilidades relativas ent
 
 <!-- Obs: na verdade, retirar todos os pacientes MISTO não impacta nos resultados e conclusões. -->
 
-![**Figura 36** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle e para cada tipo de impacto fêmoro-acetabular](../figures/painel_AlfTor_imp_grupo.png)
+![**Figura 42** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle e para cada tipo de impacto fêmoro-acetabular.](../figures/painel_AlfTor_imp_grupo.png)
 
 <!-- ### Quadris com ângulo de torção femoral alterada -->
 
