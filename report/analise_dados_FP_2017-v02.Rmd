@@ -215,7 +215,7 @@ Os impactos ocorreram de forma diferenciada por gênero
 (p = `r pv(ft.sexo.imp)`)
 .
 Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer em cada um dos gêneros.
-A prevalência do impacto tipo CAM foi maior no gênero masculino e o impacto do tipo Pincer foram observados principalmente em indivíduos do gênero feminino.
+A prevalência do impacto tipo CAM foi maior no gênero masculino e o impacto do tipo Pincer foi observado principalmente em indivíduos do gênero feminino.
 Tomando o gênero feminino como referência, demostramos os resultados relativos para os homens.
 Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens.
 Em nossa amostra, o CAM é
@@ -241,15 +241,15 @@ fisher.OR(ft.grupo.pincer, 1)
 fisher.OR(ft.grupo.misto, 1)
 ```
 
-Nós analisamos também a relação da dor com cada tipo de impacto fêmoro-acetabular.
-Observamos que a presença de CAM é
+Analisamos também a relação da dor com cada tipo de impacto.
+Observamos que a presença de CAM foi
 `r fisher.OR(ft.grupo.cam, 1)`
 vezes mais frequente nos quadris dolorosos
 (`r format.OR(ft.grupo.cam)`)
 que no grupo controle.
 Não houve diferença significativa nas ocorrências para Pincer
 (`r format.OR(ft.grupo.pincer)`)
-e misto
+e Misto
 (`r format.OR(ft.grupo.misto)`)
 (Figura 33).
 
