@@ -261,18 +261,17 @@ tt.tor.pincer
 tt.tor.misto
 ```
 
-A torção média dos quadris que possuem impacto do tipo CAM não é significativamente dos controles
+A torção média dos quadris dolorosos que possuem impacto do tipo CAM não apresentou diferença estatisticamente significativa quando comparada com os quadris controle
 (p= `r pv(tt.tor.cam)`)
 .
-
-A torção média dos quadris que possuem impacto do tipo PINCER observada foi de
+Já no impacto tipo Pincer, a torção média dos quadris dolorosos foi de
 `r format.float(tt.tor.pincer$estimate[2])`
-, maior que a média dos controles de
+graus, enquanto que a torção média dos controles foi de
 `r format.float(tt.tor.pincer$estimate[1])`
+graus
 (p= `r pv(tt.tor.pincer)`)
 .
-
-A torção média dos quadris que possuem impacto do tipo MISTO não é significativamente dos controles
+A torção média dos quadris dolorosos que possuem impacto do tipo Misto não foi significativa quando comparada com os controles
 (p= `r pv(tt.tor.misto)`)
 .
 
