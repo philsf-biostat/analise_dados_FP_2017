@@ -305,10 +305,9 @@ no grupo controle, mas a correlação não é significativa no grupo de quadris 
 (r = `r format.float(corr.tor.alf.dor$estimate)`
 ,
 p = `r pv(corr.tor.alf.dor)`)
-.
-
-Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustou-se modelos de regressão linear para cada grupo.
-A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura 35).
+(Figura 41).
+Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustaram-se modelos de regressão linear para cada grupo.
+A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle.
 Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle
 (p = `r format.pval(summary(lm.tor.alfa.con)$coefficients[2, 4], digits = 2)`)
 .
@@ -325,8 +324,8 @@ Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos
 <!-- alftor.grupo.imp -->
 <!-- ``` -->
 
-Quando controlamos pelo tipo de impacto, não é mais possível identificar associação entre os ângulos (figura 36).
-Isto pode ter sido afetado pela diferença entre as variabilidades relativas entre os ângulos estudados (tabela 3).
+Quando controlamos a análise pelo tipo de impacto, não foi possível identificar associação com o ângulo de torção.
+Isto pode ter sido afetado pela diferença entre as variabilidades relativas entre o ângulo de torção (CV aproximado 60%) e o ângulo alfa (CV aproximado 22%) (Figura 42).
 
 <!-- FIXME: mover para a DISCUSSÃO -->
 <!-- Esta aparente correlação negativa no grupo controle parece ter sido afetada pelo baixo número de pacientes com impacto misto - há apenas 2 pacientes nesta categoria. -->
