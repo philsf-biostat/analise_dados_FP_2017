@@ -186,12 +186,8 @@ A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadri
 
 ![**Figura 32** Proporção de quadris com cada tipo de impacto fêmoro-acetabular. (N total de quadris = 50)](../figures/impacto_freq.png)
 
-```{r include=FALSE}
-ppt.imp <- pairwise.prop.test(c(36, 16, 30), c(52, 52, 52), p.adjust.method = "bonf")
-```
-
-Os impactos do tipo CAM e PINCER parecem ocorrer com frequências semelhantes
-(p = `r pv(ppt.imp)[2]`)
+Os três tipos de impactos parecem ocorrer com proporções semelhantes
+(p = `r pv(pt.imp)`)
 .
 
 <!-- Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum. -->

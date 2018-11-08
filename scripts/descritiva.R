@@ -28,6 +28,9 @@ write.csv2(sum.grupo, "results/grupo.csv")
 write.csv2(tab.cv, "results/tab_cv.csv")
 
 ## Associação de dados categóricos
+imp.n <- with(dados.impacto, table(IMPACTO))
+imp.mat <- matrix(c(as.vector(imp.n), sum(imp.n) - as.vector(imp.n)), ncol = 2)
+pt.imp <- prop.test(imp.mat)
 
 # Homens tem tipos de impacto != das mulheres?
 
