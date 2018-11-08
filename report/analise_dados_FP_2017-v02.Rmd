@@ -265,11 +265,20 @@ tt.tor.pincer
 tt.tor.misto
 ```
 
-A torção média dos quadris que possuem impacto do tipo CAM não é significativamente dos controles (p= `r pv(tt.tor.cam)`).
+A torção média dos quadris que possuem impacto do tipo CAM não é significativamente dos controles
+(p= `r pv(tt.tor.cam)`)
+.
 
-A torção média dos quadris que possuem impacto do tipo PINCER observada foi de `r format.float(tt.tor.pincer$estimate[2])`, maior que a média dos controles de `r format.float(tt.tor.pincer$estimate[1])` (p= `r pv(tt.tor.pincer)`).
+A torção média dos quadris que possuem impacto do tipo PINCER observada foi de
+`r format.float(tt.tor.pincer$estimate[2])`
+, maior que a média dos controles de
+`r format.float(tt.tor.pincer$estimate[1])`
+(p= `r pv(tt.tor.pincer)`)
+.
 
-A torção média dos quadris que possuem impacto do tipo MISTO não é significativamente dos controles (p= `r pv(tt.tor.misto)`).
+A torção média dos quadris que possuem impacto do tipo MISTO não é significativamente dos controles
+(p= `r pv(tt.tor.misto)`)
+.
 
 ### Correlação entre a torção femoral e o ângulo alfa
 
