@@ -277,12 +277,11 @@ A torção média dos quadris dolorosos que possuem impacto do tipo Misto não f
 
 ### Correlação entre a torção femoral e o ângulo alfa
 
-O ângulo de torção é negativamente correlacionado com o ângulo alfa
+Na avaliação global dos quadris estudados, o ângulo de torção demonstrou ser inversamente proporcional ao ângulo alfa
 (r = `r format.float(corr.tor.alf$estimate)`
 ,
 p = `r pv(corr.tor.alf)`)
-.
-A figura 34 mostra a reta de regressão que associa as mensurações destes ângulos.
+, como podemos observar na reta de regressão que associa as mensurações destes ângulos (figura 34).
 
 <!-- [FIXME: observar que esta correlação é global] -->
 
@@ -297,9 +296,7 @@ graus no ângulo de torção
 O ângulo alfa sozinho, no entanto, explica apenas $r^2=$
 `r format.pct(corr.tor.alf$estimate^2, pct.symbol = TRUE)`
 da variabilidade observada no ângulo de torção femoral.
-É necessário investigar outros fatores que possam ajudar a explicar esta variabilidade observada.
-
-Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este resultado é inconsistente (figura 33).
+Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este resultado é inconsistente.
 O ângulo de torção é negativamente correlacionado com o ângulo alfa
 (r = `r format.float(corr.tor.alf.con$estimate)`
 ,
