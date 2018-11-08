@@ -242,8 +242,16 @@ fisher.OR(ft.grupo.misto, 1)
 ```
 
 Nós analisamos também a relação da dor com cada tipo de impacto fêmoro-acetabular.
-Observamos que a presença de CAM é `r fisher.OR(ft.grupo.cam, 1)` vezes mais frequente nos quadris dolorosos (`r format.OR(ft.grupo.cam)`) que no grupo controle.
-Não houve diferença significativa nas ocorrências para Pincer (`r format.OR(ft.grupo.pincer)`) e misto (`r format.OR(ft.grupo.misto)`) (Figura 33).
+Observamos que a presença de CAM é
+`r fisher.OR(ft.grupo.cam, 1)`
+vezes mais frequente nos quadris dolorosos
+(`r format.OR(ft.grupo.cam)`)
+que no grupo controle.
+Não houve diferença significativa nas ocorrências para Pincer
+(`r format.OR(ft.grupo.pincer)`)
+e misto
+(`r format.OR(ft.grupo.misto)`)
+(Figura 33).
 
 ![**Figura 33** Número de quadris, por gênero e por grupo de estudo, com cada tipo de impacto fêmoro-acetabular (N = 52)](../figures/painel_sex_grupo.png)
 
