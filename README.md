@@ -23,7 +23,7 @@ Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-
 - [Visualização online][reportviz-v01]
 - [Download][docx-v01]
 
-**Versão 02 - Defesa** - [Em elaboração][milestone-posqual].
+**Versão 02 - Defesa** - [Concluído em 09/11/2018][milestone-posqual].
 
 [Planejamento][v02-project].
 
