@@ -194,7 +194,7 @@ A figura 38 mostra a frequência com que cada tipo de impacto ocorreu nos quadri
 ![**Figura 38** Número de quadris com cada tipo de impacto fêmoro-acetabular, sendo dividivos quanto ao tipo de impacto (N total de quadris = 50).](../figures/impacto_freq.png)
 
 Os três tipos de impactos parecem ocorrer com proporções semelhantes
-(p = `r pv(pt.imp)`)
+(p = `r pv(pt.imp)`, teste de homogeneidade de proporções)
 .
 
 <!-- Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum. -->
@@ -294,7 +294,7 @@ A torção média dos quadris dolorosos que possuem impacto do tipo Misto não f
 Na avaliação global dos quadris estudados, o ângulo de torção demonstrou ser inversamente proporcional ao ângulo alfa
 (r = `r format.float(corr.tor.alf$estimate)`
 ,
-p = `r pv(corr.tor.alf)`)
+p = `r pv(corr.tor.alf)`, teste de correlação)
 ,
 como podemos observar na reta de regressão que associa as mensurações destes ângulos (figura 40).
 
@@ -306,7 +306,7 @@ O modelo de regressão linear apresentado na figura 40 representa como o ângulo
 Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
 `r format.float(-coef(lm.tor.alfa)[2])`
 graus no ângulo de torção
-(p = `r format.pval(summary(lm.tor.alfa)$coefficients[2, 4], digits = 2)`)
+(p = `r format.pval(summary(lm.tor.alfa)$coefficients[2, 4], digits = 2)`, teste t de Student)
 .
 O ângulo alfa sozinho, no entanto, explica apenas $r^2=$
 `r format.pct(corr.tor.alf$estimate^2, pct.symbol = TRUE)`
@@ -315,22 +315,22 @@ Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este r
 O ângulo de torção é negativamente correlacionado com o ângulo alfa
 (r = `r format.float(corr.tor.alf.con$estimate)`
 ,
-p = `r pv(corr.tor.alf.con)`)
+p = `r pv(corr.tor.alf.con)`, teste de correlação)
 no grupo controle, mas a correlação não é significativa no grupo de quadris dolorosos
 (r = `r format.float(corr.tor.alf.dor$estimate)`
 ,
-p = `r pv(corr.tor.alf.dor)`)
+p = `r pv(corr.tor.alf.dor)`, teste de correlação)
 (Figura 41).
 Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustaram-se modelos de regressão linear para cada grupo.
 A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle.
 Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle
-(p = `r format.pval(summary(lm.tor.alfa.con)$coefficients[2, 4], digits = 2)`)
+(p = `r format.pval(summary(lm.tor.alfa.con)$coefficients[2, 4], digits = 2)`, teste t de Student)
 .
 Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
 `r format.float(-coef(lm.tor.alfa.con)[2])`
 graus no ângulo de torção.
 Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos
-(p = `r format.pval(summary(lm.tor.alfa.dor)$coefficients[2, 4], digits = 2)`)
+(p = `r format.pval(summary(lm.tor.alfa.dor)$coefficients[2, 4], digits = 2)`, teste t de Student)
 .
 
 ![**Figura 41** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle).](../figures/painel_AlfTor_grupo.png)
