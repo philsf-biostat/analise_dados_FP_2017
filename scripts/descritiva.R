@@ -49,12 +49,13 @@ tc.grupo.imp <- with(dados.impacto, table(GRUPO, IMPACTO))
 ft.grupo.imp <- fisher.test(tc.grupo.imp)
 # R: não
 
+## Testes t por tipo de impacto
 
 tt.tor.cam <- with(dados, t.test(TORCAO ~ CAM))
 tt.tor.pincer <- with(dados, t.test(TORCAO ~ PINCER))
 tt.tor.misto <- with(dados, t.test(TORCAO ~ MISTO))
 
-# formatar p-valores ------------------------------------------------------
+# funções -----------------------------------------------------------------
 
 pv <- function(x, digits = 3) {
   # x é um objeto htest
