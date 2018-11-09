@@ -102,8 +102,8 @@ Para avaliar a diferença entre as variabilidades observadas no ângulo de torç
 
 ### Impactos fêmoro-acetabulares
 
-As diferenças entre as ocorrências dos impactos foi testada com teste de proporções, aplicando a correção de múltiplos p-valores de Bonferroni.
-Associações entre duas variáveis categóricas foram avaliadas usando-se o teste exato de Fisher, e apresentamos a razão de chance das associações significativas.
+As diferenças entre as ocorrências dos impactos foi testada com teste de proporções.
+Associações entre duas variáveis categóricas foram avaliadas usando-se modelos de regressão logística, e apresentamos a razão de chance (RC) e o intervalo de confiança (IC) das variáveis comparadas.
 
 ### Torção femoral
 
@@ -113,8 +113,8 @@ Avaliamos a associação entre o ângulo de torção femoral e o ângulo alfa co
 
 <!-- Além dos testes de significância, diversos modelos estatísticos foram criados para avaliar hipóteses sobre a relação entre os desfechos de interesse e os ângulos mensurados, como torção. -->
 
-Para avaliar se a dor ou o tipo de impacto influencia a relação entre o ângulo de torção femoral e o ângulo foi usado um modelo de regressão linear múltipla.
-Esta abordagem permite investigar se estes fatores contribuem para a percepção do efeito observado, globalmente, na correlação e na regressão linear simples.
+<!-- Para avaliar se a dor ou o tipo de impacto influencia a relação entre o ângulo de torção femoral e o ângulo foi usado um modelo de regressão linear múltipla. -->
+<!-- Esta abordagem permite investigar se estes fatores contribuem para a percepção do efeito observado, globalmente, na correlação e na regressão linear simples. -->
 
 <!-- ### Quadris com ângulo de torção femoral alterada -->
 
@@ -201,53 +201,60 @@ Os três tipos de impactos parecem ocorrer com proporções semelhantes
 
 ### Associação da ocorrência do impacto fêmoro-acetabular por gênero e por grupo de estudo
 
-```{r include=FALSE}
-fisher.OR(ft.sexo.cam, 1)
-fisher.OR(ft.sexo.pincer, 2)
-fisher.OR(ft.sexo.misto,1 )
+Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer em cada um dos gêneros (Tabela 4).
+
+```{r}
+pander(tc.sexo.imp)
 ```
 
-Os impactos ocorreram de forma diferenciada por gênero
-(p = `r pv(ft.sexo.imp)`)
-.
-Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer em cada um dos gêneros.
-A prevalência do impacto tipo CAM foi maior no gênero masculino e o impacto do tipo Pincer foi observado principalmente em indivíduos do gênero feminino.
-Tomando o gênero feminino como referência, demostramos os resultados relativos para os homens.
-Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens.
+Table: **Tabela 4** Frequências observadas para os impactos por gênero.
+
+Tomando o gênero feminino como referência, criamos um modelo de regressão logística para a razão de chance do gênero masculino apresentar cada tipo de impacto (Tabela 5).
+Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens que mulheres.
 Em nossa amostra, o CAM é
-`r fisher.OR(ft.sexo.cam, 1)`
+`r log.sexo.imp.res[1, 1]`
 vezes mais frequente em homens que em mulheres
-(`r format.OR(ft.sexo.cam)`)
+(RC: `r log.sexo.imp.res[1, 1]`, IC: `r log.sexo.imp.res[1, 2]`)
+.
+Não há evidências em nossa amostra de que há diferença entre homens e mulheres nas ocorrências de impacto do tipo Pincer
+(IC: `r log.sexo.imp.res[3, 2]`)
+, nem impacto do tipo Misto
+(IC: `r log.sexo.imp.res[2, 2]`)
 .
 
-Nossa amostra também indica que impacto do tipo Pincer é
-`r format.pct(-as.numeric(fisher.OR(ft.sexo.pincer, 2)), 0, pct.symbol = TRUE)`
-menos frequente em homens que em mulheres
-(`r format.OR(ft.sexo.pincer)`)
-.
-Isso confirma que a maior prevalência de Pincer é em mulheres.
-
-Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres
-(`r format.OR(ft.sexo.misto)`)
-.
-
-```{r include=FALSE}
-fisher.OR(ft.grupo.cam, 1)
-fisher.OR(ft.grupo.pincer, 1)
-fisher.OR(ft.grupo.misto, 1)
+```{r}
+pander(log.sexo.imp.res)
 ```
 
-Analisamos também a relação da dor com cada tipo de impacto.
-Observamos que a presença de CAM foi
-`r fisher.OR(ft.grupo.cam, 1)`
+Table: **Tabela 5** Regressão logística entre os tipos de impacto e o gênero.
+
+Analisamos também a relação da dor com cada tipo de impacto (Tabela 6).
+
+```{r}
+pander(tc.grupo.imp)
+```
+
+Table: **Tabela 6** Frequências observadas para os impactos por grupo.
+
+Tomando o grupo Controle como referência, criamos um modelo de regressão logística para a razão de chance do grupo Doloroso apresentar cada tipo de impacto (Tabela 7).
+Observamos que a presença do impacto do tipo Misto foi
+`r log.grupo.imp.res[2, 1]`
 vezes mais frequente nos quadris dolorosos
-(`r format.OR(ft.grupo.cam)`)
+(RC: `r log.grupo.imp.res[2, 1]`, IC: `r log.grupo.imp.res[2, 2]`)
 que no grupo controle.
-Não houve diferença significativa nas ocorrências para Pincer
-(`r format.OR(ft.grupo.pincer)`)
-e Misto
-(`r format.OR(ft.grupo.misto)`)
-(Figura 39).
+Não houve diferença significativa nas ocorrências para CAM
+(IC: `r log.grupo.imp.res[1, 2]`)
+e Pincer
+(IC: `r log.grupo.imp.res[3, 2]`)
+.
+
+```{r}
+pander(log.grupo.imp.res)
+```
+
+Table: **Tabela 7** Regressão logística entre os tipos de impacto e o grupo.
+
+A figura 39 mostra os resultados de ambas as análises.
 
 ![**Figura 39** Número de quadris estratificados por gênero e por grupo de estudo com diferentes tipos de impacto fêmoro-acetabular e manifestações clínicas (N = 50).](../figures/painel_sex_grupo.png)
 
