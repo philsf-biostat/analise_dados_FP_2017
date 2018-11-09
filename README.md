@@ -21,22 +21,24 @@ Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-
 [Planejamento][v01-project].
 
 - [Visualização online][reportviz-v01]
-- [Download][docx-v01]
+- Download ([DOCX][docx-v01], [PDF][pdf-v01])
 
 **Versão 02 - Defesa** - [Concluído em 09/11/2018][milestone-posqual].
 
 [Planejamento][v02-project].
 
 - [Visualização online][reportviz-v02]
-- Download
+- Download ([DOCX][docx-v02], [PDF][pdf-v02])
 
 [releases]: https://github.com/philsf-biostat/analise_dados_FP_2017/releases/
 [milestone-prequal]: https://github.com/philsf-biostat/analise_dados_FP_2017/milestone/5
 [milestone-posqual]: https://github.com/philsf-biostat/analise_dados_FP_2017/milestone/3
 [reportviz-v01]: report/analise_dados_FP_2017-v01.md
 [docx-v01]: report/analise_dados_FP_2017-v01.docx?raw=true
+[pdf-v01]: report/analise_dados_FP_2017-v01.pdf?raw=true
 [reportviz-v02]: report/analise_dados_FP_2017-v02.md
 [docx-v02]: report/analise_dados_FP_2017-v02.docx?raw=true
+[pdf-v02]: report/analise_dados_FP_2017-v02.pdf?raw=true
 
 [v01-project]: https://github.com/philsf-biostat/analise_dados_FP_2017/projects/4
 [v02-project]: https://github.com/philsf-biostat/analise_dados_FP_2017/projects/6
