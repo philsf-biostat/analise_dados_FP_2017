@@ -37,26 +37,18 @@ pt.imp <- prop.test(imp.mat)
 
 # Homens tem tipos de impacto != das mulheres?
 
-ft.sexo.imp <- fisher.test(with(droplevels(dados.impacto), table(SEXO, IMPACTO)))
 tc.sexo.imp <- with(dados.impacto, table(SEXO, IMPACTO))
 ft.sexo.imp <- fisher.test(tc.sexo.imp)
 # R: sim
 
-ft.sexo.cam <- fisher.test(with(dados, table(SEXO, CAM)))
-ft.sexo.pincer <- fisher.test(with(dados, table(SEXO, PINCER)))
-ft.sexo.misto <- fisher.test(with(dados, table(SEXO, MISTO)))
 ppt.sexo.imp <- pairwise.prop.test(t(tc.sexo.imp))
 
 # Sentir dor é um bom preditor para o tipo do impacto?
-ft.grupo.imp <- fisher.test(with(droplevels(dados.impacto), table(GRUPO, IMPACTO)))
 
 tc.grupo.imp <- with(dados.impacto, table(GRUPO, IMPACTO))
 ft.grupo.imp <- fisher.test(tc.grupo.imp)
 # R: não
 
-ft.grupo.cam <- fisher.test(with(dados, table(GRUPO, CAM)))
-ft.grupo.pincer <- fisher.test(with(dados, table(GRUPO, PINCER)))
-ft.grupo.misto <- fisher.test(with(dados, table(GRUPO, MISTO)))
 
 tt.tor.cam <- with(dados, t.test(TORCAO ~ CAM))
 tt.tor.pincer <- with(dados, t.test(TORCAO ~ PINCER))
