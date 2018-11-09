@@ -202,7 +202,14 @@ Os três tipos de impactos parecem ocorrer com proporções semelhantes
 ### Associação da ocorrência do impacto fêmoro-acetabular por gênero e por grupo de estudo
 
 Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer em cada um dos gêneros (Tabela 4).
-Tomando o gênero feminino como referência, demostramos os resultados relativos para os homens, expressos em razão de chance.
+
+```{r}
+pander(tc.sexo.imp)
+```
+
+Table: **Tabela 4** Frequências observadas para os impactos por gênero.
+
+Tomando o gênero feminino como referência, criamos um modelo de regressão logística para a razão de chance do gênero masculino apresentar cada tipo de impacto (Tabela 5).
 Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens que mulheres.
 Em nossa amostra, o CAM é
 `r log.sexo.imp.res[1, 1]`
@@ -210,34 +217,42 @@ vezes mais frequente em homens que em mulheres
 (RC: `r log.sexo.imp.res[1, 1]`, IC: `r log.sexo.imp.res[1, 2]`)
 .
 Não há evidências em nossa amostra de que há diferença entre homens e mulheres nas ocorrências de impacto do tipo Pincer
-(RC: `r log.sexo.imp.res[3, 1]`, IC: `r log.sexo.imp.res[3, 2]`)
+(IC: `r log.sexo.imp.res[3, 2]`)
 , nem impacto do tipo Misto
-(RC: `r log.sexo.imp.res[2, 1]`, IC: `r log.sexo.imp.res[2, 2]`)
+(IC: `r log.sexo.imp.res[2, 2]`)
 .
 
 ```{r}
 pander(log.sexo.imp.res)
 ```
 
-Table: **Tabela 4** Regressão logística entre os tipos de impacto e o gênero.
+Table: **Tabela 5** Regressão logística entre os tipos de impacto e o gênero.
 
-Analisamos também a relação da dor com cada tipo de impacto (Tabela 5).
+Analisamos também a relação da dor com cada tipo de impacto (Tabela 6).
+
+```{r}
+pander(tc.grupo.imp)
+```
+
+Table: **Tabela 6** Frequências observadas para os impactos por grupo.
+
+Tomando o grupo Controle como referência, criamos um modelo de regressão logística para a razão de chance do grupo Doloroso apresentar cada tipo de impacto (Tabela 7).
 Observamos que a presença do impacto do tipo Misto foi
 `r log.grupo.imp.res[2, 1]`
 vezes mais frequente nos quadris dolorosos
-<!-- (RC: `r log.grupo.imp.res[1, 1]`, IC: `r log.grupo.imp.res[1, 2]`) -->
+(RC: `r log.grupo.imp.res[2, 1]`, IC: `r log.grupo.imp.res[2, 2]`)
 que no grupo controle.
-Não houve diferença significativa nas ocorrências para Pincer
-(RC: `r log.grupo.imp.res[3, 1]`, IC: `r log.grupo.imp.res[3, 2]`)
-e CAM
-(RC: `r log.grupo.imp.res[1, 1]`, IC: `r log.grupo.imp.res[1, 2]`)
+Não houve diferença significativa nas ocorrências para CAM
+(IC: `r log.grupo.imp.res[1, 2]`)
+e Pincer
+(IC: `r log.grupo.imp.res[3, 2]`)
 .
 
 ```{r}
 pander(log.grupo.imp.res)
 ```
 
-Table: **Tabela 5** Regressão logística entre os tipos de impacto e o grupo.
+Table: **Tabela 7** Regressão logística entre os tipos de impacto e o grupo.
 
 A figura 39 mostra os resultados de ambas as análises.
 
