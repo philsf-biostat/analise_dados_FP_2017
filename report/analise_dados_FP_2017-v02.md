@@ -39,6 +39,13 @@ toc-title: "Sumário"
 
 # Lista de abreviaturas
 
+- CV -- Coeficiente de Variação
+- DP -- Desvio padrão
+- IC -- Intervalo de Confiança
+- RC -- Razão de Chances
+- r -- coeficiente de correlação linear de Pearson
+- r2 -- Coeficiente de determinação
+
 # Introdução
 
 # Metodologia
@@ -184,7 +191,7 @@ A figura 38 mostra a frequência com que cada tipo de impacto ocorreu nos quadri
 ![**Figura 38** Número de quadris com cada tipo de impacto fêmoro-acetabular, sendo dividivos quanto ao tipo de impacto (N total de quadris = 50).](../figures/impacto_freq.png)
 
 Os três tipos de impactos parecem ocorrer com proporções semelhantes
-(p = 0.432)
+(p = 0.432, teste de homogeneidade de proporções)
 .
 
 <!-- Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum. -->
@@ -290,7 +297,7 @@ A torção média dos quadris dolorosos que possuem impacto do tipo Misto não f
 Na avaliação global dos quadris estudados, o ângulo de torção demonstrou ser inversamente proporcional ao ângulo alfa
 (r = -0.30
 ,
-p = 0.0364)
+p = 0.0364, teste de correlação)
 ,
 como podemos observar na reta de regressão que associa as mensurações destes ângulos (figura 40).
 
@@ -302,7 +309,7 @@ O modelo de regressão linear apresentado na figura 40 representa como o ângulo
 Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
 0.20
 graus no ângulo de torção
-(p = 0.036)
+(p = 0.036, teste t de Student)
 .
 O ângulo alfa sozinho, no entanto, explica apenas $r^2=$
 9.0%
@@ -311,22 +318,22 @@ Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este r
 O ângulo de torção é negativamente correlacionado com o ângulo alfa
 (r = -0.65
 ,
-p = 0.0117)
+p = 0.0117, teste de correlação)
 no grupo controle, mas a correlação não é significativa no grupo de quadris dolorosos
 (r = -0.21
 ,
-p = 0.233)
+p = 0.233, teste de correlação)
 (Figura 41).
 Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustaram-se modelos de regressão linear para cada grupo.
 A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle.
 Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle
-(p = 0.012)
+(p = 0.012, teste t de Student)
 .
 Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
 0.39
 graus no ângulo de torção.
 Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos
-(p = 0.23)
+(p = 0.23, teste t de Student)
 .
 
 ![**Figura 41** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle).](../figures/painel_AlfTor_grupo.png)
