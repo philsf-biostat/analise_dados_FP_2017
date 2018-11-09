@@ -239,6 +239,8 @@ pander(log.grupo.imp.res)
 
 Table: **Tabela 5** Regressão logística entre os tipos de impacto e o grupo.
 
+A figura 39 mostra os resultados de ambas as análises.
+
 ![**Figura 39** Número de quadris estratificados por gênero e por grupo de estudo com diferentes tipos de impacto fêmoro-acetabular e manifestações clínicas (N = 50).](../figures/painel_sex_grupo.png)
 
 ## Torção femoral
