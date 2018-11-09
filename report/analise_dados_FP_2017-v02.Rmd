@@ -40,10 +40,10 @@ panderOptions('table.style', 'rmarkdown')
 
 ```{r, echo = FALSE}
 Version <- c("01", "02")
-Changes <- c("Versão inicial", "Análise qualitativa da torção femoral e impactos")
+Changes <- c("Versão inicial", "Análise categórica dos impactos refeita (regressão logística por gênero e por grupo) -- metodologia atualizada; Dados filtrados (apenas quadris com impacto) -- seções de Impactos e Torção; Frequências dos impactos apresentadas em tabelas de contingência; Testes de todos os p-valores identicados; Abreviaturas utilizadas no texto incluídas.")
 history <- cbind(Version, Changes)
 colnames(history) <- c("Versão", "Alterações")
-pander(history, split.cells = 70)
+pander(history, split.cells = 70, split.table=Inf)
 # kable(history)
 ```
 
