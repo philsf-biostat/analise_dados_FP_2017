@@ -1,7 +1,7 @@
 ---
 title: "Análise de dados de medidas de ângulos de torção femoral e impactos fêmoro-acetabulares"
 author: '**De:** Felipe Figueiredo **Para:** Fernando Pina Cabral'
-date: '**Data: ** dd/mm/aaaa'
+date: '**Data: ** 09/11/2018'
 output:
   html_document:
     fig_caption: yes
@@ -30,10 +30,10 @@ toc-title: "Sumário"
 **Histórico do documento**
 
 
-| Versão |                    Alterações                    |
-|:------:|:------------------------------------------------:|
-|   01   |                  Versão inicial                  |
-|   02   | Análise qualitativa da torção femoral e impactos |
+| Versão |                                                                                                                                                                      Alterações                                                                                                                                                                      |
+|:------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|   01   |                                                                                                                                                                    Versão inicial                                                                                                                                                                    |
+|   02   | Análise categórica dos impactos refeita (regressão logística por gênero e por grupo) -- metodologia atualizada; Dados filtrados (apenas quadris com impacto) -- seções de Impactos e Torção; Frequências dos impactos apresentadas em tabelas de contingência; Testes de todos os p-valores identicados; Abreviaturas utilizadas no texto incluídas. |
 
 ---
 
