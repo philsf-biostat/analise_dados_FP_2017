@@ -28,9 +28,12 @@ write.csv2(sum.grupo, "results/grupo.csv")
 write.csv2(tab.cv, "results/tab_cv.csv")
 
 ## Associação de dados categóricos
+
+# Proporções dos impactos são diferentes?
 imp.n <- with(dados.impacto, table(IMPACTO))
 imp.mat <- matrix(c(as.vector(imp.n), sum(imp.n) - as.vector(imp.n)), ncol = 2)
 pt.imp <- prop.test(imp.mat)
+# R: não
 
 # Homens tem tipos de impacto != das mulheres?
 
@@ -46,6 +49,7 @@ ppt.sexo.imp <- pairwise.prop.test(t(tc.sexo.imp))
 
 # Sentir dor é um bom preditor para o tipo do impacto?
 ft.grupo.imp <- fisher.test(with(droplevels(dados.impacto), table(GRUPO, IMPACTO)))
+
 tc.grupo.imp <- with(dados.impacto, table(GRUPO, IMPACTO))
 ft.grupo.imp <- fisher.test(tc.grupo.imp)
 # R: não
