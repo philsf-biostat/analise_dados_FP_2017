@@ -34,13 +34,23 @@ summary(lm(TORCAO ~ ALFA + IMPACTO, data = dados.impacto[GRUPO == "Doloroso"]))
 
 # Desfecho sexo
 
-log.sexo.imp <- glm(SEXO ~ IMPACTO, binomial, dados.impacto)
+log.sexo.imp <- glm(SEXO ~ IMPACTO -1, binomial, dados.impacto)
 summary(log.sexo.imp)
+log.sexo.imp.res <- data.table(
+  OR = format.float(as.vector(exp(coef(log.sexo.imp)))),
+  IC = apply(exp(confint.default(log.sexo.imp)), 1,  format.interval)
+)
+rownames(log.sexo.imp.res) <- c("CAM M", "MISTO M", "PINCER M")
 
 # Desfecho grupo
 
-log.grupo.imp <- glm(GRUPO ~ IMPACTO, binomial, dados.impacto)
+log.grupo.imp <- glm(GRUPO ~ IMPACTO -1, binomial, dados.impacto)
 summary(log.grupo.imp)
+log.grupo.imp.res <- data.table(
+  OR = format.float(as.vector(exp(coef(log.grupo.imp)))),
+  IC = apply(exp(confint.default(log.grupo.imp)), 1,  format.interval)
+)
+rownames(log.grupo.imp.res) <- c("CAM Doloroso", "MISTO Doloroso", "PINCER Doloroso")
 
 ## Desfecho Torção
 
