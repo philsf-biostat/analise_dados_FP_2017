@@ -23,7 +23,7 @@ library(ggplot2)
 #   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
 #   theme(legend.position = "none")
 
-alftor.global <- ggplot(dados, aes(ALFA, TORCAO)) +
+alftor.global <- ggplot(dados.impacto, aes(ALFA, TORCAO)) +
   theme(legend.position = "bottom") +
   xlab("Ângulo alfa") + ylab("Ângulo de torção") +
   geom_point() +
