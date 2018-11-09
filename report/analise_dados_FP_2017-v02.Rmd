@@ -51,6 +51,13 @@ pander(history, split.cells = 70)
 
 # Lista de abreviaturas
 
+- CV -- Coeficiente de Variação
+- DP -- Desvio padrão
+- IC -- Intervalo de Confiança
+- RC -- Razão de Chances
+- r -- coeficiente de correlação linear de Pearson
+- r2 -- Coeficiente de determinação
+
 # Introdução
 
 # Metodologia
