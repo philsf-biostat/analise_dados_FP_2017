@@ -179,42 +179,66 @@ Table: **Tabela 3** Variabilidades relativas (%CV) do ângulo de torção femora
 
 ### Ocorrência dos tipos de impacto fêmoro-acetabular
 
-A figura 32 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
+A figura 38 mostra a frequência com que cada tipo de impacto ocorreu nos quadris estudados.
 
-![**Figura 32** Proporção de quadris com cada tipo de impacto fêmoro-acetabular. (N total de quadris = 52)](../figures/impacto_freq.png)
+![**Figura 38** Número de quadris com cada tipo de impacto fêmoro-acetabular, sendo dividivos quanto ao tipo de impacto (N total de quadris = 50).](../figures/impacto_freq.png)
 
+Os três tipos de impactos parecem ocorrer com proporções semelhantes
+(p = 0.432)
+.
 
-
-Os impactos do tipo CAM e PINCER parecem ocorrer com frequências semelhantes (p = 0.9258).
-
-Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum.
-Isto não foi observado neste estudo.
-Quadris com impacto MISTO por outro lado são significativamente menores que os impactos CAM (p = <0.001) e PINCER (p = 0.0308).
-Os quadris com impacto MISTO são os menos frequentes na amostra aqui estudada.
+<!-- Uma hipótese na literatura é de que a ocorrência de MISTO (CAM+PINCER) é o mais comum. -->
+<!-- Isto não foi observado neste estudo. -->
+<!-- Quadris com impacto MISTO por outro lado são significativamente menores que os impactos CAM -->
+<!-- (p = ) -->
+<!-- e PINCER -->
+<!-- (p = ) -->
+<!-- . -->
+<!-- Os quadris com impacto MISTO são os menos frequentes na amostra aqui estudada. -->
 
 ### Associação da ocorrência do impacto fêmoro-acetabular por gênero e por grupo de estudo
 
 
 
-Os impactos ocorreram de forma diferenciada por gênero (p = 0.00266).
+Os impactos ocorreram de forma diferenciada por gênero
+(p = 0.00266)
+.
 Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer em cada um dos gêneros.
-A prevalência do impacto tipo CAM foi maior no gênero masculino e o impacto do tipo Pincer foram observados principalmente em indivíduos do gênero feminino.
+A prevalência do impacto tipo CAM foi maior no gênero masculino e o impacto do tipo Pincer foi observado principalmente em indivíduos do gênero feminino.
 Tomando o gênero feminino como referência, demostramos os resultados relativos para os homens.
 Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens.
-Em nossa amostra, o CAM é 3.8 vezes mais frequente em homens que em mulheres (OR: 4.82 IC: [1.11, 22.78]).
+Em nossa amostra, o CAM é
+3.8
+vezes mais frequente em homens que em mulheres
+(OR: 4.82 IC: [1.11, 22.78])
+.
 
-Nossa amostra também indica que impacto do tipo Pincer é 93%  menos frequente em homens que em mulheres (OR: 0.07 IC: [0.00, 0.52]).
+Nossa amostra também indica que impacto do tipo Pincer é
+93%
+menos frequente em homens que em mulheres
+(OR: 0.07 IC: [0.00, 0.52])
+.
 Isso confirma que a maior prevalência de Pincer é em mulheres.
 
-Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres (OR: 0.74 IC: [0.17, 3.46]).
+Não há evidências em nossa amostra de que um impacto do tipo Misto acometa mais homens que mulheres
+(OR: 0.74 IC: [0.17, 3.46])
+.
 
 
 
-Nós analisamos também a relação da dor com cada tipo de impacto fêmoro-acetabular.
-Observamos que a presença de CAM é 3.4 vezes mais frequente nos quadris dolorosos (OR: 4.35 IC: [1.07, 19.11]) que no grupo controle.
-Não houve diferença significativa nas ocorrências para Pincer (OR: 1.33 IC: [0.35, 4.99]) e misto (OR: 4.86 IC: [0.90, 50.43]) (Figura 33).
+Analisamos também a relação da dor com cada tipo de impacto.
+Observamos que a presença de CAM foi
+3.4
+vezes mais frequente nos quadris dolorosos
+(OR: 4.35 IC: [1.07, 19.11])
+que no grupo controle.
+Não houve diferença significativa nas ocorrências para Pincer
+(OR: 1.33 IC: [0.35, 4.99])
+e Misto
+(OR: 4.86 IC: [0.90, 50.43])
+(Figura 39).
 
-![**Figura 33** Número de quadris, por gênero e por grupo de estudo, com cada tipo de impacto fêmoro-acetabular (N = 52)](../figures/painel_sex_grupo.png)
+![**Figura 39** Número de quadris estratificados por gênero e por grupo de estudo com diferentes tipos de impacto fêmoro-acetabular e manifestações clínicas (N = 50).](../figures/painel_sex_grupo.png)
 
 ## Torção femoral
 
@@ -222,44 +246,72 @@ Não houve diferença significativa nas ocorrências para Pincer (OR: 1.33 IC: [
 
 
 
-A torção média dos quadris que possuem impacto do tipo CAM não é significativamente dos controles (p= 0.234).
-
-A torção média dos quadris que possuem impacto do tipo PINCER observada foi de 16.63, maior que a média dos controles de 11.77 (p= 0.0455).
-
-A torção média dos quadris que possuem impacto do tipo MISTO não é significativamente dos controles (p= 0.314).
+A torção média dos quadris dolorosos que possuem impacto do tipo CAM não apresentou diferença estatisticamente significativa quando comparada com os quadris controle
+(p= 0.234)
+.
+Já no impacto tipo Pincer, a torção média dos quadris dolorosos foi de
+16.63
+graus, enquanto que a torção média dos controles foi de
+11.77
+graus
+(p= 0.0455)
+.
+A torção média dos quadris dolorosos que possuem impacto do tipo Misto não foi significativa quando comparada com os controles
+(p= 0.314)
+.
 
 ### Correlação entre a torção femoral e o ângulo alfa
 
-O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = -0.31, p = 0.0289).
-A figura 34 mostra a reta de regressão que associa as mensurações destes ângulos.
+Na avaliação global dos quadris estudados, o ângulo de torção demonstrou ser inversamente proporcional ao ângulo alfa
+(r = -0.31
+,
+p = 0.0289)
+,
+como podemos observar na reta de regressão que associa as mensurações destes ângulos (figura 40).
 
 <!-- [FIXME: observar que esta correlação é global] -->
 
-![**Figura 34** Regressão linear entre o ângulo de torção femoral e o ângulo alfa](../figures/painel_AlfTor_global.png)
+![**Figura 40** Regressão linear entre torção femoral e o ângulo alfa.](../figures/painel_AlfTor_global.png)
 
-O modelo de regressão linear apresentado na figura 34 representa como o ângulo de torção femoral varia em função do ângulo alfa.
-Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente 0.20 graus no ângulo de torção (p = 0.029).
-O ângulo alfa sozinho, no entanto, explica apenas $r^2=$ 9.4% da variabilidade observada no ângulo de torção femoral.
-É necessário investigar outros fatores que possam ajudar a explicar esta variabilidade observada.
+O modelo de regressão linear apresentado na figura 40 representa como o ângulo de torção femoral varia em função do ângulo alfa.
+Para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
+0.20
+graus no ângulo de torção
+(p = 0.029)
+.
+O ângulo alfa sozinho, no entanto, explica apenas $r^2=$
+9.4%
+da variabilidade observada no ângulo de torção femoral.
+Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este resultado é inconsistente.
+O ângulo de torção é negativamente correlacionado com o ângulo alfa
+(r = -0.63
+,
+p = 0.00933)
+no grupo controle, mas a correlação não é significativa no grupo de quadris dolorosos
+(r = -0.21
+,
+p = 0.233)
+(Figura 41).
+Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustaram-se modelos de regressão linear para cada grupo.
+A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle.
+Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle
+(p = 0.0093)
+.
+Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente
+0.40
+graus no ângulo de torção.
+Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos
+(p = 0.23)
+.
 
-Considerando cada grupo de estudo (quadris dolorosos e quadris controle), este resultado é inconsistente (figura 33).
-O ângulo de torção é negativamente correlacionado com o ângulo alfa (r = -0.63, p = 0.00933) no grupo controle, mas a correlação não é significativa no grupo de quadris dolorosos
-(r = -0.21, p = 0.233).
-
-Sob a hipótese de uma associação linear entre o ângulo de torção femoral como função do ângulo alfa, ajustou-se modelos de regressão linear para cada grupo.
-A correlação negativa tem efeito menos marcante no grupo de quadris dolorosos que no grupo controle (figura 35).
-Controlando pelo grupo de estudo, a associação permanece significativamente negativa no grupo controle (p = 0.0093).
-Este modelo indica que para cada aumento de um grau no ângulo alfa, há uma diminuição de aproximadamente 0.40 graus no ângulo de torção.
-Uma relação linear não pode mais ser detectada no grupo de quadris dolorosos (p = 0.23).
-
-![**Figura 35** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle)](../figures/painel_AlfTor_grupo.png)
+![**Figura 41** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle).](../figures/painel_AlfTor_grupo.png)
 
 <!-- ```{r echo=FALSE, warning=FALSE, fig.cap="**Figura xx** Correlação entre Torção e Alfa, por grupo"} -->
 <!-- alftor.grupo.imp -->
 <!-- ``` -->
 
-Quando controlamos pelo tipo de impacto, não é mais possível identificar associação entre os ângulos (figura 36).
-Isto pode ter sido afetado pela diferença entre as variabilidades relativas entre os ângulos estudados (tabela 3).
+Quando controlamos a análise pelo tipo de impacto, não foi possível identificar associação com o ângulo de torção.
+Isto pode ter sido afetado pela diferença entre as variabilidades relativas entre o ângulo de torção (CV aproximado 60%) e o ângulo alfa (CV aproximado 22%) (Figura 42).
 
 <!-- FIXME: mover para a DISCUSSÃO -->
 <!-- Esta aparente correlação negativa no grupo controle parece ter sido afetada pelo baixo número de pacientes com impacto misto - há apenas 2 pacientes nesta categoria. -->
@@ -267,7 +319,7 @@ Isto pode ter sido afetado pela diferença entre as variabilidades relativas ent
 
 <!-- Obs: na verdade, retirar todos os pacientes MISTO não impacta nos resultados e conclusões. -->
 
-![**Figura 36** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle e para cada tipo de impacto fêmoro-acetabular](../figures/painel_AlfTor_imp_grupo.png)
+![**Figura 42** Regressões lineares entre o ângulo de torção femoral e o ângulo alfa, para cada grupo de estudo (quadris dolorosos e quadris controle e para cada tipo de impacto fêmoro-acetabular.](../figures/painel_AlfTor_imp_grupo.png)
 
 <!-- ### Quadris com ângulo de torção femoral alterada -->
 
