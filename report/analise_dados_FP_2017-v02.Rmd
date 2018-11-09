@@ -201,10 +201,7 @@ Os três tipos de impactos parecem ocorrer com proporções semelhantes
 
 ### Associação da ocorrência do impacto fêmoro-acetabular por gênero e por grupo de estudo
 
-Os impactos ocorreram de forma diferenciada por gênero
-(p = `r pv(ft.sexo.imp)`)
-.
-Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer em cada um dos gêneros (Figura 39).
+Avaliamos a diferença entre as prevalências dos impactos do tipo CAM e Pincer em cada um dos gêneros (Tabela 4).
 Tomando o gênero feminino como referência, demostramos os resultados relativos para os homens, expressos em razão de chance.
 Nossos dados indicam que impacto do tipo CAM realmente acomete mais homens que mulheres.
 Em nossa amostra, o CAM é
@@ -218,20 +215,29 @@ Não há evidências em nossa amostra de que há diferença entre homens e mulhe
 (RC: `r log.sexo.imp.res[2, 1]`, IC: `r log.sexo.imp.res[2, 2]`)
 .
 
-Analisamos também a relação da dor com cada tipo de impacto (Figura 39).
-Não há evidências de que os impactos ocorreram de forma diferenciada por grupo
-(p = `r pv(ft.grupo.imp)`)
+```{r}
+pander(log.sexo.imp.res)
+```
+
+Table: **Tabela 4** Regressão logística entre os tipos de impacto e o gênero.
+
+Analisamos também a relação da dor com cada tipo de impacto (Tabela 5).
+Observamos que a presença do impacto do tipo Misto foi
+`r log.grupo.imp.res[2, 1]`
+vezes mais frequente nos quadris dolorosos
+<!-- (RC: `r log.grupo.imp.res[1, 1]`, IC: `r log.grupo.imp.res[1, 2]`) -->
+que no grupo controle.
+Não houve diferença significativa nas ocorrências para Pincer
+(RC: `r log.grupo.imp.res[3, 1]`, IC: `r log.grupo.imp.res[3, 2]`)
+e CAM
+(RC: `r log.grupo.imp.res[1, 1]`, IC: `r log.grupo.imp.res[1, 2]`)
 .
 
-<!-- Observamos que a presença de CAM foi -->
-<!-- `r log.grupo.imp.res[1, 1]` -->
-<!-- vezes mais frequente nos quadris dolorosos -->
-<!-- (RC: `r log.grupo.imp.res[1, 1]`, IC: `r log.grupo.imp.res[1, 2]`) -->
-<!-- que no grupo controle. -->
-<!-- Não houve diferença significativa nas ocorrências para Pincer -->
-<!-- (RC: `r log.grupo.imp.res[3, 1]`, IC: `r log.grupo.imp.res[3, 2]`) -->
-<!-- e Misto -->
-<!-- (RC: `r log.grupo.imp.res[2, 1]`, IC: `r log.grupo.imp.res[2, 2]`) -->
+```{r}
+pander(log.grupo.imp.res)
+```
+
+Table: **Tabela 5** Regressão logística entre os tipos de impacto e o grupo.
 
 ![**Figura 39** Número de quadris estratificados por gênero e por grupo de estudo com diferentes tipos de impacto fêmoro-acetabular e manifestações clínicas (N = 50).](../figures/painel_sex_grupo.png)
 
